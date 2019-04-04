@@ -1,0 +1,341 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://startpages.github.io/startpages/Startpage_kopri-nb/
+Subject: Start page
+Date: Thu, 4 Apr 2019 14:03:56 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--dDzFsGtduBPhiAGKwq7uR6yGaVWa96WOzPW76uyJU7----"
+
+
+------MultipartBoundary--dDzFsGtduBPhiAGKwq7uR6yGaVWa96WOzPW76uyJU7----
+Content-Type: text/html
+Content-ID: <frame-C9A7FC683A685D81D628742498E13316@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://startpages.github.io/startpages/Startpage_kopri-nb/
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8">
+=09
+	<title>Start page</title>
+	<style type=3D"text/css" id=3D"less:startpages-Startpage_kopri-nb-style-st=
+yle">@import "https://startpages.github.io/startpages/Startpage_kopri-nb/st=
+yle/normalize.css";
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* Black */
+/* Red */
+/* Green */
+/* Yellow */
+/* Blue */
+/* Magenta */
+/* Cyan */
+/* White */
+body {
+  background: #1a1a1a url('https://startpages.github.io/startpages/Startpag=
+e_kopri-nb/style/g.png') repeat;
+}
+a {
+  color: #dddddd;
+  text-decoration: none;
+  display: block;
+  float: none;
+}
+ul {
+  list-style: none;
+  padding: 6px 4px 8px 6px;
+  margin: 0;
+  width: 180px;
+  float: left;
+}
+input[type=3D"submit"] {
+  display: none;
+}
+input {
+  background-color: #1a1a1a;
+  color: #dddddd;
+  border: none;
+  font-family: monospace;
+  padding: 0;
+}
+#container {
+  background-color: #1a1a1a;
+  font-family: monospace;
+  font-size: 13px;
+  width: 585px;
+  height: 290px;
+  padding: 5px;
+  border: 6px solid #404040;
+  color: #404040;
+}
+#search {
+  float: left;
+  margin: 0 0 0 6px;
+  padding: 0;
+}
+#links {
+  margin: 7px 0px 0px 2px;
+  font-size: 12px;
+  height: 172px;
+}
+.PS1 {
+  padding: 5px 0px 0px 5px;
+  display: block;
+  width: 585px;
+}
+.PS1:nth-of-type(1)::after {
+  content: " about damez";
+  margin: 0 0 0 6px;
+  font-size: 13px;
+  color: #B8D68C;
+}
+.at::before {
+  content: "damez";
+  color: #b8d68c;
+}
+.at {
+  float: left;
+  color: #cccccc;
+}
+.at::after {
+  content: "paradiz";
+  color: #4e9fb1;
+}
+.amper::before {
+  content: ":";
+  color: #cccccc;
+}
+.amper {
+  float: left;
+  color: #9b64fb;
+}
+.amper::after {
+  content: " >>";
+  color: #e84f4f;
+}
+.main li {
+  color: #e84f4f;
+}
+.main li a:hover {
+  color: #d23d3d;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.utils li {
+  color: #b8d68c;
+}
+.utils li a:hover {
+  color: #a0cf5d;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.gfx li {
+  color: #e1aa5d;
+}
+.gfx li a:hover {
+  color: #f39d21;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.unix li {
+  color: #4d679a;
+}
+.unix li a:hover {
+  color: #4e9fb1;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.reddit li {
+  color: #9b64fb;
+}
+.reddit li a:hover {
+  color: #8542ff;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.bits li {
+  color: #6d878d;
+}
+.bits li a:hover {
+  color: #42717b;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+</style>
+=09
+=09
+=09
+=09
+	<!-- Original Design: kopri@unixhub.net | Recode/enhancement: evolution@un=
+ixhub.net -->
+	</head>
+	<body>
+		<div id=3D"container" class=3D"ui-draggable" style=3D"position: relative;=
+ top: 192px; left: 379.5px;">
+			<div class=3D"PS1"><p class=3D"at">@</p><p class=3D"amper">~</p></div>
+				<div id=3D"links">
+				<ul class=3D"main">
+					<li>main</li>
+					<li><a href=3D"https://milko.netlify.com/">my_blog</a></li><li>
+					</li><li><a href=3D"mailto:kopri@unixhub.com">email_me</a></li><li>
+					</li><li><a href=3D"https://github.com/harimurtie">my_git</a></li><li>
+					</li><li><a href=3D"https://paste.xinu.at/Q0cP">public.pgp</a></li><li=
+>
+				</li></ul>
+				<ul class=3D"unix">
+					<li>unix</li>
+					<li><a href=3D"http://distrowatch.com/">distrowatch</a></li><li>
+					</li><li><a href=3D"http://bsd.org/">docs/bsd</a></li><li>
+					</li><li><a href=3D"http://tldp.org/">docs/linux</a></li><li>
+					</li><li><a href=3D"https://www.freshports.org/">docs/ports</a></li><l=
+i>
+				</li></ul>
+				<ul class=3D"utils">
+					<li>utils</li>
+					<li><a href=3D"https://twitter.com/dumpmon">dumpmon</a></li><li>
+					</li><li><a href=3D"https://paste.xinu.at/">filebin</a></li><li>
+					</li><li><a href=3D"http://pomf.se/">imghost</a></li><li>
+					</li><li><a href=3D"https://youtube.com/">vidhost</a></li><li>
+				</li></ul>
+				<ul class=3D"reddit">
+					<li>reddit</li>
+					<li><a href=3D"https://www.reddit.com/">/reddit</a></li><li>
+					</li><li><a href=3D"https://www.reddit.com/r/ManjaroLinux/">/manjarolinux</a></li=
+><li>
+					</li><li><a href=3D"https://www.reddit.com/r/unixporn/">/unixporn</a></li><li>
+					</li><li><a href=3D"http://xnxx.com">/rpornR</a></li><li>
+				</li></ul>
+				<ul class=3D"gfx">
+					<li>gfx</li>
+					<li><a href=3D"http://deviantart.com/">DA</a></li><li>
+					</li><li><a href=3D"http://dotshare.it/">dotshare</a></li><li>
+					</li><li><a href=3D"http://simpledesktops.com/">simpledesktops</a></li=
+><li>
+					</li><li><a href=3D"http://wallbase.cc/home">wallbase.sh</a></li><li>
+				</li></ul>
+				<ul class=3D"bits">
+					<li>bits</li>
+					<li><a href=3D"https://animebytes.tv/">animebytes</a></li><li>
+					</li><li><a href=3D"http://bitsnoop.com/">bitsnoop</a></li><li>
+					</li><li><a href=3D"https://www.nzbzombie.com/">nzbzombie</a></li><li>
+					</li><li><a href=3D"https://thepiratebay.sx/">piratebay</a></li><li>
+				</li></ul>
+				</div>
+				<div class=3D"PS1"><p class=3D"at">@</p><p class=3D"amper">~</p>
+				<form id=3D"search" action=3D"https://startpage.com/do/search">=20
+	  			=20
+	  			<input maxlength=3D"250" size=3D"40" tabindex=3D"1" name=3D"q" value=
+=3D"">=20
+	 			<input type=3D"submit" value=3D"go" name=3D"btnG">=20
+				</form>
+				</div>
+		</div>
+=09
+
+</body><style>
+html > ::-webkit-scrollbar { width: 0px; height: 0px; }</style></html>
+------MultipartBoundary--dDzFsGtduBPhiAGKwq7uR6yGaVWa96WOzPW76uyJU7----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://startpages.github.io/startpages/Startpage_kopri-nb/style/normalize.css
+
+@charset "utf-8";
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, =
+nav, section, summary { display: block; }
+
+audio, canvas, video { display: inline-block; }
+
+audio:not([controls]) { display: none; height: 0px; }
+
+[hidden], template { display: none; }
+
+html { font-family: sans-serif; text-size-adjust: 100%; }
+
+body { margin: 0px; }
+
+a { background: transparent; }
+
+input:active, input:focus, a:active, a:hover, a:focus { outline: 0px; }
+
+p { margin: 0px; padding: 0px; }
+
+h1 { font-size: 2em; margin: 0.67em 0px; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+hr { box-sizing: content-box; height: 0px; }
+
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+
+pre { white-space: pre-wrap; }
+
+q { quotes: "=E2=80=9C" "=E2=80=9D" "=E2=80=98" "=E2=80=99"; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-ali=
+gn: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+img { border: 0px; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0px; }
+
+fieldset { border: 1px solid rgb(192, 192, 192); margin: 0px 2px; padding: =
+0.35em 0.625em 0.75em; }
+
+legend { border: 0px; padding: 0px; }
+
+button, input, select, textarea { font-family: inherit; font-size: 100%; ma=
+rgin: 0px; }
+
+button, input { line-height: normal; }
+
+button, select { text-transform: none; }
+
+button, html input[type=3D"button"], input[type=3D"reset"], input[type=3D"s=
+ubmit"] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+input[type=3D"checkbox"], input[type=3D"radio"] { box-sizing: border-box; p=
+adding: 0px; }
+
+input[type=3D"search"] { -webkit-appearance: textfield; box-sizing: content=
+-box; }
+
+input[type=3D"search"]::-webkit-search-cancel-button, input[type=3D"search"=
+]::-webkit-search-decoration { -webkit-appearance: none; }
+
+textarea { overflow: auto; vertical-align: top; }
+
+table { border-collapse: collapse; border-spacing: 0px; }
+------MultipartBoundary--dDzFsGtduBPhiAGKwq7uR6yGaVWa96WOzPW76uyJU7------
