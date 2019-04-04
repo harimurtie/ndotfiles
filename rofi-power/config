@@ -1,0 +1,5 @@
+# configuration for rofi-power tool
+# source : https://github.com/okraits/rofi-tools
+LAUNCHER="rofi -width 25 -lines 4 -dmenu -i -p rofi-power"
+USE_LOCKER="false"
+LOCKER="betterlockscreen"

@@ -1,0 +1,84 @@
+[bar/bars]
+monitor = 
+width = 100%
+height = 15
+offset-x = 25%
+offset-y = 10%
+fixed-center = false
+bottom = false
+wm-restack = i3
+ 
+background = #ffffff
+foreground = #000000
+linecolor = #1b00f2
+ 
+spacing = 1
+lineheight = 1
+padding = 4%
+ 
+font-0 = artwiz lime:pixelsize=10:antialias=false;1
+font-1 = DejaVuSans Mono for Powerline:pixelsize=10:antialias=false;1
+font-2 = FontAwesome:pixelsize=10:antialias=false;1
+ 
+modules-left = volume
+modules-right = battery memory cpu
+modules-center = date
+ 
+module-margin = 2
+ 
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = CPU %percentage%
+ 
+ 
+[module/memory]
+type = internal/memory
+interval = 2
+label = RAM %percentage_used%
+ 
+ 
+[module/volume]
+type = internal/alsa
+ 
+format-volume = <label-volume> <bar-volume>
+label-volume = "VOL"
+label-volume-foreground = #90233f
+ 
+format-muted-foreground = #90233f
+format-muted = <label-muted> <bar-volume>
+label-muted = "MUT"
+ 
+bar-volume-width = 10
+bar-volume-foreground-0 = #635370
+bar-volume-foreground-1 = #635370
+bar-volume-foreground-2 = #7E6B8E
+bar-volume-foreground-3 = #9C83AF
+bar-volume-foreground-4 = #B195C6
+bar-volume-foreground-5 = #C5A6DD
+bar-volume-foreground-6 = #E1BDFC
+bar-volume-gradient = true
+bar-volume-indicator =
+bar-volume-indicator-font = 2
+bar-volume-fill = •
+bar-volume-fill-font = 2
+bar-volume-empty = ·
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #666666
+ 
+[module/battery]
+type = internal/battery
+full-at = 98
+ 
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full =
+ 
+label-charging = BATT %percentage%
+label-discharging = BATT %percentage%
+ 
+ 
+[module/date]
+type = internal/date
+date = %m-%d-%Y %H:%M
+interval = 5

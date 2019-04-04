@@ -1,0 +1,820 @@
+Apr 03 15:30 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:30 : update: added /Hari moekti_ada kamu.m4a
+Apr 03 15:30 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 15:30 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 15:30 : update: added /03 Atiek CB - Maafkan.m4a
+Apr 03 15:30 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 15:30 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:30 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 15:34 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:34 : client: [0] opened from 127.0.0.1:51650
+Apr 03 15:34 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 15:34 : client: [1] opened from 127.0.0.1:51652
+Apr 03 15:34 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 15:34 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 15:34 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:34 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:34 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 03 15:34 : player: played "Hari moekti_ada kamu.m4a"
+Apr 03 15:37 : client: [1] closed
+Apr 03 15:37 : client: [2] opened from 127.0.0.1:51660
+Apr 03 15:37 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 03 15:37 : client: [2] closed
+Apr 03 15:38 : client: [3] opened from 127.0.0.1:51678
+Apr 03 15:41 : update: updating /Hari moekti_ada kamu.m4a
+Apr 03 15:41 : player: played "Hari moekti_ada kamu.m4a"
+Apr 03 15:41 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 15:41 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 15:43 : client: [3] closed
+Apr 03 15:43 : client: [4] opened from 127.0.0.1:51718
+Apr 03 15:44 : client: [4] closed
+Apr 03 15:44 : client: [5] opened from 127.0.0.1:51720
+Apr 03 15:44 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 03 15:46 : player: played "Hari moekti_ada kamu.m4a"
+Apr 03 15:54 : client: [0] closed
+Apr 03 15:54 : client: [6] opened from 127.0.0.1:51866
+Apr 03 15:54 : client: [7] opened from 127.0.0.1:51884
+Apr 03 15:54 : client: [7] closed
+Apr 03 15:58 : client: [6] closed
+Apr 03 15:58 : client: [8] opened from 127.0.0.1:52048
+Apr 03 15:58 : client: [9] opened from 127.0.0.1:52050
+Apr 03 15:58 : client: [9] closed
+Apr 03 15:59 : client: [8] closed
+Apr 03 15:59 : client: [10] opened from 127.0.0.1:52068
+Apr 03 16:03 : client: [10] closed
+Apr 03 16:03 : client: [11] opened from 127.0.0.1:52078
+Apr 03 16:05 : client: [11] closed
+Apr 03 16:05 : client: [12] opened from 127.0.0.1:52098
+Apr 03 16:07 : client: [12] closed
+Apr 03 16:07 : client: [13] opened from 127.0.0.1:52102
+Apr 03 16:07 : client: [14] opened from 127.0.0.1:52104
+Apr 03 16:07 : client: [14] closed
+Apr 03 16:07 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 03 16:07 : client: [13] closed
+Apr 03 16:07 : client: [15] opened from 127.0.0.1:52106
+Apr 03 16:07 : client: [15] closed
+Apr 03 16:07 : client: [16] opened from 127.0.0.1:52108
+Apr 03 16:08 : client: [17] opened from 127.0.0.1:52110
+Apr 03 16:08 : client: [17] closed
+Apr 03 16:11 : player: played "Hari moekti_ada kamu.m4a"
+Apr 03 16:12 : client: [18] opened from 127.0.0.1:52208
+Apr 03 16:12 : client: [18] closed
+Apr 03 16:12 : client: [19] opened from 127.0.0.1:52210
+Apr 03 16:12 : client: [19] closed
+Apr 03 16:12 : client: [20] opened from 127.0.0.1:52212
+Apr 03 16:12 : client: [20] closed
+Apr 03 16:12 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 16:12 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 16:12 : client: [21] opened from 127.0.0.1:52214
+Apr 03 16:12 : client: [21] closed
+Apr 03 16:14 : client: [16] closed
+Apr 03 16:14 : client: [22] opened from 127.0.0.1:52218
+Apr 03 16:14 : client: [23] opened from 127.0.0.1:52220
+Apr 03 16:14 : client: [23] closed
+Apr 03 16:15 : client: [22] closed
+Apr 03 16:15 : client: [24] opened from 127.0.0.1:52240
+Apr 03 16:15 : client: [24] closed
+Apr 03 16:16 : client: [25] opened from 127.0.0.1:52242
+Apr 03 16:16 : client: [26] opened from 127.0.0.1:52246
+Apr 03 16:17 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 03 16:17 : player: played "03 Atiek CB - Maafkan.m4a"
+Apr 03 16:17 : client: [27] opened from 127.0.0.1:52256
+Apr 03 16:17 : client: [27] closed
+Apr 03 16:21 : player: played "Hari moekti_ada kamu.m4a"
+Apr 03 16:51 : client: [26] closed
+Apr 03 16:51 : client: [25] closed
+Apr 03 16:51 : client: [28] opened from 127.0.0.1:52760
+Apr 03 16:52 : client: [29] opened from 127.0.0.1:52762
+Apr 03 16:52 : client: [29] closed
+Apr 03 16:54 : client: [28] closed
+Apr 03 16:54 : client: [30] opened from 127.0.0.1:52792
+Apr 03 16:54 : client: [31] opened from 127.0.0.1:52796
+Apr 03 16:54 : client: [31] closed
+Apr 03 16:54 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 16:54 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 16:54 : client: [32] opened from 127.0.0.1:52798
+Apr 03 16:54 : client: [32] closed
+Apr 03 16:54 : client: [33] opened from 127.0.0.1:52800
+Apr 03 16:54 : player: played "03 Atiek CB - Maafkan.m4a"
+Apr 03 16:54 : client: [33] closed
+Apr 03 16:58 : client: [30] closed
+Apr 03 16:58 : client: [34] opened from 127.0.0.1:52834
+Apr 03 16:58 : client: [35] opened from 127.0.0.1:52840
+Apr 03 16:59 : client: [34] closed
+Apr 03 16:59 : client: [35] closed
+Apr 03 16:59 : client: [36] opened from 127.0.0.1:52842
+Apr 03 16:59 : client: [36] closed
+Apr 03 16:59 : client: [37] opened from 127.0.0.1:52844
+Apr 03 16:59 : client: [37] closed
+Apr 03 16:59 : client: [38] opened from 127.0.0.1:52846
+Apr 03 17:01 : client: [38] closed
+Apr 03 17:01 : client: [39] opened from 127.0.0.1:52892
+Apr 03 17:01 : client: [39] closed
+Apr 03 17:01 : client: [40] opened from 127.0.0.1:52894
+Apr 03 17:01 : client: [40] closed
+Apr 03 17:01 : client: [41] opened from 127.0.0.1:52898
+Apr 03 17:01 : client: [41] closed
+Apr 03 17:01 : client: [42] opened from 127.0.0.1:52900
+Apr 03 17:02 : client: [42] closed
+Apr 03 17:02 : client: [43] opened from 127.0.0.1:52902
+Apr 03 17:02 : client: [43] closed
+Apr 03 17:02 : client: [44] opened from 127.0.0.1:52904
+Apr 03 17:03 : client: [44] closed
+Apr 03 17:03 : client: [45] opened from 127.0.0.1:52906
+Apr 03 17:03 : client: [45] closed
+Apr 03 17:03 : client: [46] opened from 127.0.0.1:52908
+Apr 03 17:04 : client: [46] closed
+Apr 03 17:05 : client: [47] opened from 127.0.0.1:52912
+Apr 03 17:05 : client: [47] closed
+Apr 03 17:05 : client: [48] opened from 127.0.0.1:52930
+Apr 03 17:05 : client: [48] closed
+Apr 03 17:05 : client: [49] opened from 127.0.0.1:52932
+Apr 03 17:06 : client: [49] closed
+Apr 03 17:06 : client: [50] opened from 127.0.0.1:52936
+Apr 03 17:07 : client: [50] closed
+Apr 03 17:07 : client: [51] opened from 127.0.0.1:52938
+Apr 03 17:07 : client: [51] closed
+Apr 03 17:07 : client: [52] opened from 127.0.0.1:52940
+Apr 03 17:07 : client: [52] closed
+Apr 03 17:07 : client: [53] opened from 127.0.0.1:52942
+Apr 03 17:09 : client: [54] opened from 127.0.0.1:52944
+Apr 03 17:10 : client: [54] closed
+Apr 03 17:10 : client: [53] closed
+Apr 03 17:10 : client: [55] opened from 127.0.0.1:52964
+Apr 03 17:10 : client: [55] closed
+Apr 03 17:10 : client: [56] opened from 127.0.0.1:52966
+Apr 03 17:11 : client: [56] closed
+Apr 03 17:11 : client: [57] opened from 127.0.0.1:52986
+Apr 03 17:11 : client: [57] closed
+Apr 03 17:11 : client: [58] opened from 127.0.0.1:52988
+Apr 03 17:11 : client: [58] closed
+Apr 03 17:11 : client: [59] opened from 127.0.0.1:52994
+Apr 03 17:11 : client: [59] closed
+Apr 03 17:11 : client: [60] opened from 127.0.0.1:52996
+Apr 03 17:12 : client: [60] closed
+Apr 03 17:12 : client: [61] opened from 127.0.0.1:53002
+Apr 03 17:12 : client: [61] closed
+Apr 03 17:12 : client: [62] opened from 127.0.0.1:53004
+Apr 03 17:13 : client: [62] closed
+Apr 03 17:13 : client: [63] opened from 127.0.0.1:53006
+Apr 03 17:14 : client: [63] closed
+Apr 03 17:14 : client: [64] opened from 127.0.0.1:53044
+Apr 03 17:14 : client: [64] closed
+Apr 03 17:14 : client: [65] opened from 127.0.0.1:53050
+Apr 03 17:14 : client: [65] closed
+Apr 03 17:14 : client: [66] opened from 127.0.0.1:53052
+Apr 03 17:15 : client: [66] closed
+Apr 03 17:15 : client: [67] opened from 127.0.0.1:53054
+Apr 03 17:15 : client: [67] closed
+Apr 03 17:15 : client: [68] opened from 127.0.0.1:53056
+Apr 03 17:15 : client: [68] closed
+Apr 03 17:15 : client: [69] opened from 127.0.0.1:53058
+Apr 03 17:15 : client: [69] closed
+Apr 03 17:15 : client: [70] opened from 127.0.0.1:53060
+Apr 03 17:16 : client: [70] closed
+Apr 03 17:16 : client: [71] opened from 127.0.0.1:53086
+Apr 03 17:17 : client: [71] closed
+Apr 03 17:17 : client: [72] opened from 127.0.0.1:53088
+Apr 03 17:17 : client: [72] closed
+Apr 03 17:17 : client: [73] opened from 127.0.0.1:53090
+Apr 03 17:17 : client: [73] closed
+Apr 03 17:17 : client: [74] opened from 127.0.0.1:53092
+Apr 03 17:18 : client: [74] closed
+Apr 03 17:18 : client: [75] opened from 127.0.0.1:53094
+Apr 03 17:18 : client: [75] closed
+Apr 03 17:18 : client: [76] opened from 127.0.0.1:53096
+Apr 03 17:18 : client: [76] closed
+Apr 03 17:18 : client: [77] opened from 127.0.0.1:53098
+Apr 03 17:18 : client: [77] closed
+Apr 03 17:19 : client: [78] opened from 127.0.0.1:53120
+Apr 03 17:19 : client: [78] closed
+Apr 03 17:19 : client: [79] opened from 127.0.0.1:53122
+Apr 03 17:25 : client: [79] closed
+Apr 03 17:25 : client: [80] opened from 127.0.0.1:53204
+Apr 03 18:33 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 18:33 : client: [0] opened from 127.0.0.1:48790
+Apr 03 18:33 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 18:33 : client: [0] closed
+Apr 03 18:33 : client: [1] opened from 127.0.0.1:48798
+Apr 03 18:34 : client: [1] closed
+Apr 03 18:34 : client: [2] opened from 127.0.0.1:48802
+Apr 03 18:35 : client: [2] closed
+Apr 03 18:35 : client: [3] opened from 127.0.0.1:48806
+Apr 03 18:39 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 18:39 : client: [0] opened from 127.0.0.1:32918
+Apr 03 18:39 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 19:23 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 19:23 : client: [0] opened from 127.0.0.1:52946
+Apr 03 19:23 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 19:25 : client: [0] closed
+Apr 03 19:25 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 19:25 : client: [0] opened from 127.0.0.1:37132
+Apr 03 19:25 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 19:26 : client: [1] opened from 127.0.0.1:37142
+Apr 03 19:58 : client: [0] closed
+Apr 03 19:58 : client: [2] opened from 127.0.0.1:37666
+Apr 03 19:59 : client: [3] opened from 127.0.0.1:37668
+Apr 03 19:59 : client: [3] closed
+Apr 03 19:59 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 19:59 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 19:59 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 19:59 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 20:01 : client: [2] closed
+Apr 03 20:01 : client: [4] opened from 127.0.0.1:37676
+Apr 03 20:02 : client: [4] closed
+Apr 03 20:02 : client: [5] opened from 127.0.0.1:37678
+Apr 03 20:03 : client: [6] opened from 127.0.0.1:37778
+Apr 03 20:03 : player: played "03 Atiek CB - Maafkan.m4a"
+Apr 03 20:03 : client: [6] closed
+Apr 03 21:22 : client: [5] closed
+Apr 03 21:22 : client: [7] opened from 127.0.0.1:38768
+Apr 03 21:28 : client: [7] closed
+Apr 03 21:28 : client: [8] opened from 127.0.0.1:38790
+Apr 03 21:29 : client: [8] closed
+Apr 03 21:29 : client: [9] opened from 127.0.0.1:38808
+Apr 03 21:32 : client: [9] closed
+Apr 03 21:32 : client: [10] opened from 127.0.0.1:38814
+Apr 03 21:41 : client: [10] closed
+Apr 03 21:41 : client: [11] opened from 127.0.0.1:38922
+Apr 03 21:46 : client: [11] closed
+Apr 03 21:46 : client: [12] opened from 127.0.0.1:38944
+Apr 03 21:49 : client: [12] closed
+Apr 03 21:49 : client: [13] opened from 127.0.0.1:38962
+Apr 03 22:24 : client: [13] closed
+Apr 03 22:24 : client: [14] opened from 127.0.0.1:39570
+Apr 03 23:02 : client: [14] closed
+Apr 03 23:02 : client: [15] opened from 127.0.0.1:40488
+Apr 03 23:06 : client: [15] closed
+Apr 03 23:06 : client: [16] opened from 127.0.0.1:40600
+Apr 03 23:07 : client: [16] closed
+Apr 03 23:07 : client: [17] opened from 127.0.0.1:40602
+Apr 03 23:18 : client: [17] closed
+Apr 03 23:18 : client: [18] opened from 127.0.0.1:40688
+Apr 03 23:18 : client: [18] closed
+Apr 03 23:18 : client: [19] opened from 127.0.0.1:40690
+Apr 03 23:18 : client: [19] closed
+Apr 03 23:18 : client: [20] opened from 127.0.0.1:40692
+Apr 03 23:21 : client: [20] closed
+Apr 03 23:21 : client: [21] opened from 127.0.0.1:40710
+Apr 03 23:22 : client: [21] closed
+Apr 03 23:22 : client: [22] opened from 127.0.0.1:40716
+Apr 03 23:24 : client: [22] closed
+Apr 03 23:24 : client: [23] opened from 127.0.0.1:40718
+Apr 03 23:26 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 23:26 : client: [0] opened from 127.0.0.1:48306
+Apr 03 23:26 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 23:33 : client: [1] opened from 127.0.0.1:48446
+Apr 03 23:47 : client: [0] closed
+Apr 03 23:47 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 23:47 : client: [0] opened from 127.0.0.1:37802
+Apr 03 23:47 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 23:47 : client: [1] opened from 127.0.0.1:37808
+Apr 03 23:49 : client: [2] opened from 127.0.0.1:37822
+Apr 03 23:49 : client: [2] closed
+Apr 03 23:50 : client: [3] opened from 127.0.0.1:37826
+Apr 03 23:50 : client: [3] closed
+Apr 03 23:55 : client: [1] closed
+Apr 03 23:55 : client: [4] opened from 127.0.0.1:37832
+Apr 03 23:56 : client: [0] closed
+Apr 03 23:56 : client: [5] opened from 127.0.0.1:37840
+Apr 03 23:56 : client: [6] opened from 127.0.0.1:37842
+Apr 03 23:56 : client: [5] closed
+Apr 03 23:56 : client: [6] closed
+Apr 03 23:56 : client: [7] opened from 127.0.0.1:37844
+Apr 03 23:56 : client: [8] opened from 127.0.0.1:37846
+Apr 03 23:57 : client: [7] closed
+Apr 03 23:57 : client: [8] closed
+Apr 03 23:57 : client: [9] opened from 127.0.0.1:37848
+Apr 03 23:57 : client: [10] opened from 127.0.0.1:37850
+Apr 03 23:57 : client: [9] closed
+Apr 03 23:57 : client: [10] closed
+Apr 03 23:57 : client: [11] opened from 127.0.0.1:37854
+Apr 04 10:25 : update: added /Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus
+Apr 04 10:25 : update: added /MC Hammer - U Can't Touch This-otCpCn0l4Wo.m4a
+Apr 04 10:25 : update: added /The Four Seasons - December, 1963 (Oh, What a Night)-liyiT_DGREA.ogg
+Apr 04 10:25 : update: added /C+C Music Factory - Gonna Make You Sweat (1991)-j2pPJywRGTk.opus
+Apr 04 10:25 : update: added /The Immortals - Mortal Kombat-juaunbIGCcw.opus
+Apr 04 10:25 : update: added /La Bouche Be my Love-WyNWrNNSqtg.opus
+Apr 04 10:26 : client: [11] closed
+Apr 04 10:26 : client: [12] opened from 127.0.0.1:41150
+Apr 04 13:32 : client: [13] opened from 127.0.0.1:43260
+Apr 04 13:32 : client: [13] closed
+Apr 04 13:32 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 13:32 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 13:32 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 13:32 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 13:32 : client: [14] opened from 127.0.0.1:43262
+Apr 04 13:32 : player: played "03 Atiek CB - Maafkan.m4a"
+Apr 04 13:32 : client: [14] closed
+Apr 04 13:40 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 13:40 : client: [0] opened from 127.0.0.1:53526
+Apr 04 13:40 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 13:41 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 13:41 : client: [0] opened from 127.0.0.1:53510
+Apr 04 13:41 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 13:41 : client: [0] closed
+Apr 04 13:41 : client: [1] opened from 127.0.0.1:53518
+Apr 04 14:01 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 14:01 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 14:01 : client: [0] opened from 127.0.0.1:38584
+Apr 04 14:03 : client: [1] opened from 127.0.0.1:38592
+Apr 04 14:49 : client: [0] closed
+Apr 04 14:49 : client: [2] opened from 127.0.0.1:38916
+Apr 04 14:55 : client: [2] closed
+Apr 04 14:55 : client: [3] opened from 127.0.0.1:38990
+Apr 04 14:56 : client: [3] closed
+Apr 04 14:56 : client: [4] opened from 127.0.0.1:38992
+Apr 04 14:56 : client: [4] closed
+Apr 04 14:56 : client: [5] opened from 127.0.0.1:38994
+Apr 04 14:56 : client: [5] closed
+Apr 04 14:56 : client: [6] opened from 127.0.0.1:38996
+Apr 04 14:56 : client: [6] closed
+Apr 04 14:56 : client: [7] opened from 127.0.0.1:38998
+Apr 04 14:56 : client: [7] closed
+Apr 04 14:56 : client: [8] opened from 127.0.0.1:39000
+Apr 04 14:59 : client: [8] closed
+Apr 04 14:59 : client: [9] opened from 127.0.0.1:39006
+Apr 04 14:59 : client: [9] closed
+Apr 04 15:00 : client: [10] opened from 127.0.0.1:39008
+Apr 04 15:00 : client: [10] closed
+Apr 04 15:00 : client: [11] opened from 127.0.0.1:39010
+Apr 04 15:00 : client: [11] closed
+Apr 04 15:00 : client: [12] opened from 127.0.0.1:39012
+Apr 04 15:00 : client: [12] closed
+Apr 04 15:01 : client: [13] opened from 127.0.0.1:39014
+Apr 04 16:36 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 16:36 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 16:36 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 16:36 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 16:37 : client: [14] opened from 127.0.0.1:40272
+Apr 04 16:37 : player: played "03 Atiek CB - Maafkan.m4a"
+Apr 04 16:37 : client: [14] closed
+Apr 04 16:42 : client: [13] closed
+Apr 04 16:42 : client: [15] opened from 127.0.0.1:40362
+Apr 04 16:42 : client: [15] closed
+Apr 04 16:42 : client: [16] opened from 127.0.0.1:40364
+Apr 04 16:43 : client: [16] closed
+Apr 04 16:43 : client: [17] opened from 127.0.0.1:40366
+Apr 04 16:44 : client: [17] closed
+Apr 04 16:44 : client: [18] opened from 127.0.0.1:40386
+Apr 04 16:47 : client: [18] closed
+Apr 04 16:47 : client: [19] opened from 127.0.0.1:40456
+Apr 04 18:52 : client: [19] closed
+Apr 04 18:52 : client: [20] opened from 127.0.0.1:41082
+Apr 04 18:52 : client: [20] closed
+Apr 04 18:52 : client: [21] opened from 127.0.0.1:41100
+Apr 04 19:19 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 19:19 : client: [0] opened from 127.0.0.1:59396
+Apr 04 19:19 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 19:19 : client: [1] opened from 127.0.0.1:59404
+Apr 04 19:26 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 19:26 : client: [0] opened from 127.0.0.1:33380
+Apr 04 19:26 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 19:28 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 19:28 : client: [0] opened from 127.0.0.1:60940
+Apr 04 19:28 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 19:28 : client: [1] opened from 127.0.0.1:60948
+Apr 04 19:43 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 19:43 : client: [0] opened from 127.0.0.1:34496
+Apr 04 19:43 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 19:44 : client: [1] opened from 127.0.0.1:34756
+Apr 04 19:58 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 19:58 : client: [0] opened from 127.0.0.1:41092
+Apr 04 19:58 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 19:59 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 19:59 : client: [0] opened from 127.0.0.1:42260
+Apr 04 19:59 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 20:04 : avahi: Client Disconnected, will reconnect shortly
+Apr 04 20:04 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 04 20:07 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 20:07 : client: [0] opened from 127.0.0.1:55286
+Apr 04 20:15 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 20:15 : client: [0] opened from 127.0.0.1:41502
+Apr 04 20:28 : client: [0] closed
+Apr 04 20:28 : client: [1] opened from 127.0.0.1:41926
+Apr 04 20:29 : client: [2] opened from 127.0.0.1:41936
+Apr 04 21:23 : client: [1] closed
+Apr 04 21:23 : client: [3] opened from 127.0.0.1:43122
+Apr 04 21:29 : client: [3] closed
+Apr 04 21:29 : client: [4] opened from 127.0.0.1:43184
+Apr 04 21:29 : client: [4] closed
+Apr 04 21:29 : client: [5] opened from 127.0.0.1:43198
+Apr 04 21:41 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:41 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 21:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 04 21:46 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 21:46 : player: played "03 Atiek CB - Maafkan.m4a"
+Apr 04 21:46 : client: [6] opened from 127.0.0.1:43384
+Apr 04 21:46 : client: [6] closed
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /08 Mungkinkah Terjadi (feat. Rida RS.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /14 Orkes Moral - Murid Bajingan.m4a
+Apr 04 21:46 : update: added /Juwita Smaradahana - Chrisye.mp3
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /01.Reza - Selalu Ada.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /02 Nuansa Bening.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /January Christy - Melayang.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /03 Hampa.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /01 Janji.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /14 Tuhan Tolonglah.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /01 Pengalaman Pertama.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /04 Puspa Indah.m4a
+Apr 04 21:46 : update: added /God Bless - Lagu Kehidupan-Panggung Sandiwara.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /01 Ninja Opo Vespa.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /02 Mata Lelaki.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=434
+Apr 04 21:46 : update: added /Armand Maulana - Terbang.m4a
+Apr 04 21:46 : update: added /Dian Pramana Putra - Kau Seputih Melati.mp3
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /03 Tangan Tangan Setan.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /Berlian Hutauruk - Merpati Putih.m4a
+Apr 04 21:46 : update: added /07 Manfred Mann's Earthband - Questions.flac
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /01_Astrid - Jadikan Aku Yang Kedua.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=425
+Apr 04 21:46 : update: added /Irene Cara  - Flashdance What A Feeling.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /Dionne_Warwick_I'll_Never_Love_This.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /04 Jarum Neraka.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /Rodrigo Amarante - Tuyo (Narcos Theme Song).m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /Kau Datang - Trie Utami.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /12 Selamat Jalan Kekasih.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : update: added /Atiek CB - Terserah Boy.m4a
+Apr 04 21:46 : update: added /01. That's What Friends Are For.m4a
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:46 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:46 : update: added /01 Temani Diriku (feat. NSG).m4a
+Apr 04 21:47 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:47 : client: [7] opened from 127.0.0.1:43386
+Apr 04 21:47 : client: [7] closed
+Apr 04 21:47 : client: [8] opened from 127.0.0.1:43390
+Apr 04 21:47 : client: [8] closed
+Apr 04 21:47 : client: [9] opened from 127.0.0.1:43392
+Apr 04 21:47 : client: [9] closed
+Apr 04 21:47 : client: [10] opened from 127.0.0.1:43394
+Apr 04 21:47 : client: [10] closed
+Apr 04 21:47 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:47 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:47 : client: [11] opened from 127.0.0.1:43396
+Apr 04 21:47 : client: [11] closed
+Apr 04 21:49 : update: updating /The Immortals - Mortal Kombat-juaunbIGCcw.opus
+Apr 04 21:49 : client: [12] opened from 127.0.0.1:43416
+Apr 04 21:49 : client: [12] closed
+Apr 04 21:49 : client: [13] opened from 127.0.0.1:43418
+Apr 04 21:49 : client: [13] closed
+Apr 04 21:49 : player: played "The Four Seasons - December, 1963 (Oh, What a Night)-liyiT_DGREA.ogg"
+Apr 04 21:50 : client: [14] opened from 127.0.0.1:43420
+Apr 04 21:50 : client: [14] closed
+Apr 04 21:51 : client: [15] opened from 127.0.0.1:43422
+Apr 04 21:51 : client: [15] closed
+Apr 04 21:51 : client: [16] opened from 127.0.0.1:43424
+Apr 04 21:51 : client: [16] closed
+Apr 04 21:51 : client: [17] opened from 127.0.0.1:43426
+Apr 04 21:51 : client: [17] closed
+Apr 04 21:51 : client: [18] opened from 127.0.0.1:43428
+Apr 04 21:51 : client: [18] closed
+Apr 04 21:51 : client: [19] opened from 127.0.0.1:43430
+Apr 04 21:51 : client: [19] closed
+Apr 04 21:51 : client: [20] opened from 127.0.0.1:43432
+Apr 04 21:51 : client: [20] closed
+Apr 04 21:51 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:51 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:51 : client: [21] opened from 127.0.0.1:43434
+Apr 04 21:51 : client: [21] closed
+Apr 04 21:51 : player: played "Rodrigo Amarante - Tuyo (Narcos Theme Song).m4a"
+Apr 04 21:51 : update: updating /Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus
+Apr 04 21:51 : update: updating /Juwita Smaradahana - Chrisye.mp3
+Apr 04 21:51 : update: updating /MC Hammer - U Can't Touch This-otCpCn0l4Wo.m4a
+Apr 04 21:51 : update: updating /Dian Pramana Putra - Kau Seputih Melati.mp3
+Apr 04 21:51 : update: updating /The Four Seasons - December, 1963 (Oh, What a Night)-liyiT_DGREA.ogg
+Apr 04 21:51 : update: updating /C+C Music Factory - Gonna Make You Sweat (1991)-j2pPJywRGTk.opus
+Apr 04 21:51 : update: updating /La Bouche Be my Love-WyNWrNNSqtg.opus
+Apr 04 21:52 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:52 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:52 : client: [22] opened from 127.0.0.1:43438
+Apr 04 21:52 : client: [22] closed
+Apr 04 21:52 : client: [23] opened from 127.0.0.1:43440
+Apr 04 21:52 : client: [23] closed
+Apr 04 21:52 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:52 : client: [24] opened from 127.0.0.1:43442
+Apr 04 21:52 : client: [24] closed
+Apr 04 21:52 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:52 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:52 : client: [25] opened from 127.0.0.1:43444
+Apr 04 21:52 : client: [25] closed
+Apr 04 21:52 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=434
+Apr 04 21:52 : client: [26] opened from 127.0.0.1:43446
+Apr 04 21:52 : client: [26] closed
+Apr 04 21:53 : exception: Failed to decode /home/damez/Music/lib/The Immortals - Mortal Kombat-juaunbIGCcw.opus
+Apr 04 21:53 : exception: nested: libopus error: corrupted stream
+Apr 04 21:53 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=425
+Apr 04 21:53 : client: [27] opened from 127.0.0.1:43448
+Apr 04 21:53 : client: [27] closed
+Apr 04 21:53 : player: played "The Immortals - Mortal Kombat-juaunbIGCcw.opus"
+Apr 04 21:53 : client: [28] opened from 127.0.0.1:43450
+Apr 04 21:53 : client: [28] closed
+Apr 04 21:53 : exception: Failed to decode /home/damez/Music/lib/The Immortals - Mortal Kombat-juaunbIGCcw.opus
+Apr 04 21:53 : exception: nested: libopus error: corrupted stream
+Apr 04 21:53 : client: [29] opened from 127.0.0.1:43468
+Apr 04 21:53 : client: [29] closed
+Apr 04 21:53 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=425
+Apr 04 21:53 : player: played "The Immortals - Mortal Kombat-juaunbIGCcw.opus"
+Apr 04 21:53 : client: [30] opened from 127.0.0.1:43470
+Apr 04 21:53 : client: [30] closed
+Apr 04 21:53 : update: removing The Immortals - Mortal Kombat-juaunbIGCcw.opus
+Apr 04 21:53 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:53 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 21:53 : client: [31] opened from 127.0.0.1:43474
+Apr 04 21:53 : client: [31] closed
+Apr 04 21:54 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:54 : client: [32] opened from 127.0.0.1:43476
+Apr 04 21:54 : client: [32] closed
+Apr 04 21:54 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:54 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:54 : client: [33] opened from 127.0.0.1:43478
+Apr 04 21:54 : client: [33] closed
+Apr 04 21:57 : client: [34] opened from 127.0.0.1:43588
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : client: [34] closed
+Apr 04 21:57 : client: [35] opened from 127.0.0.1:43590
+Apr 04 21:57 : client: [35] closed
+Apr 04 21:57 : client: [36] opened from 127.0.0.1:43594
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:57 : client: [36] closed
+Apr 04 21:57 : client: [37] opened from 127.0.0.1:43596
+Apr 04 21:57 : client: [37] closed
+Apr 04 21:57 : client: [38] opened from 127.0.0.1:43598
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:57 : client: [38] closed
+Apr 04 21:57 : client: [39] opened from 127.0.0.1:43600
+Apr 04 21:57 : client: [39] closed
+Apr 04 21:57 : client: [40] opened from 127.0.0.1:43602
+Apr 04 21:57 : client: [40] closed
+Apr 04 21:57 : client: [41] opened from 127.0.0.1:43604
+Apr 04 21:57 : client: [41] closed
+Apr 04 21:57 : client: [42] opened from 127.0.0.1:43606
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:57 : client: [42] closed
+Apr 04 21:57 : client: [43] opened from 127.0.0.1:43608
+Apr 04 21:57 : client: [43] closed
+Apr 04 21:57 : client: [44] opened from 127.0.0.1:43610
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:57 : client: [44] closed
+Apr 04 21:57 : client: [45] opened from 127.0.0.1:43612
+Apr 04 21:57 : client: [45] closed
+Apr 04 21:57 : client: [46] opened from 127.0.0.1:43614
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:57 : client: [46] closed
+Apr 04 21:57 : client: [47] opened from 127.0.0.1:43616
+Apr 04 21:57 : client: [47] closed
+Apr 04 21:57 : client: [48] opened from 127.0.0.1:43618
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 21:57 : client: [48] closed
+Apr 04 21:57 : client: [49] opened from 127.0.0.1:43620
+Apr 04 21:57 : client: [49] closed
+Apr 04 21:57 : client: [50] opened from 127.0.0.1:43622
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : client: [50] closed
+Apr 04 21:57 : client: [51] opened from 127.0.0.1:43624
+Apr 04 21:57 : client: [51] closed
+Apr 04 21:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 21:57 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 21:57 : client: [52] opened from 127.0.0.1:43626
+Apr 04 21:57 : client: [52] closed
+Apr 04 21:57 : player: played "Berlian Hutauruk - Merpati Putih.m4a"
+Apr 04 21:59 : update: added /Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 21:59 : update: updating /Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 22:00 : exception: Failed to decode /home/damez/Music/lib/Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 22:00 : exception: nested: libopus error: corrupted stream
+Apr 04 22:00 : player: played "Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus"
+Apr 04 22:00 : exception: Failed to decode /home/damez/Music/lib/Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 22:00 : exception: nested: libopus error: corrupted stream
+Apr 04 22:00 : player: played "Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus"
+Apr 04 22:00 : client: [53] opened from 127.0.0.1:43666
+Apr 04 22:00 : client: [53] closed
+Apr 04 22:00 : exception: Failed to decode /home/damez/Music/lib/Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 22:00 : exception: nested: libopus error: corrupted stream
+Apr 04 22:00 : player: played "Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus"
+Apr 04 22:00 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 22:00 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 22:00 : client: [54] opened from 127.0.0.1:43668
+Apr 04 22:00 : client: [54] closed
+Apr 04 22:00 : exception: Failed to decode /home/damez/Music/lib/Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 22:00 : exception: nested: libopus error: corrupted stream
+Apr 04 22:00 : player: played "Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus"
+Apr 04 22:00 : client: [2] closed
+Apr 04 22:00 : client: [55] opened from 127.0.0.1:43670
+Apr 04 22:01 : update: removing Rara Ragadi - Buatmu Adinda yang Jelita-zpf4ww4Q0xs.opus
+Apr 04 22:13 : client: [55] closed
+Apr 04 22:13 : client: [56] opened from 127.0.0.1:43778
+Apr 04 22:14 : client: [56] closed
+Apr 04 22:14 : client: [57] opened from 127.0.0.1:43798
+Apr 04 22:15 : client: [57] closed
+Apr 04 22:15 : client: [58] opened from 127.0.0.1:43800
+Apr 04 22:16 : exception: Failed to decode /home/damez/Music/lib/Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus
+Apr 04 22:16 : exception: nested: libopus error: corrupted stream
+Apr 04 22:16 : player: played "Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus"
+Apr 04 22:16 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 22:16 : client: [59] opened from 127.0.0.1:43802
+Apr 04 22:16 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 22:16 : client: [59] closed
+Apr 04 22:16 : client: [60] opened from 127.0.0.1:43804
+Apr 04 22:16 : client: [60] closed
+Apr 04 22:16 : client: [61] opened from 127.0.0.1:43806
+Apr 04 22:16 : client: [61] closed
+Apr 04 22:16 : exception: Failed to decode /home/damez/Music/lib/Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus
+Apr 04 22:16 : exception: nested: libopus error: corrupted stream
+Apr 04 22:16 : player: played "Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus"
+Apr 04 22:16 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 22:16 : client: [62] opened from 127.0.0.1:43808
+Apr 04 22:16 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 22:16 : client: [62] closed
+Apr 04 22:16 : update: removing Real McCoy - Another Night (Videoclip)-Pav2f4b-1ZE.opus
+Apr 04 22:19 : client: [63] opened from 127.0.0.1:43832
+Apr 04 22:19 : player: played "Rodrigo Amarante - Tuyo (Narcos Theme Song).m4a"
+Apr 04 22:19 : client: [63] closed
+Apr 04 22:22 : exception: Failed to decode /home/damez/Music/lib/La Bouche Be my Love-WyNWrNNSqtg.opus
+Apr 04 22:22 : exception: nested: libopus error: corrupted stream
+Apr 04 22:22 : player: played "La Bouche Be my Love-WyNWrNNSqtg.opus"
+Apr 04 22:22 : client: [64] opened from 127.0.0.1:43848
+Apr 04 22:22 : client: [64] closed
+Apr 04 22:23 : client: [65] opened from 127.0.0.1:43854
+Apr 04 22:23 : client: [65] closed
+Apr 04 22:25 : client: [58] closed
+Apr 04 22:25 : client: [66] opened from 127.0.0.1:43874
+Apr 04 22:25 : client: [67] opened from 127.0.0.1:43876
+Apr 04 22:25 : client: [67] closed
+Apr 04 22:25 : client: [66] closed
+Apr 04 22:26 : client: [68] opened from 127.0.0.1:43878
+Apr 04 22:26 : client: [69] opened from 127.0.0.1:43880
+Apr 04 22:26 : client: [69] closed
+Apr 04 22:26 : client: [68] closed
+Apr 04 22:26 : client: [70] opened from 127.0.0.1:43882
+Apr 04 22:26 : client: [71] opened from 127.0.0.1:43884
+Apr 04 22:26 : client: [71] closed
+Apr 04 22:26 : client: [70] closed
+Apr 04 22:26 : client: [72] opened from 127.0.0.1:43886
+Apr 04 22:26 : client: [73] opened from 127.0.0.1:43888
+Apr 04 22:26 : client: [73] closed
+Apr 04 22:26 : client: [72] closed
+Apr 04 22:27 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 22:27 : player: played "Dian Pramana Putra - Kau Seputih Melati.mp3"
+Apr 04 22:28 : client: [74] opened from 127.0.0.1:43892
+Apr 04 22:28 : client: [75] opened from 127.0.0.1:43894
+Apr 04 22:28 : client: [75] closed
+Apr 04 22:28 : client: [74] closed
+Apr 04 22:28 : client: [76] opened from 127.0.0.1:43896
+Apr 04 22:28 : client: [77] opened from 127.0.0.1:43898
+Apr 04 22:28 : client: [77] closed
+Apr 04 22:28 : client: [78] opened from 127.0.0.1:43902
+Apr 04 22:28 : client: [78] closed
+Apr 04 22:28 : client: [79] opened from 127.0.0.1:43904
+Apr 04 22:28 : client: [79] closed
+Apr 04 22:28 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 22:28 : client: [80] opened from 127.0.0.1:43906
+Apr 04 22:28 : client: [80] closed
+Apr 04 22:28 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=425
+Apr 04 22:28 : client: [81] opened from 127.0.0.1:43908
+Apr 04 22:28 : client: [81] closed
+Apr 04 22:28 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 22:28 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 22:28 : client: [82] opened from 127.0.0.1:43910
+Apr 04 22:28 : client: [82] closed
+Apr 04 22:28 : client: [83] opened from 127.0.0.1:43912
+Apr 04 22:28 : client: [83] closed
+Apr 04 22:28 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 22:28 : client: [84] opened from 127.0.0.1:43914
+Apr 04 22:28 : client: [84] closed
+Apr 04 22:30 : client: [76] closed
+Apr 04 22:30 : client: [85] opened from 127.0.0.1:44016
+Apr 04 22:30 : client: [86] opened from 127.0.0.1:44018
+Apr 04 22:30 : client: [86] closed
+Apr 04 22:30 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 22:30 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 22:30 : client: [87] opened from 127.0.0.1:44020
+Apr 04 22:30 : client: [87] closed
+Apr 04 22:30 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=434
+Apr 04 22:30 : client: [88] opened from 127.0.0.1:44022
+Apr 04 22:30 : client: [88] closed
+Apr 04 22:31 : player: played "Armand Maulana - Terbang.m4a"
+Apr 04 23:40 : client: [5] closed
+Apr 04 23:40 : client: [89] opened from 127.0.0.1:44730
+Apr 04 23:43 : client: [90] opened from 127.0.0.1:44758
+Apr 04 23:43 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 23:43 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 23:43 : client: [91] opened from 127.0.0.1:44760
+Apr 04 23:43 : client: [92] opened from 127.0.0.1:44762
+Apr 04 23:43 : client: [91] closed
+Apr 04 23:43 : client: [92] closed
+Apr 04 23:44 : client: [93] opened from 127.0.0.1:44764
+Apr 04 23:44 : client: [93] closed
+Apr 04 23:44 : client: [94] opened from 127.0.0.1:44766
+Apr 04 23:44 : client: [94] closed
+Apr 04 23:44 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 23:44 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 04 23:44 : client: [95] opened from 127.0.0.1:44786
+Apr 04 23:44 : client: [96] opened from 127.0.0.1:44788
+Apr 04 23:44 : client: [95] closed
+Apr 04 23:44 : client: [96] closed
+Apr 04 23:44 : client: [97] opened from 127.0.0.1:44794
+Apr 04 23:44 : client: [98] opened from 127.0.0.1:44796
+Apr 04 23:44 : client: [98] closed
+Apr 04 23:45 : client: [97] closed
+Apr 04 23:45 : client: [90] closed
+Apr 04 23:45 : client: [89] closed
+Apr 04 23:45 : client: [99] opened from 127.0.0.1:44802
+Apr 04 23:47 : client: [99] closed
+Apr 04 23:47 : exception: Failed to play on "pulse audio" (pulse): suspended
+Apr 04 23:47 : client: [100] opened from 127.0.0.1:44804
+Apr 04 23:47 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 23:47 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 04 23:47 : client: [101] opened from 127.0.0.1:44820
+Apr 04 23:47 : client: [101] closed
+Apr 04 23:52 : exception: Failed to decode /home/damez/Music/lib/C+C Music Factory - Gonna Make You Sweat (1991)-j2pPJywRGTk.opus
+Apr 04 23:52 : exception: nested: libopus error: corrupted stream
+Apr 04 23:53 : player: played "Berlian Hutauruk - Merpati Putih.m4a"
+Apr 04 23:53 : player: played "C+C Music Factory - Gonna Make You Sweat (1991)-j2pPJywRGTk.opus"
+Apr 04 23:53 : exception: Failed to decode /home/damez/Music/lib/C+C Music Factory - Gonna Make You Sweat (1991)-j2pPJywRGTk.opus
+Apr 04 23:53 : exception: nested: libopus error: corrupted stream
+Apr 04 23:53 : player: played "C+C Music Factory - Gonna Make You Sweat (1991)-j2pPJywRGTk.opus"
+Apr 04 23:53 : client: [102] opened from 127.0.0.1:44936
+Apr 04 23:53 : client: [102] closed
+Apr 04 23:57 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 04 23:57 : player: played "Dian Pramana Putra - Kau Seputih Melati.mp3"
+Apr 04 23:57 : client: [103] opened from 127.0.0.1:45010
+Apr 04 23:57 : client: [103] closed
+Apr 05 00:00 : player: played "Dionne_Warwick_I'll_Never_Love_This.m4a"
+Apr 05 00:00 : client: [104] opened from 127.0.0.1:45028
+Apr 05 00:00 : client: [104] closed
+Apr 05 00:04 : player: played "The Four Seasons - December, 1963 (Oh, What a Night)-liyiT_DGREA.ogg"
+Apr 05 00:04 : client: [105] opened from 127.0.0.1:45034
+Apr 05 00:04 : client: [105] closed
+Apr 05 00:11 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 05 00:12 : player: played "God Bless - Lagu Kehidupan-Panggung Sandiwara.m4a"
+Apr 05 00:12 : client: [106] opened from 127.0.0.1:45076
+Apr 05 00:12 : client: [106] closed
+Apr 05 00:16 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=425
+Apr 05 00:16 : player: played "Hari moekti_ada kamu.m4a"
+Apr 05 00:16 : client: [107] opened from 127.0.0.1:45082
+Apr 05 00:16 : client: [107] closed
+Apr 05 00:19 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 05 00:19 : ffmpeg/aac: Could not update timestamps for skipped samples.
+Apr 05 00:19 : player: played "Irene Cara  - Flashdance What A Feeling.m4a"
+Apr 05 00:19 : client: [108] opened from 127.0.0.1:45084
+Apr 05 00:19 : client: [108] closed
+Apr 05 00:24 : player: played "January Christy - Melayang.m4a"
+Apr 05 00:24 : client: [109] opened from 127.0.0.1:45090
+Apr 05 00:24 : client: [109] closed
+Apr 05 00:29 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 05 00:29 : player: played "Juwita Smaradahana - Chrisye.mp3"
+Apr 05 00:29 : client: [110] opened from 127.0.0.1:45112
+Apr 05 00:29 : client: [110] closed
+Apr 05 00:33 : exception: Failed to decode /home/damez/Music/lib/La Bouche Be my Love-WyNWrNNSqtg.opus
+Apr 05 00:33 : exception: nested: libopus error: corrupted stream
+Apr 05 00:34 : player: played "Kau Datang - Trie Utami.m4a"
+Apr 05 00:34 : player: played "La Bouche Be my Love-WyNWrNNSqtg.opus"
+Apr 05 00:34 : exception: Failed to decode /home/damez/Music/lib/La Bouche Be my Love-WyNWrNNSqtg.opus
+Apr 05 00:34 : exception: nested: libopus error: corrupted stream
+Apr 05 00:34 : player: played "La Bouche Be my Love-WyNWrNNSqtg.opus"
+Apr 05 00:34 : client: [111] opened from 127.0.0.1:45134
+Apr 05 00:34 : client: [111] closed
+Apr 05 00:38 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 05 00:38 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 05 00:38 : player: played "MC Hammer - U Can't Touch This-otCpCn0l4Wo.m4a"
+Apr 05 00:38 : client: [112] opened from 127.0.0.1:45140
+Apr 05 00:38 : client: [112] closed
+Apr 05 00:41 : player: played "Rodrigo Amarante - Tuyo (Narcos Theme Song).m4a"

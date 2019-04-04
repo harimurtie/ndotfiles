@@ -1,0 +1,12 @@
+Apr 03 15:23 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:23 : exception: Failed to open '/home/damez/.config/mpd/state': No such file or directory
+Apr 03 15:23 : update: added lib/Hari moekti_ada kamu.m4a
+Apr 03 15:23 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: stream 0, timescale not set
+Apr 03 15:23 : ffmpeg/mov,mp4,m4a,3gp,3g2,mj2: Invalid timestamps stream=0, pts=-1024, dts=0, size=26
+Apr 03 15:23 : update: added lib/03 Atiek CB - Maafkan.m4a
+Apr 03 15:23 : avahi: Service 'Music Player @ paradiz' successfully established.
+Apr 03 15:23 : client: [0] opened from 127.0.0.1:49630
+Apr 03 15:23 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Apr 03 15:23 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Apr 03 15:23 : client: [0] opened from 127.0.0.1:49640
+Apr 03 15:23 : avahi: Service 'Music Player @ paradiz' successfully established.
