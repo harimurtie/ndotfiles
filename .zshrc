@@ -9,6 +9,7 @@ DISABLE_AUTO_UPDATE=true
 #ZSH_THEME="agnoster"
 #ZSH_THEME="avit"
 ZSH_THEME="spaceship"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="minimal"
 #ZSH_THEME="bira"
 SPACESHIP_PROMPT_ORDER=(
@@ -48,7 +49,7 @@ SPACESHIP_DIR_COLOR="cyan"
 #SPACESHIP_USER_COLOR_ROOT="red"
 
 SPACESHIP_TIME_SHOW="true"
-SPACESHIP_TIME_PREFIX="jam"
+SPACESHIP_TIME_PREFIX="jam "
 SPACESHIP_TIME_COLOR="yellow"
 SPACESHIP_TIME_FORMAT="%t"
 SPACESHIP_TIME_12hr="true"
@@ -207,6 +208,8 @@ export PATH
 #if [[ -z "$TMUX" ]]; then
 #        tmux
 #fi
+
+DISABLE_AUTO_TITLE="true"
 
 export TERM=screen-256color
 
