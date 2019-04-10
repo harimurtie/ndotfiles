@@ -1,0 +1,15 @@
+set imap_user = "milko.harimurti@icloud.com"
+set from = "milko.harimurti@icloud.com"
+set smtp_url = "smtp://milko.harimurti@smtp.mail.me.com:587/"
+
+set folder="imaps://milko.harimurti@imap.mail.me.com/"
+set postponed = "+Drafts"
+set spoolfile="imaps://milko.harimurti@imap.mail.me.com/INBOX"
+set record = "+Sent"
+set imap_pass=zdxu-yfca-gcqy-gcqk
+set smtp_pass=zdxu-yfca-gcqy-gcqk
+set imap_pipeline_depth=0
+
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
