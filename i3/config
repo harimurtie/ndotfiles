@@ -16,7 +16,9 @@ bindsym $mod+u border none
 bindsym $mod+b border pixel 2
 bindsym $mod+n border normal
 
-font xft:Iosevka Term 10
+#font xft:Iosevka Term 12
+#font xft:Anime Ace 2.0 BB 10
+font xft:TerminessTTF Nerd Font Mono 13
 floating_modifier $mod
 
 bindsym $mod+d exec --no-startup-id urxvt
@@ -25,14 +27,14 @@ bindsym $mod+q kill
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
-for_window [class=st-256color] title_format " terminal"
+for_window [class=st-256color] title_format " terminal"
 for_window [class=qutebrowser] title_format " qutebrowser"
-for_window [class=Tilix] title_format " terminal"
+for_window [class=Tilix] title_format " terminal"
 for_window [class=PPSSPPSDL] title_format "  konsol"
 for_window [class=Sublime_text] title_format "sublime"
 for_window [class=Thunar] title_format " thunar"
 for_window [class=Spotify] title_format " spotify"
-for_window [class=mpv] title_format " movie"
+for_window [class=mpv] title_format " movie"
 for_window [class=Pamac-manager] title_format " pamac"
 for_window [class=Google-chrome] title_format " chrome"
 #bindsym $mod+u title_format "Important | %title"
@@ -43,9 +45,9 @@ for_window [class=Google-chrome] title_format " chrome"
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 #bindsym XF86MonBrightnessUp exec --no-startup-id ~/Documents/scripts/brightnesscontrol.sh up
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 #bindsym XF86MonBrightnessDown exec --no-startup-id ~/Documents/scripts/brightnesscontrol.sh down
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 #bindsym XF86AudioRaiseVolume exec --no-startup-id ~/Documents/scripts/volumecontrol.sh up
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2
@@ -54,13 +56,20 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2
 #bindsym XF86AudioMute exec --no-startup-id ~/Documents/scripts/volumecontrol.sh mute
 bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute
 
+#ncmpcpp media keys
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym $mod+F5 exec --no-startup-id mpc stop
+
 # Start Applications
 bindsym $mod+Ctrl+b exec uxterm -e 'bmenu'
 bindsym $mod+F1 exec --no-startup-id xst
 bindsym $mod+F2 exec --no-startup-id telegram-desktop
 bindsym $mod+F3 exec --no-startup-id thunar
 bindsym $mod+F4 exec --no-startup-id qutebrowser
-bindsym $mod+F5 exec --no-startup-id tomate-gtk
+#bindsym $mod+F5 exec --no-startup-id tomate-gtk
 bindsym $mod+F6 exec --no-startup-id subl
 bindsym $mod+F7 exec --no-startup-id mpv --no-audio --window-scale=0.5 av://v4l2:/dev/video0 --vf=hflip
 bindsym $mod+F8 exec --no-startup-id betterlockscreen -s
@@ -73,10 +82,11 @@ bindsym Print exec "scrot 'ss_%d-%m-%Y_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/
 bindsym $mod+Print exec "sleep 0.2; scrot -s 'ss_%d-%m-%Y_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots' --release; exec dunstify 'area screenshot taken'"
 bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --use-xdg-de --display-binary
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'SF Pro Text 11' -modi drun
-bindsym $mod+c exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -lines 6 -width 400 -i -sort -p RUN'
+#bindsym $mod+c exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -lines 6 -width 400 -i -sort -p RUN'
 bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'WINDOWS'"
 #bindsym $mod+Tab exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 5 -width 40 -location 0 -show window
 #bindsym $mod+f exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show find -modi "find:~/.local/share/rofi/finder.sh"
+#bindsym $mod+f exec --no-startup-id clipmenu
 bindsym $mod+y exec --no-startup-id networkmanager_dmenu
 bindsym $mod+5 exec --no-startup-id pkill polybar
 bindsym $mod+0 exec --no-startup-id clearine
@@ -164,6 +174,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 2
+for_window [class="PPSSPPQt"] floating disable border pixel 2
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [class="Docky"] floating disable border pixel 2
@@ -208,9 +219,11 @@ for_window [class="Skype"] floating disable
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating disable
-for_window [class="feh"] floating disable
+for_window [class="feh"] floating enable 
 for_window [class="Telegram"] floating disable
-#for_window [class="sxiv"] floating enable border pixel 5
+for_window [class="sxiv"] floating enable 
+for_window [class="polkit-gnome-authentication-agent-1"] floating enable border normal 
+#for_window [class="sxiv"] floating enable 
 
 
 for_window [urgent=latest] focus
@@ -269,21 +282,32 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id unclutter
 exec_always --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id wal -R
-
+exec --no-startup-id wal -R
+exec --no-startup-id clipnotify
+exec --no-startup-id clipmenud
+exec --no-startup-id setxkbmap —option "ctrl:nocaps"
+#exec --no-startup-id compton -CG
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/tb.png
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/mds.jpg
 #bindsym $mod+6 exec --no-startup-id feh --bg-fill -Z /home/damez/Pictures/Wallpaper/on.png
 #bindsym $mod+7 exec --no-startup-id feh --bg-fill -Z /home/damez/Pictures/Wallpaper/off.png
-bindsym $mod+6 exec --no-startup-id wal --theme random_dark
-bindsym $mod+7 exec --no-startup-id wal --theme random_light
+bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
+bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
+bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 
+set $clip_chooser clipmenu.sh
+# Show clipboard content
+#bindsym $mod+f exec --no-startup-id /home/damez/Documents/scripts/clipmenu.sh show
+bindsym $mod+f exec --no-startup-id clipmenu
+# Clean Up clipboard
+#bindsym $mod+Shift+d exec --no-startup-id $clip_chooser clean
+bindcode $mod+Shift+f exec --no-startup-id $clip_chooser clean
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
 #  client.focused          #000000 #FFFFFF #000000 #FDF6E3  #000000
-  client.focused          #DAA90D #DAA90D #000000 #000000  #B58900
+  client.focused          #285577 #285577 #FFFFFF #285577  #FFFFFF
 #  client.focused          #000000 #FFFFFF #000000  #B58900
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #B58900
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #B58900
@@ -296,8 +320,8 @@ bindsym $mod+7 exec --no-startup-id wal --theme random_light
 ### settings for i3-gaps: ###
 #############################
 
-gaps inner 10
-gaps outer 5
+gaps inner 20
+gaps outer 1
 
 smart_gaps on
 
