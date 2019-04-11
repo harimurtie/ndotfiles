@@ -195,6 +195,11 @@ alias baca="fltrdr"
 alias ssd="dd if=./largefile of=/dev/null bs=4k && dd if=/dev/zero of=./largefile bs=4k count=1024"
 alias b="bunnyfetch"
 alias nf="neofetch"
+alias beras="b && curl wttr.in/Purwokerto\?0 && curl -L git.io/rice"
+alias note="notetaking"
+alias ci3="vim ~/.config/i3/config"
+alias cz="vim ~/.zshrc"
+alias sz="source ~/.zshrc"
 #autorun
 PATH="$HOME/Documents/scripts:$PATH"
 export PATH
