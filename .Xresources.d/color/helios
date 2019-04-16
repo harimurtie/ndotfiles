@@ -1,0 +1,31 @@
+!! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+!! Helios
+!! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+*.background:           #0a0e14
+*.foreground:           #d3dae3
+
+*.color0:               #1d2021
+*.color8:               #d72638
+
+*.color1:               #303335
+*.color9:               #eb8413
+
+*.color2:               #434749
+*.color10:              #f19d1a
+
+*.color3:               #565b5e
+*.color11:              #88b92d
+
+*.color4:               #4877b1
+*.color12:              #1ba595
+
+*.color5:               #d5d5d5
+*.color13:              #1e8bac
+
+*.color6:               #dddddd
+*.color14:              #be4264
+
+*.color7:               #e5e5e5
+*.color15:              #c85e0d
+
+
