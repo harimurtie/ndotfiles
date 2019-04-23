@@ -8,9 +8,9 @@ DISABLE_AUTO_UPDATE=true
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="agnoster"
 #ZSH_THEME="avit"
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="minimal"
+ZSH_THEME="minimal"
 #ZSH_THEME="bira"
 SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
@@ -167,13 +167,15 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias mm="systemd-analyze && neofetch && inxi -G && curl wttr.in/Purwokerto\?0"
+alias memo="systemd-analyze && neofetch && inxi -G && curl wttr.in/Purwokerto\?0"
 alias q="reset"
 alias hello="sys && wttr && anal"
+alias mt="neomutt"
 alias anal="systemd-analyze"
 alias goo="googler"
-alias la="ls -a"
-alias ll="ls -l"
+alias la="exa -a"
+alias ll="exa -l"
+alias lla="exa -al"
 alias x="exit"
 alias f="fff"
 alias ra="ranger"
@@ -183,12 +185,12 @@ alias qq="q && ~ && bunnyfetch"
 alias cek="/home/damez/Documents/bangunapp/color-scripts/color-scripts/pacman && sudo pacman -Syyuu"
 alias shot="scrot -c -d 10"
 alias konek="nmtui"
-alias memo="sudo mem.py"
 alias musik="mpd && ncmpcpp"
 alias mix="ncpamixer"
 alias mm="sudo ps_mem"
 alias ff="free -h"
 alias swap="cat /proc/sys/vm/swappiness"
+alias cpol="vim ~/.config/polybar/config"
 alias sapu="clearcache"
 alias mupen="mupen64plus"
 alias baca="fltrdr"
@@ -200,6 +202,12 @@ alias note="notetaking"
 alias ci3="vim ~/.config/i3/config"
 alias cz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
+alias hgrep="history | grep"
+
+
+
+
+
 #autorun
 PATH="$HOME/Documents/scripts:$PATH"
 export PATH
@@ -213,6 +221,11 @@ export PATH
 #if [[ -z "$TMUX" ]]; then
 #        tmux
 #fi
+
+
+if [ -d "$HOME/git/kodi-playercorefactory/bash-scripts" ] ; then
+        PATH="$HOME/git/kodi-playercorefactory/bash-scripts:$PATH"
+fi
 
 DISABLE_AUTO_TITLE="true"
 
