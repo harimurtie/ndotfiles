@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCRIPT_FOLDER="$HOME/Documents/scripts"
+SCRIPT_FILE="$SCRIPT_FOLDER/$1"
+
+if [[ -f $SCRIPT_FILE ]];then
+    echo file sudah ada
+else
+    echo '#!/bin/bash' > $SCRIPT_FILE
+    chmod +x $SCRIPT_FILE
+    vim $SCRIPT_FILE
+fi
+

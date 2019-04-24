@@ -1,0 +1,10 @@
+#!/bin/sh
+# FFmppeg Linux screen recorder
+#
+REC_iface=$(pactl list sources short | awk '{print$2}' | grep 'monitor')
+SCREEN_res=$(xrandr -q --current | grep '*' | awk '{print$1}')
+
+ffmpeg -f alsa -ac 2 -i pulse -acodec aac -f x11grab -r 25 -s $SCREEN_res -i :0.0 -vcodec libx264 -strict experimental outputs.mkv
+
+#ffmpeg -f alsa -ac 2 -i pulse -acodec aac -f x11grab -s $SCREEN_res -i :0.0 -vcodec libx264 soutputs.mkv
+#ffmpeg -y -f x11grab -s 1366x768 -i :0.0 -f alsa -i default -vcodec libx264 output.mkv

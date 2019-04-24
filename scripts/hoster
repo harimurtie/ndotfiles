@@ -1,0 +1,6 @@
+#!/bin/bash
+curl --silent http://someonewhocares.org/hosts/hosts | grep '^127.0.0.1' >> ~/Documents/scripts/hosts &&
+sudo cp ~/Documents/scripts/hosts /etc/
+
+
+

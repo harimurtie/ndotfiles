@@ -1,0 +1,296 @@
+set $nsi --no-startup-id
+set $mod Mod4
+set $editor st
+workspace_layout tabbed
+title_align center
+bindsym $mod+a focus parent
+new_window pixel 2
+hide_edge_borders none
+bindsym --release button3 kill
+bindsym $mod+u border none
+bindsym $mod+b border pixel 2
+bindsym $mod+n border normal
+font xft:TerminessTTF Nerd Font Mono 13
+floating_modifier $mod
+bindsym $mod+t exec --no-startup-id st
+bindsym $mod+q kill
+
+#window decor
+for_window [class=".*"] title_format "%class"
+for_window [class=Telegram] title_format "   telegram"
+for_window [class=xst-256color] title_format " xst"
+for_window [class=URxvt] title_format " urxvt"
+for_window [class=St] title_format " st"
+for_window [class=Steam] title_format " steam"
+for_window [class=qutebrowser] title_format " qutebrowser"
+for_window [class=Tilix] title_format " terminal"
+for_window [class=PPSSPPSDL] title_format "  konsol"
+for_window [class=Sublime_text] title_format "sublime"
+for_window [class=Pcmanfm] title_format " files"
+for_window [class=Gucharmap] title_format " character map"
+for_window [class=Spotify] title_format " spotify"
+for_window [class=mpv] title_format " movie"
+for_window [class=Pamac-manager] title_format " pamac"
+for_window [class=Google-chrome] title_format " chrome"
+#bindsym $mod+u title_format "Important | %title"
+
+bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2
+bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute
+
+#ncmpcpp media keys
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym $mod+F5 exec --no-startup-id mpc stop
+
+# Start Applications
+bindsym $mod+Ctrl+b exec uxterm -e 'bmenu'
+bindsym $mod+F1 exec --no-startup-id xst
+bindsym $mod+F2 exec --no-startup-id telegram-desktop
+bindsym $mod+F3 exec --no-startup-id pcmanfm
+bindsym $mod+F4 exec --no-startup-id qutebrowser
+bindsym $mod+F6 exec --no-startup-id subl
+bindsym $mod+F7 exec --no-startup-id mpv --no-audio --window-scale=0.5 av://v4l2:/dev/video0 --vf=hflip
+bindsym $mod+F8 exec --no-startup-id betterlockscreen -s
+bindsym $mod+F9 exec --no-startup-id pamac-manager
+bindsym $mod+F10 exec --no-startup-id setxkbmap —option "ctrl:nocaps"
+bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst'"
+bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
+bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
+bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary
+#bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
+bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'WINDOWS'"
+#bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
+bindsym $mod+f exec --no-startup-id networkmanager_dmenu
+bindsym $mod+5 exec --no-startup-id pkill polybar
+bindsym $mod+0 exec --no-startup-id /home/damez/.config/polybar/scripts/powermenu
+
+focus_follows_mouse no
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+
+# workspace back and forth (with/without active container)
+workspace_auto_back_and_forth no
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+Return fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+o open
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+x move scratchpad
+bindsym $mod+z scratchpad show
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace number $ws1
+bindsym $mod+Ctrl+2 move container to workspace number $ws2
+bindsym $mod+Ctrl+3 move container to workspace number $ws3
+bindsym $mod+Ctrl+4 move container to workspace number $ws4
+bindsym $mod+Ctrl+5 move container to workspace number $ws5
+bindsym $mod+Ctrl+6 move container to workspace number $ws6
+bindsym $mod+Ctrl+7 move container to workspace number $ws7
+bindsym $mod+Ctrl+8 move container to workspace number $ws8
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3;  workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $ws8
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 2
+for_window [class="PPSSPPQt"] floating disable border pixel 2
+for_window [class="leagueclient.exe"] floating disable
+for_window [class="dota2"] floating disable
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [class="Docky"] floating disable border pixel 2
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 2
+for_window [class="GParted"] floating disable
+for_window [class="csgo_linux64"] floating disable
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating disable
+for_window [title="MuseScore: Play Panel"] floating disable
+for_window [class="Nitrogen"] floating disable
+for_window [class="firefox"] floating disable
+for_window [class="com.github.babluboy.bookworm"] floating disable
+for_window [class="Save screenshot as..."] floating disable
+for_window [class="GtkFileChooserDialog"] floating disable
+for_window [class="Tilix"] floating disable border pixel 2
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="Media viewer"] fullscreen enable
+for_window [title="I3 Cheatsheet"] floating disable
+for_window [class="cheat"] floating disable
+for_window [title="Choose files"] fullscreen enable
+for_window [title="Save As"] floating disable
+for_window [title="Mousepad"] floating disable
+for_window [class="tomate"] floating enable border enable
+for_window [title="About Pale Moon"] floating disable
+for_window [title="video0 - mpv"] floating enable sticky disable
+for_window [class="mpv"] floating enable border enable sticky enable
+for_window [class="Pamac-manager"] floating disable
+for_window [title="TelegramDesktop"] floating enable sticky enable
+for_window [class="pavucontrol-qt"] floating disable
+for_window [class="Sxiv"] floating disable
+for_window [title="Open PSX Disc Image File"] floating disable
+for_window [class="Open PSX Disc Image File"] floating disable
+for_window [class="qt5ct"] floating disable
+for_window [class="Qtconfig-qt4"] floating disable
+for_window [class="Simple-scan"] floating disable
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating disable
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating disable
+for_window [class="Xfburn"] floating disable
+for_window [class="feh"] floating enable
+for_window [class="Telegram"] floating disable
+for_window [class="sxiv"] floating enable
+for_window [class="polkit-gnome-authentication-agent-1"] floating enable border normal
+for_window [class="VirtualBox Machine"] floating disable
+
+
+for_window [urgent=latest] focus
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# touchpad toggle
+bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
+
+# Set shut down, restart and locking features
+bindsym $mod+Escape mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym j resize shrink width 1 px or 1 ppt
+        bindsym k resize grow height 1 px or 1 ppt
+        bindsym l resize shrink height 1 px or 1 ppt
+        bindsym semicolon resize grow width 1 px or 1 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Lock screen
+#bindsym $mod+Escape exec --no-startup-id betterlockscreen -l
+
+#Autostart applications
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id unclutter
+exec --no-startup-id mpd
+exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id wal -R
+exec --no-startup-id clipnotify
+exec --no-startup-id clipmenud
+exec --no-startup-id udiskie
+#exec --no-startup-id tint2
+
+
+# Background Wallpaper
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/mds.jpg
+bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
+bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
+bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
+
+set $clip_chooser clipmenu.sh
+# Show clipboard content
+bindsym $mod+s exec --no-startup-id clipmenu
+# Clean Up clipboard
+bindsym $mod+Shift+f exec --no-startup-id $clip_chooser clean
+
+
+
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+  client.focused          #285577 #285577 #FFFFFF #285577  #FFFFFF
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #B58900
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #B58900
+  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  client.placeholder      #000000 #0c0c0c #ffffff #000000
+  client.background       #2B2C2B
+
+#############################
+### settings for i3-gaps: ###
+#############################
+gaps inner 8
+gaps outer 0
+smart_gaps on
+smart_borders on
+
