@@ -1,4 +1,4 @@
-;=============================================================;
+;#=============================================================;
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -51,28 +51,27 @@ enable-ipc = true
 [bar/top]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 15
+height = 18
 offset-x = 2%
 offset-y = 2%
 bottom = true
 fixed-center = false
 line-size = 2
 border-top-size=3
-border-bottom-size=6
+#border-bottom-size=6
 foreground = ${colors.foreground}
 #background = #156566
 #border-color = #156566
-#background = #131C26
-background = #000000
-border-color = #000000
+background = #131C26
+border-color = #131C26
 
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = icon mpd_bar i3 xwindow
+modules-left = icon i3 xwindow
 modules-center =
-modules-right = network fs mem batre xbacklight spiker date1 date2 gaps wifi pwr
+modules-right = mpd_bar pkg fs mem batre xbacklight spiker date1 date2 gap wifi pwr
 
 ;=====================================================
 ;   module
@@ -83,8 +82,8 @@ type = custom/text
 content-foreground = #FFFFFF
 #content-background =
 content = 
-content-padding = 1.5
-click-right = "rofi -modi drun -show drun -location 1 -columns 3 xoffset 0 -yoffset 50"
+content-padding = 1
+click-right = "rofi -modi drun -show drun -location 1 xoffset 0 -yoffset 50"
 click-left = ~/.config/polybar/module/launcher-full
 
 [module/xwindow]
@@ -150,7 +149,7 @@ interval = 1
 #format-online = <icon-prev> <toggle> <icon-next>  <label-song> <bar-progress> <label-time>
 format-online = <icon-prev> <toggle> <icon-stop> <icon-next> <label-song>
 label-song =  "%title%"
-label-song-maxlen = 15
+label-song-maxlen = 25
 label-song-ellipsis = true
 label-offline = "mpd is offline"
 format-online-foreground = #FFFFFF
@@ -210,7 +209,7 @@ interval = 30
 label =  %time%
 label-padding = 1
 label-foreground = #FFFFFF
-label-background = #000000
+label-background = #131C26
 time = %I:%M
 
 [module/date2]
@@ -219,7 +218,7 @@ interval = 30
 label =  %time%
 #label-padding = 1
 label-foreground = #FFFFFF
-label-background = #000000
+label-background = #131C26
 time = %d-%m-%Y
 
 [module/wifi]
@@ -238,23 +237,23 @@ full-at = 100
 format-charging = <animation-charging><label-charging>
 format-discharging = <ramp-capacity><label-discharging>
 label-charging-foreground= #FFFFFF
-label-charging-background= #000000
+label-charging-background= #131C26
 label-charging-padding=1
 label-discharging-foreground= #FFFFFF
-label-discharging-background= #000000
+label-discharging-background= #131C26
 label-discharging-padding=1
 format-full-prefix = ""
 format-full-prefix-foreground = #FFFFFF
-format-full-prefix-background = #000000
+format-full-prefix-background = #131C26
 ramp-capacity-foreground = #FFFFFF
-ramp-capacity-background = #000000
+ramp-capacity-background = #131C26
 #ramp-capacity-padding = 1
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 #animation-charging-padding = 1
 animation-charging-foreground = #FFFFFF
-animation-charging-background = #000000
+animation-charging-background = #131C26
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -268,12 +267,12 @@ format = <ramp><label>
 ramp = 
 ramp-0 = 
 ramp-foreground = #FFFFFF
-ramp-background = #000000
-ramp-padding = 1
+ramp-background = #131C26
+#ramp-padding = 1
 label = %percentage%%
 label-foreground = #FFFFFF
-label-background = #000000
-#label-padding= 0.8
+label-background = #131C26
+label-padding= 1
 
 [module/spiker]
 type = internal/pulseaudio
@@ -284,9 +283,9 @@ ramp-volume-padding = 1
 ramp-volume-foreground = #FFFFFF
 label-volume-foreground = #FFFFFF
 label-muted-foreground = #FFFFFF
-ramp-volume-background = #000000
-label-volume-background = #000000
-label-muted-background = #000000
+ramp-volume-background = #131C26
+label-volume-background = #131C26
+label-muted-background = #131C26
 label-volume = %percentage%%
 label-muted = ""
 #label-volume-padding = 1
@@ -359,15 +358,6 @@ click-left = "google-chrome-stable >/dev/null 2>&1 &"
 content = 
 content-padding =1
 
-[module/ejek]
-type = custom/text
-content-foreground = #FFFFFF
-content-background = #000000
-click-left = ~/.config/polybar/scripts/udiskie
-content = 
-content-padding =1
-
-
 [module/fs]
 type = internal/fs
 ; Mountpoints to display
@@ -390,57 +380,5 @@ type = custom/script
 exec = ~/.config/polybar/scripts/updates.sh
 format-foreground = #ffffff
 format-background = #131C26
-format-padding = 1
+format-padding = 2
 tail = true
-
-[module/network]
-type = internal/network
-interface = wlp1s0
-interval = 1
-#udspeed-minwidth = 2
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = <label-connected>
-format-connected-foreground = #FFFFFF
-format-connected-padding = 1
-format-connected-prefix =
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = #FFFFFF
-format-disconnected-padding = 1
-format-disconnected-prefix =
-
-label-font = 1
-label-connected = " %downspeed:%"
-label-disconnected = " dc"
-
-#label-connected = "%downspeed:% %upspeed:%"
-#label-disconnected = " -- KB/s  -- KB/s"
-
-[module/wlan]
-type = internal/network
-interface = wlp1s0
-interval = 1
-#udspeed-minwidth = 2
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = %{A1:connman-gtk:}<label-connected>%{A}
-format-connected-foreground = #FFFFFF
-format-connected-padding = 1
-format-connected-prefix =" "
-
-format-disconnected = %{A1:connman-gtk:}<label-disconnected>%{A}
-format-disconnected-foreground = #FFFFFF
-format-disconnected-padding = 1
-format-disconnected-prefix =" "
-
-label-font = 1
-
-label-connected = %essid%
-label-connected-maxlen = 15
-
-label-disconnected = offline
-
-
