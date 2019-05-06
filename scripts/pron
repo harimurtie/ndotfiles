@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/Mail/a30 && mpv "$(ls *mkv *mp4 | dmenu -b -l 10)"
