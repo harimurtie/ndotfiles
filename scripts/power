@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DMENU='dmenu -i -b -fn -xos4-terminus-medium-r-*--12-*-*-*-*-*-iso10646-1 -nb #000000 -nf #999999 -sb #000000 -sf #31658C'
+choice=$(echo -e "lock\nlogout\nshutdown\nreboot\nsuspend" | $DMENU)
+
+case "$choice" in
+      lock) betterlockscreen -l & ;;
+      logout) i3-msg exit & ;;
+      shutdown) sudo shutdown -h now & ;;
+      reboot) sudo shutdown -r now & ;;
+      suspend) sudo pm-suspend & ;;
+esac
+

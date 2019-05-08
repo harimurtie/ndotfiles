@@ -15,7 +15,7 @@ floating_modifier $mod
 bindsym $mod+t exec --no-startup-id urxvt
 bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id st
-
+bindsym $mod+m exec --no-startup-id ~/.config/i3/i3-hud-menu.py
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
@@ -67,9 +67,10 @@ bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
 bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
-bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'WINDOWS'"
+bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'windows'"
+#bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
 #bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
-bindsym $mod+d exec --no-startup-id networkmanager_dmenu
+bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
 bindsym $mod+g exec --no-startup-id ~/Documents/scripts/pron
 bindsym $mod+5 exec --no-startup-id pkill polybar
@@ -161,6 +162,8 @@ for_window [class="Docky"] floating disable border pixel 2
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 2
 for_window [class="GParted"] floating disable
+for_window [class="Google-chrome-stable"] floating disable
+for_window [class="chrome"] floating disable
 for_window [class="csgo_linux64"] floating disable
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
@@ -172,7 +175,7 @@ for_window [class="firefox"] floating disable
 for_window [class="com.github.babluboy.bookworm"] floating disable
 for_window [class="Save screenshot as..."] floating disable
 for_window [class="GtkFileChooserDialog"] floating disable
-for_window [class="Tilix"] floating disable border pixel 2
+for_window [class="Tilix"] floating disable
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="Media viewer"] fullscreen enable
@@ -203,7 +206,7 @@ for_window [class="Xfburn"] floating disable
 for_window [class="feh"] floating enable
 for_window [class="Telegram"] floating disable
 for_window [class="sxiv"] floating enable
-for_window [class="polkit-gnome-authentication-agent-1"] floating enable border normal
+for_window [class="polkit-gnome-authentication-agent-1"] floating enable
 for_window [class="VirtualBox Machine"] floating disable
 
 
@@ -213,9 +216,11 @@ bindsym $mod+Shift+r restart
 
 # touchpad toggle
 bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
+bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
+
 
 # Set shut down, restart and locking features
-bindsym $mod+Escape mode "$mode_system"
+#bindsym $mod+Escape mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
@@ -259,6 +264,7 @@ mode "resize" {
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id unclutter
+exec --no-startup-id ~/.config/i3/i3-appmenu-service.py
 exec --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id wal -R
@@ -269,7 +275,7 @@ exec --no-startup-id udiskie
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/bh.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/pd.jpg
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
@@ -277,7 +283,7 @@ bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/sol
 
 set $clip_chooser clipmenu.sh
 # Show clipboard content
-bindsym $mod+c exec --no-startup-id clipmenu
+bindsym $mod+c exec --no-startup-id clipmenu -b
 # Clean Up clipboard
 bindsym $mod+Shift+f exec --no-startup-id $clip_chooser clean
 
@@ -295,7 +301,7 @@ bindsym $mod+Shift+f exec --no-startup-id $clip_chooser clean
 #############################
 ### settings for i3-gaps: ###
 #############################
-gaps inner 8
+gaps inner 15
 gaps outer 3
 smart_gaps on
 #smart_borders on

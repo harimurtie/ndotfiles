@@ -316,7 +316,8 @@ content = 襤
 content-padding = 1
 #content-background = #
 content-foreground = #FFFFFF
-click-left = ~/.config/polybar/scripts/powermenu
+#click-left = ~/.config/polybar/scripts/powermenu
+click-left = ~/Documents/scripts/power
 
 [module/gap]
 type = custom/text
