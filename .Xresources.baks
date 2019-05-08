@@ -1,0 +1,10 @@
+!! ------------------------------------------------------------------------------
+!! Import other Configuration from ~/.Xresources.d
+!! ------------------------------------------------------------------------------
+!#include "/home/nabil/.Xresources.d/xautolock"
+#include "/home/damez/.Xresources.d/color/adaptaColor"
+#include "/home/damez/.Xresources.d/cursor"
+#include "/home/damez/.Xresources.d/urxvt"
+#include "/home/damez/.Xresources.d/xterm"
+!! ------------------------------------------------------------------------------
+
