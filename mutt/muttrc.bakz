@@ -1,15 +1,15 @@
 set ssl_starttls=yes
 set ssl_force_tls=yes
 
-set imap_user = 'milko.harimurti@icloud.com'
-set imap_pass = 'didw-ifkr-icgv-jnov'
-set smtp_pass = 'didw-ifkr-icgv-jnov'
+set imap_user = ''
+set imap_pass = ''
+set smtp_pass = ''
 set imap_pipeline_depth=0
-set from='milko.harimurti@icloud.com'
-set realname='Milko Harimurti'
+set from=''
+set realname=''
 
-set folder = imaps://milko.harimurti@imap.mail.me.com/
-set spoolfile = imaps://milko.harimurti@imap.mail.me.com/INBOX
+set folder = imaps://@imap.mail.me.com/
+set spoolfile = imaps://@imap.mail.me.com/INBOX
 set postponed="+Drafts"
 set record = "+Sent Messages"
 
@@ -20,7 +20,7 @@ set certificate_file = "~/.mutt/certificates"
 set move = no
 set imap_keepalive = 900
 
-set smtp_url = "smtp://milko.harimurti@smtp.mail.me.com:587/"
+set smtp_url = "smtp://@smtp.mail.me.com:587/"
 
 set pager_index_lines=12
 
@@ -34,11 +34,3 @@ set forward_decode                   # decode when forwarding
 set forward_quote                    # include message in forwards
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
-
-
-
-# open in gui browser: hit "v" then go down to text/html then hit "m" or "Enter"
-bind attach <return> view-mailcap
-auto_view text/html                                      # view html automatically
-alternative_order text/plain text/enriched text/html     # list html for last
-

@@ -171,11 +171,15 @@ alias memo="systemd-analyze && neofetch && inxi -G && curl wttr.in/Purwokerto\?0
 alias q="reset"
 alias hello="sys && wttr && anal"
 alias mt="neomutt"
-alias anal="systemd-analyze"
+alias boot="uname -r && systemd-analyze"
 alias goo="googler"
+alias v="nvim"
+alias sv="sudo nvim"
 alias la="exa -a"
 alias ll="exa -l"
 alias lla="exa -al"
+alias wlist="nmcli device wifi list"
+alias wconn="nmcli connection show"
 alias x="exit"
 alias f="fff"
 alias ra="ranger"
@@ -190,8 +194,8 @@ alias mix="ncpamixer"
 alias mm="sudo ps_mem"
 alias ff="free -h"
 alias swap="cat /proc/sys/vm/swappiness"
-alias cpol="vim ~/.config/polybar/config"
-alias sapu="clearcache"
+alias cpol="nvim ~/.config/polybar/config"
+alias sapu="sapu"
 alias mupen="mupen64plus"
 alias baca="fltrdr"
 alias ssd="dd if=./largefile of=/dev/null bs=4k && dd if=/dev/zero of=./largefile bs=4k count=1024"
@@ -199,13 +203,26 @@ alias b="bunnyfetch"
 alias nf="neofetch"
 alias beras="b && curl wttr.in/Purwokerto\?0 && curl -L git.io/rice"
 alias note="notetaking"
-alias ci3="vim ~/.config/i3/config"
-alias cz="vim ~/.zshrc"
+alias ci3="nvim ~/.config/i3/config"
+alias cz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias hgrep="history | grep"
+alias pron="mpv /home/damez/Mail/a30"
+alias mov="mpv /home/damez/Videos/film"
+alias tut="mpv /home/damez/Videos/linux"
+alias tv="mpv --force-window -autofit 500x280 --shuffle /home/damez/Documents/iptv"
+alias mts="dmenumount"
+alias um="dmenuumount"
+alias build="make && sudo make install"
 
+fzf-dmenu() {
+	# note: xdg-open has a bug with .desktop files, so we cant use that shit
+	selected="$(ls /usr/share/applications | fzf -e)"
+	nohup `grep '^Exec' "/usr/share/applications/$selected" | tail -1 | sed 's/^Exec=//' | sed 's/%.//'` >/dev/null 2>&1&
+}
 
-
+# hotkey to run the function (Ctrl+O)
+bindkey -s '^O' "fzf-dmenu\n"
 
 
 #autorun
@@ -213,10 +230,8 @@ PATH="$HOME/Documents/scripts:$PATH"
 export PATH
 PATH="$HOME/Documents/catatan:$PATH"
 export PATH
-PATH="$HOME/BangunApp/kunst:$PATH"
-export PATH
 
-#export EDITOR=vim
+export EDITOR=nvim
 
 #if [[ -z "$TMUX" ]]; then
 #        tmux

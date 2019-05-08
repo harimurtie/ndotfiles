@@ -217,7 +217,7 @@ bindsym $mod+Shift+r restart
 # touchpad toggle
 bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
 bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
-
+bindsym $mod+9 exec --no-startup-id ~/Documents/scripts/itung
 
 # Set shut down, restart and locking features
 #bindsym $mod+Escape mode "$mode_system"
@@ -269,6 +269,7 @@ exec --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id wal -R
 exec --no-startup-id clipnotify
+exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
 exec --no-startup-id udiskie
 #exec --no-startup-id tint2

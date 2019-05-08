@@ -68,3 +68,7 @@ video/*; mpv -vo drm -quiet '%s'; needsterminal
 # Ascii videos
 # video/x-youtube; youtube-dl -q -o - '%s' | mplayer -cache 8192 -vo caca -quiet -; needsterminal
 # video/*; wget '%s' -O - | mplayer -cache 8192 -vo caca -quiet -; needsterminal
+
+text/html; "$BROWSER" %s; test=test -n "$DISPLAY"; needsterminal;
+text/html; "$BROWSERCLI" -I %{charset} -T text/html; copiousoutput;
+text/plain; cat %s; copiousoutput
