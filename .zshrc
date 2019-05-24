@@ -80,6 +80,13 @@ SPACESHIP_VI_MODE_INSERT="[I]"
 SPACESHIP_VI_MODE_NORMAL="[N]"
 SPACESHIP_VI_MODE_COLOR="green"
 
+#MINIMAL THEME
+# Components on the left prompt
+MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status mnml_keymap)
+# Components on the right prompt
+MNML_RPROMPT=('mnml_cwd 2 0' mnml_git)
+# Components shown on info line
+MNML_INFOLN=(mnml_err mnml_jobs mnml_uhp mnml_files)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -96,7 +103,7 @@ SPACESHIP_VI_MODE_COLOR="green"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -137,6 +144,7 @@ plugins=(vi-mode git)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/lib/minimal.zsh
 
 # User configuration
 
@@ -214,6 +222,8 @@ alias tv="mpv --force-window -autofit 500x280 --shuffle /home/damez/Documents/ip
 alias mts="dmenumount"
 alias um="dmenuumount"
 alias build="make && sudo make install"
+alias acc="acestream-launcher --player mpv"
+alias tmuxa="tmux attach"
 
 fzf-dmenu() {
 	# note: xdg-open has a bug with .desktop files, so we cant use that shit
@@ -249,6 +259,20 @@ export TERM=screen-256color
 alias webcam-disable="echo 'blacklist uvcvideo' | sudo tee /etc/modprobe.d/blacklist.conf; echo '[Disable] WebCam'"
 alias webcam-enable="echo '' | sudo tee /etc/modprobe.d/blacklist.conf; echo '[Enable] WebCam'"
 
+
+
+# choose a player (default is cvlc)
+#ACE_PLAYER=cvlc
+ ACE_PLAYER=mpv
+
+fzf-dmenu() {
+	# note: xdg-open has a bug with .desktop files, so we cant use that shit
+	selected="$(ls /usr/share/applications | fzf -e)"
+	nohup `grep '^Exec' "/usr/share/applications/$selected" | tail -1 | sed 's/^Exec=//' | sed 's/%.//'` >/dev/null 2>&1&
+}
+
+# hotkey to run the function (Ctrl+O)
+bindkey -s '^O' "fzf-dmenu\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #. /home/damez/BangunApp/promptless/promptless.sh

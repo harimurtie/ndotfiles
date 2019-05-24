@@ -11,11 +11,20 @@ set nocompatible              " be iMproved, required
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'Sirver/ultisnips'
+Plug 'Valloric/YouCompleteMe'
+Plug 'suan/vim-instant-markdown'
+Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
-"Plug 'dikiaap/minimalist'
-"Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'dikiaap/minimalist'
+Plug 'itchyny/calendar.vim'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
 Plug 'itchyny/lightline.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 call plug#end()
 " }}}
@@ -105,7 +114,7 @@ set infercase " case inferred by default
 set shiftround " round the indent to shiftwidth (when at 3 spaces, and I hit > go to 4, n    ot 5)
 set expandtab " no real tabs please!
 set shiftwidth=4 " auto-indent amount when using >> <<
-set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see e    xpandtab)
+"set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see e    xpandtab)
 set tabstop=4 " real tabs should be 4, and they will show with set list on
 set autoindent
 "set smartindent
@@ -211,20 +220,20 @@ nmap <C-p> :Buffers<cr>
 " disable arrow keys on insert mode and make up & down arrow as line bubbling
 "no <down> ddp
 "nmap <down> ]e " handled by vim-unimpaired
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
+"no <down> <Nop>
+"no <left> <Nop>
+"no <right> <Nop>
+"no <up> <Nop>
 "no <up> ddkP
 "nmap <up> [e " handled by vim-unimpaired
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-vno <up> <Nop>
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
+"ino <up> <Nop>
+"vno <down> <Nop>
+"vno <left> <Nop>
+"vno <right> <Nop>
+"vno <up> <Nop>
 
 " Code folding saved after exit vim
 autocmd BufWinLeave .* mkview
@@ -272,6 +281,38 @@ let g:powerline_pycmd = 'py3'
 "let g:airline_theme = 'molokai'
 " }}}
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:lightline = {
+\   'colorscheme': 'seoul256',
+\   'active': {
+\     'left':[[ 'mode', 'paste' ],
+\             [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
+\   },
+\   'component': {
+\     'lineinfo': ' %3l:%-2v',
+\   },
+\   'component_function': {
+\     'gitbranch': 'fugitive#head',
+\   }
+\}
+let g:lightline.separator = {
+\   'left': '', 'right': ''
+\}
+let g:lightline.subseparator = {
+\   'left': '', 'right': ''
+\}
+let g:lightline.tabline = {
+\   'left': [['buffers']],
+\   'right': [['close']]
+\}
+let g:lightline.component_expand = {
+\   'buffers': 'lightline#bufferline#buffers'
+\}
+let g:lightline.component_type = {
+\   'buffers': 'tabsel'
+\}
+set showtabline=2  " Show tabline
+set guioptions-=e  " Don't use GUI tabline
 
 " Rubycomplete {{{
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -378,14 +419,22 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 
 " YouCompleteMe {{{
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:loaded_youcompleteme = 1
+let g:loaded_youcompleteme = 1
 " }}}
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Ultisnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"COC"
+"suggest.triggerAfterInsertEnter": true
+let g:pandoc_preview_pdf_cmd = "zathura"
+nnoremap <leader>v :PandocPreview<cr>
 
-
-
-
+"instantmarkdown"
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
 
 " vim: ft=vim fdm=marker

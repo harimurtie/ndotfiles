@@ -20,7 +20,7 @@ xscreensaver.fade:   false
 xscreensaver.unfade: false
 ! ===== urxvt =====
 URxvt.scrollBar: false
-URxvt.font: xft:Iosevka Term:size=10
+URxvt.font: xft:Iosevka Term:size=11
 URxvt.internalBorder:     22
 URxvt.transparent : true
 URxvt.shading:  45

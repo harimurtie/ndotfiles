@@ -15,13 +15,13 @@ floating_modifier $mod
 bindsym $mod+t exec --no-startup-id urxvt
 bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id st
-bindsym $mod+m exec --no-startup-id ~/.config/i3/i3-hud-menu.py
+#bindsym $mod+m exec --no-startup-id ~/.config/i3/i3-hud-menu.py
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
 for_window [class=xst-256color] title_format " xst"
 for_window [class=URxvt] title_format " urxvt"
-for_window [class=St] title_format " st"
+for_window [class=St] title_format " terminal"
 for_window [class=Steam] title_format " steam"
 for_window [class=qutebrowser] title_format " qutebrowser"
 for_window [class=Tilix] title_format " terminal"
@@ -53,7 +53,7 @@ bindsym $mod+F5 exec --no-startup-id mpc stop
 
 # Start Applications
 bindsym $mod+Ctrl+b exec uxterm -e 'bmenu'
-bindsym $mod+F1 exec --no-startup-id xst
+bindsym $mod+F1 exec --no-startup-id st
 bindsym $mod+F2 exec --no-startup-id telegram-desktop
 bindsym $mod+F3 exec --no-startup-id pcmanfm
 bindsym $mod+F4 exec --no-startup-id qutebrowser
@@ -65,7 +65,7 @@ bindsym $mod+F9 exec --no-startup-id pamac-manager
 bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst'"
 bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary
+bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary --no-generic
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
 bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'windows'"
 #bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
@@ -162,16 +162,12 @@ for_window [class="Docky"] floating disable border pixel 2
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 2
 for_window [class="GParted"] floating disable
-for_window [class="Google-chrome-stable"] floating disable
-for_window [class="chrome"] floating disable
-for_window [class="csgo_linux64"] floating disable
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating disable
 for_window [title="MuseScore: Play Panel"] floating disable
 for_window [class="Nitrogen"] floating disable
-for_window [class="firefox"] floating disable
 for_window [class="com.github.babluboy.bookworm"] floating disable
 for_window [class="Save screenshot as..."] floating disable
 for_window [class="GtkFileChooserDialog"] floating disable
@@ -216,11 +212,11 @@ bindsym $mod+Shift+r restart
 
 # touchpad toggle
 bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
-bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
+#bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
 bindsym $mod+9 exec --no-startup-id ~/Documents/scripts/itung
 
 # Set shut down, restart and locking features
-#bindsym $mod+Escape mode "$mode_system"
+bindsym $mod+Escape mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
@@ -264,10 +260,11 @@ mode "resize" {
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id unclutter
-exec --no-startup-id ~/.config/i3/i3-appmenu-service.py
+#exec --no-startup-id ~/.config/i3/i3-appmenu-service.py
 exec --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id wal -R
+exec --no-startup-id gebaard -b
 exec --no-startup-id clipnotify
 exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
@@ -276,7 +273,7 @@ exec --no-startup-id udiskie
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/pd.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/mv.jpg
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
