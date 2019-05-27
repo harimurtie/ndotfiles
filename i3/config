@@ -75,6 +75,7 @@ bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
 bindsym $mod+g exec --no-startup-id ~/Documents/scripts/pron
 bindsym $mod+5 exec --no-startup-id pkill polybar
 bindsym $mod+0 exec --no-startup-id /home/damez/.config/polybar/scripts/powermenu
+bindsym $mod+y exec --no-startup-id ~/Documents/scripts/mpvyt "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
 
 focus_follows_mouse no
 bindsym $mod+h focus left
@@ -93,6 +94,7 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
 
 
 # workspace back and forth (with/without active container)
@@ -302,5 +304,5 @@ bindsym $mod+Shift+f exec --no-startup-id $clip_chooser clean
 gaps inner 15
 gaps outer 3
 smart_gaps on
-#smart_borders on
+smart_borders on
 
