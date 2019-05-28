@@ -16,7 +16,7 @@
 ;=====================================================
 [colors]
 #background = #DAA90D
-background = ${xrdb:background}
+background = #000000
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
@@ -33,11 +33,10 @@ bd = #e53935
 ;   fonts
 ;=====================================================
 [fonts]
-font-0 = "UbuntuMono Nerd Font:size=11:antialias=true;2"
-#font-0 = "Anime Ace 2.0 BB:size=8:antialias=true;2"
-font-1 = "Iosevka Term:size=18:antialias=true;2"
-font-2 = "icomoon\-feather:size=15;2"
-font-3 = "Ubuntu Condensed:size=12;2"
+font-0 = "Source Code Pro For Powerline:size=15:antialias=true;2"
+font-1 = "Iosevka Term:size=20:antialias=true;2"
+font-2 = "icomoon\-feather:size=20;2"
+font-3 = "Ubuntu Condensed:size=20;2"
 
 ;=====================================================
 ;   global/wm
@@ -46,35 +45,32 @@ font-3 = "Ubuntu Condensed:size=12;2"
 enable-ipc = true
 
 ;=====================================================
-;   bar/top
+;   bar/dock
 ;=====================================================
-[bar/top]
+[bar/dock]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 15
-offset-x = 2%
-offset-y = 2%
-#bottom = false
+height = 25
+#offset-x = 2%
+#offset-y = 2%
 bottom = true
 fixed-center = false
 line-size = 2
-border-top-size=3
-border-bottom-size=6
+border-top-size=10
+border-bottom-size=3
 foreground = ${colors.foreground}
 #background = #156566
 #border-color = #156566
-#background = #131C26
-background = #00000
-border-color = #00000
+background = #fffff
+border-color = #fffff
 
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = icon mpd_bar i3 xwindow
-modules-center =
-modules-right = min show max close network fs mem batre xbacklight spiker date1 date2 gaps wifi pwr
-
+#modules-left = icon thunar libre chrome i3 xwindow
+modules-center = gap gap gap gap thunar libre chrome telegram
+modules-right = min show max close
 ;=====================================================
 ;   module
 ;=====================================================
@@ -84,18 +80,18 @@ type = custom/text
 content-foreground = #FFFFFF
 #content-background =
 content = 
-content-padding = 1.5
-click-right = "rofi -modi drun -show drun -location 1 -columns 3 xoffset 0 -yoffset 50"
+content-padding = 1
+click-right = "rofi -modi drun -show drun -location 1 xoffset 0 -yoffset 50"
 click-left = ~/.config/polybar/module/launcher-full
 
 [module/xwindow]
 type = internal/xwindow
 #label = %title% %{B- -o -u}
-label = %title:0:50:...%  %{B- -o -u}
+label = %title:0:20:...%  %{B- -o -u}
 label-padding-left = 2
-label-padding-right = 1
-label-foreground = #FFFFFF
-#label-background = #FFFFFF
+label-padding-right = 2
+label-foreground = #000000
+label-background = #FFFFFF
 
 [module/i3]
 type = internal/i3
@@ -106,12 +102,11 @@ fuzzy-match = false
 strip-wsnumbers = true
 pin-workspaces = true
 reverse-scroll = false
-#content-padding = 1
-#content-background = ${colors.background}
-content-background =#285577
+content-padding = 1
+content-background = ${colors.background}
 label-focused = %icon%
 label-focused-foreground = #FFFFFF
-label-focused-background = #285577
+#label-focused-background = #FFFFFF
 ;label-focused-background = #00bd2c40
 label-focused-padding = 1
 
@@ -151,16 +146,16 @@ interval = 1
 #format-online = <icon-prev> <toggle> <icon-next>  <label-song> <bar-progress> <label-time>
 format-online = <icon-prev> <toggle> <icon-stop> <icon-next> <label-song>
 label-song =  "%title%"
-label-song-maxlen = 15
+label-song-maxlen = 25
 label-song-ellipsis = true
 label-offline = "mpd is offline"
-format-online-foreground = #FFFFFF
+format-online-foreground = #FFFFF
 format-offline-foreground = #FFFFFF
 label-time-foreground = #FFFFFF
 #format-online-background = #FFFFFF
 #format-offline-background = #FFFFFF
 #label-time-background = #FFFFFF
-format-online-padding = 1
+format-online-padding = 2
 icon-play = 
 icon-pause = 
 icon-stop = 
@@ -194,7 +189,7 @@ bar-progress-empty-font = 2
 [module/sep]
 type = custom/text
 content-foreground = #000000
-content-background = #00000
+content-background = #000000
 content = ""
 content-padding = 0
 
@@ -211,7 +206,7 @@ interval = 30
 label =  %time%
 label-padding = 1
 label-foreground = #FFFFFF
-label-background = #00000
+label-background = #000000
 time = %I:%M
 
 [module/date2]
@@ -220,16 +215,16 @@ interval = 30
 label =  %time%
 #label-padding = 1
 label-foreground = #FFFFFF
-label-background = #00000
+label-background = #000000
 time = %d-%m-%Y
 
 [module/wifi]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #00000
-click-left = "networkmanager_dmenu -b >/dev/null 2>&1 &"
+content-background = #000000
+click-left = "networkmanager_dmenu >/dev/null 2>&1 &"
 content = 
-#content-padding =1
+content-padding =1
 
 [module/batre]
 type = internal/battery
@@ -239,23 +234,23 @@ full-at = 100
 format-charging = <animation-charging><label-charging>
 format-discharging = <ramp-capacity><label-discharging>
 label-charging-foreground= #FFFFFF
-label-charging-background= #00000
+label-charging-background= #000000
 label-charging-padding=1
 label-discharging-foreground= #FFFFFF
-label-discharging-background= #00000
+label-discharging-background= #000000
 label-discharging-padding=1
 format-full-prefix = ""
 format-full-prefix-foreground = #FFFFFF
-format-full-prefix-background = #00000
+format-full-prefix-background = #000000
 ramp-capacity-foreground = #FFFFFF
-ramp-capacity-background = #00000
+ramp-capacity-background = #000000
 #ramp-capacity-padding = 1
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 #animation-charging-padding = 1
 animation-charging-foreground = #FFFFFF
-animation-charging-background = #00000
+animation-charging-background = #000000
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -269,24 +264,24 @@ format = <ramp><label>
 ramp = 
 ramp-0 = 
 ramp-foreground = #FFFFFF
-ramp-background = #00000
+ramp-background = #000000
 ramp-padding = 1
 label = %percentage%%
 label-foreground = #FFFFFF
-label-background = #00000
-#label-padding= 0.8
+label-background = #000000
+#label-padding= 1
 
 [module/spiker]
 type = internal/pulseaudio
 sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 format-volume = <ramp-volume><label-volume>
-#format-volume-padding = 1
+format-volume-padding = 1
 ramp-volume-padding = 1
 ramp-volume-foreground = #FFFFFF
 label-volume-foreground = #FFFFFF
 label-muted-foreground = #FFFFFF
-ramp-volume-background = #00000
-label-volume-background = #00000
+ramp-volume-background = #000000
+label-volume-background = #000000
 label-muted-background = #000000
 label-volume = %percentage%%
 label-muted = ""
@@ -300,16 +295,12 @@ ramp-volume-4 = 
 ramp-volume-5 = 
 ramp-volume-6 = 
 
-[module/mem]
-type = internal/memory
-; Seconds to sleep between updates
-; Default: 1
-interval = 3
-format = <label>
-#label =  %gb_used%/%gb_total%
-label =  %gb_used%
-label-padding=1
-label-foreground=#FFFFFF
+[module/sep3]
+type = custom/text
+content-foreground = #000000
+content-background = #000000
+content = ""
+content-padding = 0
 
 [module/pwr]
 type = custom/text
@@ -317,8 +308,14 @@ content = 襤
 content-padding = 1
 #content-background = #
 content-foreground = #FFFFFF
-#click-left = ~/.config/polybar/scripts/powermenu
-click-left = ~/Documents/scripts/power
+click-left = clearine
+
+[module/sep2]
+type = custom/text
+content-foreground = #000000
+content-background = #000000
+content = ""
+content-padding = 0
 
 [module/gap]
 type = custom/text
@@ -340,15 +337,15 @@ click-right = "wal --theme random_light"
 [module/thunar]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #000000
+content-background = #FFFFF
 click-left = "thunar >/dev/null 2>&1 &"
-content = 
+content = 
 content-padding =1
 
 [module/libre]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #000000
+content-background = #fffff
 click-left = "libreoffice >/dev/null 2>&1 &"
 content = 
 content-padding =1
@@ -356,100 +353,24 @@ content-padding =1
 [module/chrome]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #000000
+content-background = #fffff
 click-left = "google-chrome-stable >/dev/null 2>&1 &"
 content = 
 content-padding =1
 
-[module/ejek]
+[module/telegram]
 type = custom/text
-content-foreground = #FFFFFF
-content-background = #000000
-click-left = ~/.config/polybar/scripts/udiskie
-content = 
+content-foreground = #ffffff
+content-background = #fffff
+click-left = "telegram-desktop >/dev/null 2>&1 &"
+content = 
 content-padding =1
-
-
-[module/fs]
-type = internal/fs
-; Mountpoints to display
-mount-0 = /
-; Seconds to sleep between updates
-; Default: 30
-interval = 10
-; Display fixed precision values
-; Default: false
-fixed-values = true
-; Spacing between entries
-; Default: 2
-spacing = 4
-label-mounted =  %free%
-label-padding=1
-label-mounted-foreground= #FFFFFF
-
-[module/pkg]
-type = custom/script
-exec = ~/.config/polybar/scripts/updates.sh
-format-foreground = #ffffff
-format-background = #131C26
-format-padding = 1
-tail = true
-
-[module/network]
-type = internal/network
-interface = wlp1s0
-interval = 1
-#udspeed-minwidth = 2
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = <label-connected>
-format-connected-foreground = #FFFFFF
-format-connected-padding = 1
-format-connected-prefix =
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = #FFFFFF
-format-disconnected-padding = 1
-format-disconnected-prefix =
-
-label-font = 1
-label-connected = " %downspeed:%"
-label-disconnected = " dc"
-
-#label-connected = "%downspeed:% %upspeed:%"
-#label-disconnected = " -- KB/s  -- KB/s"
-
-[module/wlan]
-type = internal/network
-interface = wlp1s0
-interval = 1
-#udspeed-minwidth = 2
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = %{A1:connman-gtk:}<label-connected>%{A}
-format-connected-foreground = #FFFFFF
-format-connected-padding = 1
-format-connected-prefix =" "
-
-format-disconnected = %{A1:connman-gtk:}<label-disconnected>%{A}
-format-disconnected-foreground = #FFFFFF
-format-disconnected-padding = 1
-format-disconnected-prefix =" "
-
-label-font = 1
-
-label-connected = %essid%
-label-connected-maxlen = 15
-
-label-disconnected = offline
 
 [module/min]
 type = custom/text
 content-foreground =#ffffff
 content-background =#000000
-click-left = i3-msg move scratchpad
+click-left = i3-msg move scratchpad 
 content = 
 content-padding =1
 
@@ -457,7 +378,7 @@ content-padding =1
 type = custom/text
 content-foreground =#ffffff
 content-background =#000000
-click-left = i3-msg scratchpad show
+click-left = i3-msg scratchpad show 
 content = 
 content-padding =1
 
@@ -465,16 +386,14 @@ content-padding =1
 type = custom/text
 content-foreground =#ffffff
 content-background =#000000
-click-left = i3-msg floating toggle
-content = 
+click-left = i3-msg floating toggle 
+content = 
 content-padding =1
 
 [module/close]
 type = custom/text
 content-foreground =#ffffff
 content-background =#000000
-click-left = i3-msg kill
+click-left = i3-msg kill 
 content = 
 content-padding =1
-
-
