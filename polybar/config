@@ -71,9 +71,9 @@ font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = icon mpd_bar i3 xwindow
+modules-left = icon mpd_bar i3 xwindow network
 modules-center =
-modules-right = min show max close network fs mem batre xbacklight spiker date1 date2 gaps wifi pwr
+modules-right = min show max close gaps fs mem batre xbacklight spiker date1 date2 gaps yt wifi pwr
 
 ;=====================================================
 ;   module
@@ -92,7 +92,7 @@ click-left = ~/.config/polybar/module/launcher-full
 type = internal/xwindow
 #label = %title% %{B- -o -u}
 label = %title:0:50:...%  %{B- -o -u}
-label-padding-left = 2
+label-padding-left = 1
 label-padding-right = 1
 label-foreground = #FFFFFF
 #label-background = #FFFFFF
@@ -476,5 +476,15 @@ content-background =#000000
 click-left = i3-msg kill
 content = 
 content-padding =1
+
+[module/yt]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+#click-left = "google-chrome-stable >/dev/null 2>&1 &"
+click-left = ~/Documents/scripts/ytv
+content = 
+content-padding =2
+
 
 
