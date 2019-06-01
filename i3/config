@@ -67,12 +67,13 @@ bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
 bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary --no-generic
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
+#bindsym Alt_L:+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'windows'"
 bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'windows'"
 #bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
 #bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
 bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
-bindsym $mod+g exec --no-startup-id ~/Documents/scripts/pron
+bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/pron
 bindsym $mod+5 exec --no-startup-id pkill polybar
 bindsym $mod+0 exec --no-startup-id /home/damez/.config/polybar/scripts/powermenu
 bindsym $mod+y exec --no-startup-id ~/Documents/scripts/mpvyt "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
@@ -114,7 +115,7 @@ bindsym $mod+Shift+space floating toggle
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
 bindsym $mod+x move scratchpad
-bindsym $mod+z scratchpad show
+bindsym $mod+z exec --no-startup-id ~/Documents/scripts/hide
 
 set $ws1 "1"
 set $ws2 "2"
@@ -209,7 +210,7 @@ for_window [class="VirtualBox Machine"] floating disable
 
 
 for_window [urgent=latest] focus
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # touchpad toggle
@@ -271,11 +272,12 @@ exec --no-startup-id clipnotify
 exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
 exec --no-startup-id udiskie
+exec --no-startup-id wal -R
 #exec --no-startup-id tint2
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/mv.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ld.jpg
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
@@ -285,14 +287,15 @@ set $clip_chooser clipmenu.sh
 # Show clipboard content
 bindsym $mod+c exec --no-startup-id clipmenu -b
 # Clean Up clipboard
-bindsym $mod+Shift+f exec --no-startup-id $clip_chooser clean
+#bindsym $mod+Shift+c exec --no-startup-id $clip_chooser clean
+bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 
 
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
   client.focused          #285577 #285577 #FFFFFF #285577  #FFFFFF
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #000000
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #FFFFFF
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #000000
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000
