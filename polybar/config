@@ -35,9 +35,10 @@ bd = #e53935
 [fonts]
 font-0 = "UbuntuMono Nerd Font:size=11:antialias=true;2"
 #font-0 = "Anime Ace 2.0 BB:size=8:antialias=true;2"
-font-1 = "Iosevka Term:size=18:antialias=true;2"
-font-2 = "icomoon\-feather:size=15;2"
-font-3 = "Ubuntu Condensed:size=12;2"
+font-1 = "Iosevka Term:size=12:antialias=true;2"
+font-2 = "Droid Sans Japanese:size=12;2"
+font-3 = "icomoon\-feather:size=12;2"
+font-4 = "Ubuntu Condensed:size=12;2"
 
 ;=====================================================
 ;   global/wm
@@ -58,7 +59,7 @@ offset-y = 2%
 bottom = true
 fixed-center = false
 line-size = 2
-border-top-size=3
+border-top-size=6
 border-bottom-size=6
 foreground = ${colors.foreground}
 #background = #156566
@@ -71,9 +72,9 @@ font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = icon mpd_bar i3 xwindow network
+modules-left = icon thunar libre terminal telegram qute mouse mpd_bar i3 xwindow
 modules-center =
-modules-right = min show max close gaps fs mem batre xbacklight spiker date1 date2 gaps yt wifi pwr
+modules-right = min show max close gaps fs mem batre xbacklight spiker date1 date2 gaps yt network ejek wifi pwr
 
 ;=====================================================
 ;   module
@@ -270,11 +271,11 @@ ramp = 
 ramp-0 = 
 ramp-foreground = #FFFFFF
 ramp-background = #00000
-ramp-padding = 1
+#ramp-padding = 0.5
 label = %percentage%%
 label-foreground = #FFFFFF
 label-background = #00000
-#label-padding= 0.8
+label-padding= 1
 
 [module/spiker]
 type = internal/pulseaudio
@@ -342,7 +343,7 @@ type = custom/text
 content-foreground = #FFFFFF
 content-background = #000000
 click-left = "thunar >/dev/null 2>&1 &"
-content = 
+content = 
 content-padding =1
 
 [module/libre]
@@ -350,7 +351,7 @@ type = custom/text
 content-foreground = #FFFFFF
 content-background = #000000
 click-left = "libreoffice >/dev/null 2>&1 &"
-content = 
+content = 
 content-padding =1
 
 [module/chrome]
@@ -414,7 +415,8 @@ format-disconnected-padding = 1
 format-disconnected-prefix =
 
 label-font = 1
-label-connected = " %downspeed:%"
+#label-connected = " %downspeed:%"
+label-connected = " up"
 label-disconnected = " dc"
 
 #label-connected = "%downspeed:% %upspeed:%"
@@ -448,7 +450,7 @@ label-disconnected = offline
 [module/min]
 type = custom/text
 content-foreground =#ffffff
-content-background =#000000
+content-background =#00000
 click-left = i3-msg move scratchpad
 content = 
 content-padding =1
@@ -456,15 +458,15 @@ content-padding =1
 [module/show]
 type = custom/text
 content-foreground =#ffffff
-content-background =#000000
-click-left = i3-msg scratchpad show
-content = 
+content-background =#00000
+click-left = ~/Documents/scripts/hide
+content = 
 content-padding =1
 
 [module/max]
 type = custom/text
 content-foreground =#ffffff
-content-background =#000000
+content-background =#00000
 click-left = i3-msg floating toggle
 content = 
 content-padding =1
@@ -472,19 +474,47 @@ content-padding =1
 [module/close]
 type = custom/text
 content-foreground =#ffffff
-content-background =#000000
+content-background =#00000
 click-left = i3-msg kill
 content = 
+content-padding =1
+
+[module/qute]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "qutebrowser >/dev/null 2>&1 &"
+content = 
+content-padding =1
+
+[module/terminal]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "st >/dev/null 2>&1 &"
+content = 
+content-padding =1
+
+[module/telegram]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "telegram-desktop >/dev/null 2>&1 &"
+content = 
+content-padding =1
+
+[module/mouse]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "mousepad >/dev/null 2>&1 &"
+content = 
 content-padding =1
 
 [module/yt]
 type = custom/text
 content-foreground = #FFFFFF
 content-background = #fffff
-#click-left = "google-chrome-stable >/dev/null 2>&1 &"
-click-left = ~/Documents/scripts/ytv
-content = 
-content-padding =2
-
-
-
+click-left = "~/Documents/scripts/ytv >/dev/null 2>&1 &"
+content = 
+content-padding =1
