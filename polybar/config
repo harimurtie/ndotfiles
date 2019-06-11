@@ -60,7 +60,7 @@ bottom = true
 fixed-center = false
 line-size = 2
 border-top-size=6
-border-bottom-size=6
+border-bottom-size=3
 foreground = ${colors.foreground}
 #background = #156566
 #border-color = #156566
@@ -74,7 +74,7 @@ font-2 = ${fonts.font-2}
 
 modules-left = icon thunar libre terminal telegram qute mouse mpd_bar i3 xwindow
 modules-center =
-modules-right = min show max close gaps fs mem batre xbacklight spiker date1 date2 gaps yt network ejek wifi pwr
+modules-right = min show max close gaps fs mem batre xbacklight spiker date0 yt network ejek wifi pwr
 
 ;=====================================================
 ;   module
@@ -92,7 +92,7 @@ click-left = ~/.config/polybar/module/launcher-full
 [module/xwindow]
 type = internal/xwindow
 #label = %title% %{B- -o -u}
-label = %title:0:50:...%  %{B- -o -u}
+label = %title:0:10:...%  %{B- -o -u}
 label-padding-left = 1
 label-padding-right = 1
 label-foreground = #FFFFFF
@@ -206,6 +206,16 @@ content-background = #676E6E
 content = 
 content-padding =2
 
+[module/date0]
+type = internal/date
+interval = 30
+label =  %time%
+label-padding = 1
+label-foreground = #FFFFFF
+label-background = #00000
+time = %a %d-%m %H:%M
+
+
 [module/date1]
 type = internal/date
 interval = 30
@@ -222,7 +232,7 @@ label =  %time%
 #label-padding = 1
 label-foreground = #FFFFFF
 label-background = #00000
-time = %d-%m-%Y
+time = %d-%m
 
 [module/wifi]
 type = custom/text
@@ -341,7 +351,7 @@ click-right = "wal --theme random_light"
 [module/thunar]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #000000
+content-background = #00000
 click-left = "thunar >/dev/null 2>&1 &"
 content = 
 content-padding =1
@@ -349,7 +359,7 @@ content-padding =1
 [module/libre]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #000000
+content-background = #00000
 click-left = "libreoffice >/dev/null 2>&1 &"
 content = 
 content-padding =1
@@ -365,7 +375,7 @@ content-padding =1
 [module/ejek]
 type = custom/text
 content-foreground = #FFFFFF
-content-background = #000000
+content-background = #00000
 click-left = ~/.config/polybar/scripts/udiskie
 content = 
 content-padding =1
