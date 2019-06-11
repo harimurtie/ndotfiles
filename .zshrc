@@ -1,3 +1,13 @@
+#
+# User configuration sourced by interactive shells
+#
+
+# Define zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+
+# Start zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
+
 # If you come from bash you might have to change your $PATH.  # export PATH=$HOME/bin:/usr/local/bin:$PATH # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE=true
@@ -176,9 +186,10 @@ source ~/.oh-my-zsh/lib/minimal.zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias memo="systemd-analyze && neofetch && inxi -G && curl wttr.in/Purwokerto\?0"
-alias q="reset"
+alias q="reset && ~"
 alias hello="sys && wttr && anal"
 alias mt="neomutt"
+alias xwin="xwininfo"
 alias boot="uname -r && systemd-analyze"
 alias goo="googler"
 alias v="nvim"
@@ -193,7 +204,7 @@ alias f="fff"
 alias ra="ranger"
 alias m="mounts"
 alias um="unmount"
-alias qq="q && ~ && bunnyfetch"
+alias qq="q && bunnyfetch"
 alias cek="/home/damez/Documents/bangunapp/color-scripts/color-scripts/pacman && sudo pacman -Syyuu"
 alias shot="scrot -c -d 10"
 alias konek="nmtui"
@@ -207,7 +218,7 @@ alias sapu="sapu"
 alias mupen="mupen64plus"
 alias baca="fltrdr"
 alias ssd="dd if=./largefile of=/dev/null bs=4k && dd if=/dev/zero of=./largefile bs=4k count=1024"
-alias b="bunnyfetch"
+alias host="bunnyfetch"
 alias nf="neofetch"
 alias beras="b && curl wttr.in/Purwokerto\?0 && curl -L git.io/rice"
 alias note="notetaking"
@@ -259,7 +270,24 @@ export TERM=screen-256color
 alias webcam-disable="echo 'blacklist uvcvideo' | sudo tee /etc/modprobe.d/blacklist.conf; echo '[Disable] WebCam'"
 alias webcam-enable="echo '' | sudo tee /etc/modprobe.d/blacklist.conf; echo '[Enable] WebCam'"
 
+streaming() {
+     INRES="1366x768" # input resolution
+     OUTRES="1366x768" # output resolution
+     FPS="15" # target FPS
+     GOP="30" # i-frame interval, should be double of FPS,
+     GOPMIN="15" # min i-frame interval, should be equal to fps,
+     THREADS="2" # max 6
+     CBR="1000k" # constant bitrate (should be between 1000k - 3000k)
+     QUALITY="ultrafast"  # one of the many FFMPEG preset
+     AUDIO_RATE="44100"
+     STREAM_KEY="live_430136061_Mj3w0aW7MkjayA9SujNk8FWZ0CfBeB" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
+     SERVER="live-sin" # twitch server in California, see http://bashtech.net/twitch/ingest.php to change
 
+     ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f alsa -i pulse -f flv -ac 2 -ar $AUDIO_RATE \
+       -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\
+       -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
+       -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
+ }
 
 # choose a player (default is cvlc)
 #ACE_PLAYER=cvlc

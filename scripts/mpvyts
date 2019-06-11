@@ -1,0 +1,33 @@
+#!/bin/bash
+if [[ "$#" -ne 1 ]]; then
+  exit 1
+fi
+
+format=/tmp/format-$(date +%s)
+youtube-dl -F "$1" > "$format"
+
+check_empty() {
+	if [[ -z $1 ]]; then
+		exit 1
+	fi
+}
+
+if [[ -z $(grep "video only" "$format") ]]; then
+  quality=$(tail -n +5 "$format" | awk '{print $1}' | rofi -dmenu -i -p "Select quality:")
+  check_empty "$quality"
+
+  mpv --title=mpv-float --loop-file --ontop --ytdl-format="$quality" "$1"
+else
+  video_quality=$(grep "video only" "$format" | awk '{print $1,"("$NF,$4,$2")"}' \
+    | rofi -dmenu -i -p "Select video resolution" | awk '{print $1}')
+  check_empty "$video_quality"
+
+  audio_quality=$(grep "audio only" "$format" | awk '{print $1,"("$NF,$7,$9")"}' \
+    | rofi -dmenu -i -p "Select audio quality" | awk '{print $1}')
+  check_empty "$audio_quality"
+
+  mpv --title=mpv-float --loop-file --ontop \
+    --ytdl-format="$video_quality"+"$audio_quality" "$1"
+fi
+
+[[ -e "$format" ]] && rm "$format"

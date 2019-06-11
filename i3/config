@@ -173,6 +173,7 @@ for_window [title="MuseScore: Play Panel"] floating disable
 for_window [class="Nitrogen"] floating disable
 for_window [class="com.github.babluboy.bookworm"] floating disable
 for_window [class="Save screenshot as..."] floating disable
+for_window [class="Choose files"] floating disable
 for_window [class="GtkFileChooserDialog"] floating disable
 for_window [class="Tilix"] floating disable
 for_window [class="Oblogout"] fullscreen enable
@@ -180,9 +181,10 @@ for_window [class="octopi"] floating enable
 for_window [title="Media viewer"] fullscreen enable
 for_window [title="I3 Cheatsheet"] floating disable
 for_window [class="cheat"] floating disable
-for_window [title="Choose files"] fullscreen enable
+for_window [title="Choose files"] floating disable
 for_window [title="Save As"] floating disable
 for_window [title="Mousepad"] floating disable
+for_window [class="Mousepad"] floating disable
 for_window [class="tomate"] floating enable border enable
 for_window [title="About Pale Moon"] floating disable
 for_window [title="video0 - mpv"] floating enable border normal sticky disable
@@ -277,7 +279,8 @@ exec --no-startup-id wal -R
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ld.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ctx.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ctsx.jpg
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
@@ -304,8 +307,8 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 #############################
 ### settings for i3-gaps: ###
 #############################
-gaps inner 15
-gaps outer 3
+gaps inner 1
+gaps outer 1
 smart_gaps on
 smart_borders on
 
