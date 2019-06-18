@@ -1,0 +1,2 @@
+#!/bin/bash
+elinks "http://justread.mpgarate.com/read?url=$1"

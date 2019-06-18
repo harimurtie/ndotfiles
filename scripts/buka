@@ -1,0 +1,14 @@
+#!/bin/bash
+DESKTOPPATH="/usr/share/applications $HOME/.local/share/applications"
+DMENU_CACHE="$HOME/.cache/dmenu_guiapps"
+
+if ! [ -f "$DMENU_CACHE" ] || stest -dqr -n "$DMENU_CACHE" $DESKTOPPATH; then
+            find $DESKTOPPATH -name '*.desktop' -exec awk -F '[ =]' '
+                            /^Terminal=true/ { term=1; }
+                                            /^Exec[^\/]*$/ { if (!term) cmds[$2] = 1; }
+                                                            END { for (key in cmds) print key; }
+                                                                    ' '{}' \; | sort -b | uniq > $DMENU_CACHE
+                                            fi
+
+                                            cat "$DMENU_CACHE" | dmenu -i "$@" | ${SHELL:-"/bin/sh"} &
+

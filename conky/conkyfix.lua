@@ -30,7 +30,7 @@ conky.config = {
   draw_shades = false,
 
 -- positioning
-  gap_x = 5,
+  gap_x = 10,
   gap_y = 40,
   maximum_width = 2000,
   minimum_height = 0,
@@ -77,9 +77,9 @@ datetime = ''
 .. '${time [ %A, %H:%M:%S %Z ]}'
 .. '\n'
 .. '${alignr}'
-.. '${time %d %B %Y}' 
+.. '${time %d %B %Y}'
 .. '\n'
-.. '${alignr}' 
+.. '${alignr}'
 .. '${exec ~/Documents/dotfiles/conky/conkyhijri.sh}'
 .. '\n'
 
