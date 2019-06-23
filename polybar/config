@@ -59,7 +59,7 @@ offset-y = 2%
 bottom = true
 fixed-center = false
 line-size = 2
-border-top-size=6
+border-top-size=7
 border-bottom-size=3
 foreground = ${colors.foreground}
 #background = #156566
@@ -72,7 +72,7 @@ font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = icon thunar libre terminal telegram qute mouse mpd_bar i3 xwindow
+modules-left = icon thunar libre terminal telegram qute mouse steam i3 xwindow
 modules-center =
 modules-right = min show max close gaps fs mem batre xbacklight spiker date0 yt network ejek wifi pwr
 
@@ -85,8 +85,9 @@ type = custom/text
 content-foreground = #FFFFFF
 #content-background =
 content = 
-content-padding = 1.5
-click-right = "rofi -modi drun -show drun -location 1 -columns 3 xoffset 0 -yoffset 50"
+#content = i3wm
+content-padding = 1
+click-right = "rofi -modi drun -show drun -location 7 -columns 1 -xoffset 0 -yoffset -25 -width 30"
 click-left = ~/.config/polybar/module/launcher-full
 
 [module/xwindow]
@@ -329,7 +330,7 @@ content-padding = 1
 #content-background = #
 content-foreground = #FFFFFF
 #click-left = ~/.config/polybar/scripts/powermenu
-click-left = ~/Documents/scripts/power
+click-left = ~/.config/i3/scripts/polybar_wrapper options
 
 [module/gap]
 type = custom/text
@@ -376,7 +377,8 @@ content-padding =1
 type = custom/text
 content-foreground = #FFFFFF
 content-background = #00000
-click-left = ~/.config/polybar/scripts/udiskie
+#click-left = ~/.config/polybar/scripts/udiskie
+click-left = ~/Documents/scripts/udiskie-dmenu
 content = 
 content-padding =1
 
@@ -527,4 +529,13 @@ content-foreground = #FFFFFF
 content-background = #fffff
 click-left = "~/Documents/scripts/ytv >/dev/null 2>&1 &"
 content = 
+content-padding =1
+
+
+[module/steam]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "/usr/bin/steam >/dev/null 2>&1 &"
+content = 
 content-padding =1

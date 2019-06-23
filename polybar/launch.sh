@@ -8,6 +8,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 polybar top &
-#polybar -c ~/.config/polybar/config_bottom bottom &
+#polybar -c ~/.config/polybar/configdock dock &
 
 echo "Bars launched..."

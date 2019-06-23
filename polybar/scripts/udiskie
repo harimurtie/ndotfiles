@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## udiskie - Milko Harimurti -
+
+udiskie-umount -a --force --detach

@@ -9,13 +9,13 @@ hide_edge_borders none
 bindsym --release button3 kill
 bindsym $mod+u border none
 bindsym $mod+b border pixel 1
-bindsym $mod+n border normal
-font xft:TerminessTTF Nerd Font Mono 13
+#bindsym $mod+n border normal
+font xft:TerminessTTF Nerd Font Mono 11
 floating_modifier $mod
 bindsym $mod+t exec --no-startup-id urxvt
 bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id st
-#bindsym $mod+m exec --no-startup-id ~/.config/i3/i3-hud-menu.py
+bindsym $mod+n exec --no-startup-id ~/Documents/scripts/qmenu_hud
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
@@ -59,13 +59,12 @@ bindsym $mod+F3 exec --no-startup-id pcmanfm
 bindsym $mod+F4 exec --no-startup-id qutebrowser
 bindsym $mod+F6 exec --no-startup-id subl
 bindsym $mod+F7 exec --no-startup-id mpv --no-audio --window-scale=0.5 av://v4l2:/dev/video0 --vf=hflip
-bindsym $mod+F8 exec --no-startup-id betterlockscreen -l dim
+bindsym $mod+F8 exec --no-startup-id ~/.config/i3/scripts/dropdown_terminal toggle
 bindsym $mod+F9 exec --no-startup-id pamac-manager
-#bindsym $mod+F10 exec --no-startup-id setxkbmap —option "ctrl:nocaps"
 bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst'"
 bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary --no-generic
+bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --display-binary --no-generic -b
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
 #bindsym Alt_L:+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'windows'"
 bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 10 -width 500 -display-window 'windows'"
@@ -75,7 +74,7 @@ bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
 bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/pron
 bindsym $mod+5 exec --no-startup-id pkill polybar
-bindsym $mod+0 exec --no-startup-id /home/damez/.config/polybar/scripts/powermenu
+bindsym $mod+0 exec --no-startup-id /home/damez/.config/i3/scripts/polybar_wrapper options
 bindsym $mod+y exec --no-startup-id ~/Documents/scripts/mpvyt "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
 
 focus_follows_mouse no
@@ -158,6 +157,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $
 for_window [title="alsamixer"] floating enable border pixel 2
 for_window [class="PPSSPPQt"] floating disable border pixel 2
 for_window [class="leagueclient.exe"] floating disable
+for_window [class="VirtualBox Machine"] floating enable
 for_window [class="dota2"] floating disable
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -265,11 +265,12 @@ mode "resize" {
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id unclutter
-#exec --no-startup-id ~/.config/i3/i3-appmenu-service.py
+exec --no-startup-id ~/Documents/scripts/qmenu_registrar
 exec --no-startup-id mpd
+exec --no-startup-id conky -c ~/Documents/dotfiles/conky/conkyfix.lua
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id wal -R
-exec --no-startup-id gebaard -b
+#exec --no-startup-id gebaard -b
 exec --no-startup-id clipnotify
 exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
@@ -279,12 +280,14 @@ exec --no-startup-id wal -R
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ctx.jpg
-#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ctsx.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/bb.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/lxde.png
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
-bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
+#bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
+bindsym $mod+8 exec --no-startup-id /home/damez/Documents/scripts/udiskie-dmenu
+bindsym $mod+m exec --no-startup-id /home/damez/Documents/scripts/dmenu-mpd.sh
 
 set $clip_chooser clipmenu.sh
 # Show clipboard content
@@ -307,8 +310,8 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 #############################
 ### settings for i3-gaps: ###
 #############################
-gaps inner 1
-gaps outer 1
+gaps inner 8
+gaps outer 8
 smart_gaps on
 smart_borders on
 

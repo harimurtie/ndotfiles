@@ -1,0 +1,211 @@
+#-----------------------------------------------------------------------------#
+#----------------------------- Global settings -------------------------------#
+#-----------------------------------------------------------------------------#
+
+[colors]
+include-file = ~/.config/polybar/colors
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/top]
+monitor = ${env:MONITOR:eDP1}
+enable-ipc = true
+override-redirect = false
+bottom = false
+
+height = 30
+width = 100%
+offset-y = 0
+fixed-center = true
+spacing = 1
+module-margin-left = 2
+module-margin-right = 2
+
+border-bottom-size = 2
+border-bottom-color = ${colors.primary}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "DejaVu Sans:style=Bold:pixelsize=12;3"
+font-1 = "DejaVu Sans:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-4 = "Font Awesome 5 Brands:pixelsize=12;3"
+
+modules-left = i3
+modules-center = xwindow
+modules-right = xbacklight volume date option_menu
+padding-right = 1
+
+
+#------------------------------- Left modules --------------------------------#
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+strip-wsnumbers = true
+
+label-focused = %name%
+label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.background}
+label-focused-underline  = ${colors.background-alt}
+label-focused-overline  = ${colors.background}
+label-focused-padding = 2
+
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${colors.urgent}
+label-urgent-overline  = ${colors.background}
+label-urgent-padding = 2
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-visible = %name%
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+
+#------------------------------ Center modules -------------------------------#
+
+[module/xwindow]
+type = internal/xwindow
+label = %{T2}%title:0:40:...%%{T-}
+
+#-----------------------------=- Right modules -------------------------------#
+[module/option_menu]
+type = custom/ipc
+hook-0 = ~/.config/i3/scripts/polybar_wrapper options_icon
+initial = 1
+click-left = ~/.config/i3/scripts/polybar_wrapper options
+
+[module/date]
+type = internal/date
+interval = 5
+time = %H:%M
+format-prefix ="  "
+format-prefix-foreground = ${colors.foreground}
+label = "%time% "
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume =   <bar-volume>
+
+label-muted = "muted"
+label-muted-foreground = ${colors.background-alt}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
+bar-volume-foreground-5 = ${colors.urgent}
+bar-volume-foreground-6 = ${colors.urgent}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.foreground}
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.primary}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground}
+
+#-----------------------------------------------------------------------------#
+#---------------------------- Side panel config- -----------------------------#
+#-----------------------------------------------------------------------------#
+[bar/panel]
+monitor = ${env:MONITOR:eDP1}
+enable-ipc = true
+override-redirect = true
+bottom = false
+
+height = 500 # 1080p - bar height - 2*border width
+width = 100%
+offset-y = 40
+#offset-x = 75%
+fixed-center = true
+spacing = 1
+module-margin-left = 2
+module-margin-right = 2
+
+border-size = 2
+border-color = ${colors.primary}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = "Font Awesome 5 Free:style=Solid:pixelsize=18;-490"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=18;-490"
+font-2 = "Font Awesome 5 Brands:pixelsize=18;-490"
+
+modules-center = lock exit hibernate reboot shutdown screenshot
+
+#------------------------------ Option modules -------------------------------#
+[module/exit]
+type = custom/text
+content = "  "
+click-left = i3-msg exit
+
+[module/hibernate]
+type = custom/text
+content = "  "
+click-left = ~/.config/i3/scripts/hibernate
+
+[module/shutdown]
+type = custom/text
+content = "  "
+click-left = shutdown now
+
+[module/reboot]
+type = custom/text
+content = "  "
+click-left = reboot
+
+[module/lock]
+type = custom/text
+content = "  "
+click-left = ~/.config/i3/scripts/betterlockscreen -l blur
+
+[module/screenshot]
+type = custom/text
+content = "  "
+click-left = scrot -e 'feh $f -x' --delay 1
+
+
+
