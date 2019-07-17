@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/Videos/tutorial && mpv "$(ls *mkv *mp4 *m3u *webm | dmenu -b -l 20)"

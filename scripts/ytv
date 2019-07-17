@@ -1,2 +1,2 @@
 #!/bin/bash
-~/Documents/scripts/mpvyt "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
+~/Documents/scripts/mpvyts "$(xclip -selection clipboard -o | cut -d '&' -f 1)"

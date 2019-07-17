@@ -1,0 +1,6 @@
+#!/bin/bash
+while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
+do
+sleep 1
+done &
+DISPLAY=damez:1 exec dwm

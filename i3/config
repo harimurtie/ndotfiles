@@ -1,16 +1,19 @@
 set $nsi --no-startup-id
 set $mod Mod4
 set $editor st
+gaps inner 8
 workspace_layout tabbed
+#workspace_layout splith
+#workspace_layout splitv
 title_align center
 bindsym $mod+a focus parent
-new_window pixel 0
+new_window pixel 2
 hide_edge_borders none
 bindsym --release button3 kill
 bindsym $mod+u border none
 bindsym $mod+b border pixel 1
 #bindsym $mod+n border normal
-font xft:TerminessTTF Nerd Font Mono 11
+font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
 bindsym $mod+t exec --no-startup-id urxvt
 bindsym $mod+q kill
@@ -72,10 +75,12 @@ bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show windo
 #bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
 bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
+bindsym $mod+g exec --no-startup-id ~/Documents/scripts/tutor
 bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/pron
-bindsym $mod+5 exec --no-startup-id pkill polybar
+bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/pbar on
+bindsym $mod+Ctrl+5 exec --no-startup-id pkill polybar
 bindsym $mod+0 exec --no-startup-id /home/damez/.config/i3/scripts/polybar_wrapper options
-bindsym $mod+y exec --no-startup-id ~/Documents/scripts/mpvyt "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
+bindsym $mod+y exec --no-startup-id ~/Documents/scripts/mpvyts "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
 
 focus_follows_mouse no
 bindsym $mod+h focus left
@@ -138,7 +143,7 @@ bindsym $mod+Ctrl+1 move container to workspace number $ws1
 bindsym $mod+Ctrl+2 move container to workspace number $ws2
 bindsym $mod+Ctrl+3 move container to workspace number $ws3
 bindsym $mod+Ctrl+4 move container to workspace number $ws4
-bindsym $mod+Ctrl+5 move container to workspace number $ws5
+#bindsym $mod+Ctrl+5 move container to workspace number $ws5
 bindsym $mod+Ctrl+6 move container to workspace number $ws6
 bindsym $mod+Ctrl+7 move container to workspace number $ws7
 bindsym $mod+Ctrl+8 move container to workspace number $ws8
@@ -148,7 +153,7 @@ bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $
 bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3;  workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number $ws5
+#bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6; workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $ws8
@@ -187,8 +192,8 @@ for_window [title="Mousepad"] floating disable
 for_window [class="Mousepad"] floating disable
 for_window [class="tomate"] floating enable border enable
 for_window [title="About Pale Moon"] floating disable
-for_window [title="video0 - mpv"] floating enable border normal sticky disable
-for_window [class="mpv"] floating enable border normal sticky enable
+for_window [title="video0 - mpv"] floating enable border pixel 2 sticky disable
+for_window [class="mpv"] floating enable border pixel 2 sticky enable
 for_window [class="gl"] floating enable border enable sticky enable
 for_window [class="Pamac-manager"] floating disable
 for_window [title="TelegramDesktop"] floating enable sticky enable
@@ -202,7 +207,7 @@ for_window [class="Simple-scan"] floating disable
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating disable
 for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating disable
+for_window [class="virtualbox"] floating disable
 for_window [class="Xfburn"] floating disable
 for_window [class="feh"] floating enable
 for_window [class="Telegram"] floating disable
@@ -263,16 +268,15 @@ mode "resize" {
 #Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id unclutter
-exec --no-startup-id ~/Documents/scripts/qmenu_registrar
+#exec --no-startup-id ~/Documents/scripts/qmenu_registrar
 exec --no-startup-id mpd
-exec --no-startup-id conky -c ~/Documents/dotfiles/conky/conkyfix.lua
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id wal -R
 #exec --no-startup-id gebaard -b
 exec --no-startup-id clipnotify
-exec --no-startup-id urxvtd
+#exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
 exec --no-startup-id udiskie
 exec --no-startup-id wal -R
@@ -280,8 +284,8 @@ exec --no-startup-id wal -R
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/bb.jpg
-#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/lxde.png
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/tiger.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/xfce.jpg
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt

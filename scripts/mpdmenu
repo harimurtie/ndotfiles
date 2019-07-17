@@ -5,7 +5,7 @@
 all_name='[ALL]'
 mode=playlist
 
-launcher='dmenu -x 300 -y 220 -w 800 -fn "Iosevka-11" -i -l 10'
+launcher='dmenu -b -x 300 -y 220 -w 800 -fn "Iosevka-11" -i -l 10'
 
 d_artist() {
     mpc list artist | sort -f | $launcher -p artist "${dmenu_args[@]}"
