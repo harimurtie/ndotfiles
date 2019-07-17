@@ -21,6 +21,7 @@ DISABLE_AUTO_UPDATE=true
 #ZSH_THEME="spaceship"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="minimal"
+#ZSH_THEME="refined"
 #ZSH_THEME="bira"
 SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
@@ -192,11 +193,11 @@ alias mt="neomutt"
 alias xwin="xwininfo"
 alias boot="uname -r && systemd-analyze"
 alias goo="googler"
-alias v="nvim"
-alias sv="sudo nvim"
-alias la="exa -a"
-alias ll="exa -l"
-alias lla="exa -al"
+alias v="vim"
+alias sv="sudo vim"
+alias la="ls -a"
+alias yd="youtube-dl -f 18"
+alias lla="ls -al"
 alias wlist="nmcli device wifi list"
 alias wconn="nmcli connection show"
 alias x="exit"
@@ -213,7 +214,7 @@ alias mix="ncpamixer"
 alias mm="sudo ps_mem"
 alias ff="free -h"
 alias swap="cat /proc/sys/vm/swappiness"
-alias cpol="nvim ~/.config/polybar/config"
+alias cpol="vim ~/.config/polybar/config"
 alias sapu="sapu"
 alias mupen="mupen64plus"
 alias baca="fltrdr"
@@ -222,10 +223,11 @@ alias host="bunnyfetch"
 alias nf="neofetch"
 alias beras="b && curl wttr.in/Purwokerto\?0 && curl -L git.io/rice"
 alias note="notetaking"
-alias ci3="nvim ~/.config/i3/config"
-alias cz="nvim ~/.zshrc"
+alias ci3="vim ~/.config/i3/config"
+alias cz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias hgrep="history | grep"
+alias mpvyt="youtube-viewer --resolution=360p"
 alias pron="mpv /home/damez/Mail/a30"
 alias mov="mpv /home/damez/Videos/film"
 alias tut="mpv /home/damez/Videos/linux"
@@ -235,6 +237,8 @@ alias um="dmenuumount"
 alias build="make && sudo make install"
 alias acc="acestream-launcher --player mpv"
 alias tmuxa="tmux attach"
+alias cx="vim ~/.Xresources"
+alias cv="vim ~/.vimrc"
 
 fzf-dmenu() {
 	# note: xdg-open has a bug with .desktop files, so we cant use that shit
@@ -252,10 +256,10 @@ export PATH
 PATH="$HOME/Documents/catatan:$PATH"
 export PATH
 
-export EDITOR=nvim
+export EDITOR=vim
 
 #if [[ -z "$TMUX" ]]; then
-#        tmux
+#        tmux attach
 #fi
 
 
