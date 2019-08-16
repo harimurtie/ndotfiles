@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+sudo chmod -R 777 /torrents/
+sudo chown hexdsl:users /torrents/
+sudo chmod -R 777 /torrents/

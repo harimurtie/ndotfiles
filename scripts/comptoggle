@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if pgrep compton &>/dev/null; then
+    robot "shutting down Compton" & notify-send "Turning Compton OFF"
+    pkill compton &
+else
+    robot "turning on Compton" & notify-send "Turning Compton ON"
+	compton -b --config /dev/null &
+fi
+
+exit 0

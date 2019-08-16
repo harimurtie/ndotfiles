@@ -1,0 +1,12 @@
+#!/bin/bash
+#usage 'remind "TEXT" TIME (remind "test" 1)
+#saves all reminders to 'remind.txt' with time and date, forever... for history"
+if [ $# -ne 2 ]; then
+    echo "needs message and mins";
+    exit;
+fi
+at now + $2 min <<ENDMARKER
+notify-send "$1" && play ~/.bin/beep.mp3 &&
+say "$1" && echo "$1 : `date "+%F %H%M"`"
+ENDMARKER
+exit;

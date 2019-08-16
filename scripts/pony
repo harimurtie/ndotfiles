@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#mpv --aid=2 --sid=1 --fullscreen https://yp.coco-pommel.org/ypvideo/YP-7R-$1x$2.mkv
+season=$(printf '%02d' $1)
+
+ep=$(printf '%02d' $2)
+
+mpv --aid=2 --sid=1 --fullscreen https://yp.coco-pommel.org/ypvideo/YP-7R-${season}x${ep}.mkv

@@ -1,0 +1,16 @@
+#!/usr/bin/sh
+
+status=$(systemctl status openvpn-client@protonuk.service | grep -o 'Active: [^ ,]\+' | awk '{print $2}')
+
+if [ "$status" == "active" ]
+then
+    sudo systemctl stop openvpn-client@protonuk.service
+    echo "disabled"
+    notify-send -a "vpn" "VPN off"
+	robot "VPN off"
+else
+    sudo systemctl start openvpn-client@protonuk.service
+    echo "enabled"
+    notify-send -a "vpn" "VPN on"
+	robot "VPN on"
+fi

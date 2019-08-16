@@ -1,0 +1,2 @@
+#!/bin/bash
+pocket-cli add --url $1

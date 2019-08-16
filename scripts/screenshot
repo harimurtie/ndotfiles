@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+saveloc=/home/hexdsl/Pictures/screenshots/`date "+%F_%H%M%S.png"`
+
+maim -s $saveloc -c 1,0,1.5,0.2 -l -u -m 9 &&
+xclip -selection clipboard -t image/png -i $saveloc && imgurbash2 $saveloc
+#notify-send -a "screenshot" "SCREEN SHOT TAKEN"
+play ~/.bin/shutter.mp3

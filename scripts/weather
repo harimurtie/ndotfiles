@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+if [ -z "$1" ]; then
+    placez="hurley"
+else
+    placez="$1"
+fi
+
+curl wttr.in/$placez
+

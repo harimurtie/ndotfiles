@@ -1,0 +1,4 @@
+#!/bin/bash
+[ ! -s ~/.config/mpd/pid ] && mpd
+#urxvtc -name "spotify" -e "ncmpcpp"
+termite -e "ncmpcpp"

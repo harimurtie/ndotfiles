@@ -1,0 +1,5 @@
+#!/bin/bash
+
+termite -e $1
+
+sleep 5

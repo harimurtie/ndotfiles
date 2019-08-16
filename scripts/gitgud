@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+if [ -z "$1" ];then
+    echo "usage: gu message [branch]"
+    exit
+else
+    if [ -z "$2" ]
+    then
+        branch="master"
+    else
+        branch=$2
+    fi
+fi
+git add -A && git commit -m "$1" && git push -u origin "$branch"

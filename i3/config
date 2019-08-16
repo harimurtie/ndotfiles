@@ -15,7 +15,7 @@ bindsym $mod+b border pixel 1
 #bindsym $mod+n border normal
 font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
-bindsym $mod+t exec --no-startup-id urxvt
+bindsym $mod+t exec --no-startup-id termite
 bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id st
 bindsym $mod+n exec --no-startup-id ~/Documents/scripts/qmenu_hud
@@ -25,6 +25,7 @@ for_window [class=Telegram] title_format "   telegram"
 for_window [class=xst-256color] title_format " xst"
 for_window [class=URxvt] title_format " urxvt"
 for_window [class=St] title_format " terminal"
+for_window [class=Termite] title_format " termite"
 for_window [class=Steam] title_format " steam"
 for_window [class=qutebrowser] title_format " qutebrowser"
 for_window [class=Tilix] title_format " terminal"
@@ -62,7 +63,8 @@ bindsym $mod+F3 exec --no-startup-id pcmanfm
 bindsym $mod+F4 exec --no-startup-id qutebrowser
 bindsym $mod+F6 exec --no-startup-id subl
 bindsym $mod+F7 exec --no-startup-id mpv --no-audio --window-scale=0.5 av://v4l2:/dev/video0 --vf=hflip
-bindsym $mod+F8 exec --no-startup-id ~/.config/i3/scripts/dropdown_terminal toggle
+bindsym $mod+F8 exec --no-startup-id buckle
+bindsym $mod+Ctrl+F8 exec --no-startup-id pkill buckle
 bindsym $mod+F9 exec --no-startup-id pamac-manager
 bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst'"
 bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
@@ -76,10 +78,14 @@ bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show windo
 bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
 bindsym $mod+g exec --no-startup-id ~/Documents/scripts/tutor
-bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/pron
-bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/pbar on
-bindsym $mod+Ctrl+5 exec --no-startup-id pkill polybar
-bindsym $mod+0 exec --no-startup-id /home/damez/.config/i3/scripts/polybar_wrapper options
+bindsym $mod+Shift+v exec --no-startup-id ~/Documents/scripts/buku
+bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/porn
+#bindsym $mod+5 exec --no-startup-id plank
+#bindsym $mod+Ctrl+5 exec --no-startup-id pkill plank
+#bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/pbar on
+bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/killdock on
+bindsym $mod+Ctrl+5 exec --no-startup-id ~/Documents/scripts/killdock off
+#bindsym $mod+0 exec --no-startup-id /home/damez/.config/i3/scripts/polybar_wrapper options
 bindsym $mod+y exec --no-startup-id ~/Documents/scripts/mpvyts "$(xclip -selection clipboard -o | cut -d '&' -f 1)"
 
 focus_follows_mouse no
@@ -167,6 +173,10 @@ for_window [class="dota2"] floating disable
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [class="Docky"] floating disable border pixel 2
+for_window [class="olive-editor"] floating disable
+for_window [class="Olive"] floating disable
+for_window [class="plank"] floating disable
+for_window [class="Plank"] floating disable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 2
 for_window [class="GParted"] floating disable
@@ -206,6 +216,7 @@ for_window [class="Qtconfig-qt4"] floating disable
 for_window [class="Simple-scan"] floating disable
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating disable
+for_window [class="key-mon"] floating enable border 0
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="virtualbox"] floating disable
 for_window [class="Xfburn"] floating disable
@@ -268,15 +279,16 @@ mode "resize" {
 #Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id unclutter
+#exec --no-startup-id key-mon
 #exec --no-startup-id ~/Documents/scripts/qmenu_registrar
 exec --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id wal -R
 #exec --no-startup-id gebaard -b
 exec --no-startup-id clipnotify
-#exec --no-startup-id urxvtd
+exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
 exec --no-startup-id udiskie
 exec --no-startup-id wal -R
@@ -284,10 +296,11 @@ exec --no-startup-id wal -R
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/tiger.jpg
-#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/xfce.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/arc.png
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/tigres.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ana.jpg
 bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
-bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarscale.txt
+bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
 #bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+8 exec --no-startup-id /home/damez/Documents/scripts/udiskie-dmenu
@@ -314,8 +327,8 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 #############################
 ### settings for i3-gaps: ###
 #############################
-gaps inner 8
-gaps outer 8
+gaps inner 5
+gaps outer 7
 smart_gaps on
 smart_borders on
 

@@ -1,0 +1,4 @@
+
+#!/bin/sh
+! pgrep -x transmission-da >/dev/null && transmission-daemon && notify-send "Starting torrent daemon..." && sleep 3
+urxvtc -e transmission-remote-cli

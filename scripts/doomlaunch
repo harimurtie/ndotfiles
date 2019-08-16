@@ -1,0 +1,2 @@
+#!/bin/bash
+sh -c 'gzdoom "$(zenity --file-selection --file-filter='*.WAD' --title="Select WAD file" --filename=/home/hexdsl/.config/gzdoom/)"'

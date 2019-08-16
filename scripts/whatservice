@@ -1,0 +1,3 @@
+#!/bin/sh
+pacman -Qql $1 | grep -Fe .service -e .socket
+

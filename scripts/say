@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+# say "text" en
+# https://cloud.google.com/translate/docs/languages
+
+if [ -z "$2" ]; then
+    lang="en"
+else
+    lang="$2"
+fi
+
+mpv "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$1&tl=$lang"

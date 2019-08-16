@@ -1,0 +1,3 @@
+#!/bin/bash
+killall mpd
+killall ncmpcpp

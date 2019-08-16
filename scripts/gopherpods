@@ -1,0 +1,3 @@
+#!/bin/bash
+#rm -f gophermap && find . -iname "*.mp3" -exec sh -c 'echo -e "s${1##*/}\t/podcasts/${1#./}\tgopher.xpenguin.club" >> gophermap' sh {} \;
+rm -f list && rm -f gophermap && find . -iname "*.mp3" -exec sh -c 'echo -e "s${1##*/}\t/podcasts/${1#./}\tgopher.xpenguin.club" >> list' sh {} \; && cat list | sort -n > gophermap && rm -f list

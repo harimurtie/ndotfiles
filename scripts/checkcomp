@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ "$(pidof compton)" ]
+then
+	robot "Compton is on" & notify-send "Compton is on"
+else
+	robot "compton is off" &notify-send "Compton is off"
+fi

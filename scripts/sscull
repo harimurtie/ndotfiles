@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# settings
+
+ssdir="/home/hexdsl/Pictures/screenshots/"	# screenshots folder
+maxsize=250	# (megabytes) size at which stuff starts getting deleted
+
+####################################################################
+# If the total size of files in the directory exceeds maxsize      #
+# files will be deleted, oldest first, until total size is less    #
+# than maxsize                                                     #
+####################################################################
+
+maxbytes=$(( maxsize * 1000000 ))
+currbytes=$(du -b $ssdir | cut -f 1 -d $'\t')
+
+if [ $currbytes -gt $maxbytes ]; then
+	difference=$(( currbytes - maxbytes ))
+	declare -a filesbyage=($(ls -1tr $ssdir))
+	total=0
+	i=0
+	while [ $total -lt $difference ]; do
+		total=$(( total + $(du -b $ssdir${filesbyage[$i]} | cut -f 1 -d $'\t') ))
+		rm $ssdir${filesbyage[$i]}
+		i=$(( i + 1 ))
+	done
+fi
+

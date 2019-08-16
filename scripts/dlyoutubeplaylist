@@ -1,0 +1,2 @@
+#!/bin/bash
+youtube-dl -citk --auto-number -f mp4 --geo-bypass-country US --yes-playlist $1

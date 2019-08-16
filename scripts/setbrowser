@@ -1,0 +1,7 @@
+#!/bin/bash
+xdg-settings set default-web-browser "$1.desktop" &&
+xdg-settings set default-url-scheme-handler http "$1.desktop" &&
+xdg-settings set default-url-scheme-handler https "$1.desktop" &&
+xdg-mime default "$1.desktop" x-scheme-handler/http &&
+xdg-mime default "$1.desktop" x-scheme-handler/https &&
+xdg-settings get default-web-browser

@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+if ifconfig tun0 | grep -q "00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00"; then
+   notify-send -a "VPN" "VPN IS ON"
+   robot "VPN Status ON"
+   exit
+fi
+robot "VPN not found"

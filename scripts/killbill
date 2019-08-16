@@ -1,0 +1,2 @@
+#!/bin/sh
+wmfocus -p | xargs xkill -id

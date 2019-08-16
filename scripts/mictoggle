@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+pactl set-source-mute alsa_input.usb-Blue_Microphones_Yeti_Stereo_Microphone_REV8-00.analog-stereo toggle
+stat=$(pacmd list-sources | grep -i muted -m 1 | awk '{print $2}')
+if [ "$stat" = "no" ]; then
+    play -v 3 /usr/share/sounds/freedesktop/stereo/network-connectivity-established.oga
+	notify-send "NO MUTE"
+else
+    play -v 3 /usr/share/sounds/freedesktop/stereo/network-connectivity-lost.oga
+	notify-send "YES MUTE"
+fi

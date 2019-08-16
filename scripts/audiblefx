@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+for x in *.aa; do mv "$x" "${x%.aa}.mp3"; done

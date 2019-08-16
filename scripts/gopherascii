@@ -1,0 +1,21 @@
+#!/bin/sh
+
+cat << 'eof'
+        GGGGGGGGGGGGG     OOOOOOOOO     PPPPPPPPPPPPPPPPP   HHHHHHHHH     HHHHHHHHHEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRR
+     GGG::::::::::::G   OO:::::::::OO   P::::::::::::::::P  H:::::::H     H:::::::HE::::::::::::::::::::ER::::::::::::::::R
+   GG:::::::::::::::G OO:::::::::::::OO P::::::PPPPPP:::::P H:::::::H     H:::::::HE::::::::::::::::::::ER::::::RRRRRR:::::R
+  G:::::GGGGGGGG::::GO:::::::OOO:::::::OPP:::::P     P:::::PHH::::::H     H::::::HHEE::::::EEEEEEEEE::::ERR:::::R     R:::::R
+ G:::::G       GGGGGGO::::::O   O::::::O  P::::P     P:::::P  H:::::H     H:::::H    E:::::E       EEEEEE  R::::R     R:::::R
+G:::::G              O:::::O     O:::::O  P::::P     P:::::P  H:::::H     H:::::H    E:::::E               R::::R     R:::::R
+G:::::G              O:::::O     O:::::O  P::::PPPPPP:::::P   H::::::HHHHH::::::H    E::::::EEEEEEEEEE     R::::RRRRRR:::::R
+G:::::G    GGGGGGGGGGO:::::O     O:::::O  P:::::::::::::PP    H:::::::::::::::::H    E:::::::::::::::E     R:::::::::::::RR
+G:::::G    G::::::::GO:::::O     O:::::O  P::::PPPPPPPPP      H:::::::::::::::::H    E:::::::::::::::E     R::::RRRRRR:::::R
+G:::::G    GGGGG::::GO:::::O     O:::::O  P::::P              H::::::HHHHH::::::H    E::::::EEEEEEEEEE     R::::R     R:::::R
+G:::::G        G::::GO:::::O     O:::::O  P::::P              H:::::H     H:::::H    E:::::E               R::::R     R:::::R
+ G:::::G       G::::GO::::::O   O::::::O  P::::P              H:::::H     H:::::H    E:::::E       EEEEEE  R::::R     R:::::R
+  G:::::GGGGGGGG::::GO:::::::OOO:::::::OPP::::::PP          HH::::::H     H::::::HHEE::::::EEEEEEEE:::::ERR:::::R     R:::::R
+   GG:::::::::::::::G OO:::::::::::::OO P::::::::P          H:::::::H     H:::::::HE::::::::::::::::::::ER::::::R     R:::::R
+     GGG::::::GGG:::G   OO:::::::::OO   P::::::::P          H:::::::H     H:::::::HE::::::::::::::::::::ER::::::R     R:::::R
+        GGGGGG   GGGG     OOOOOOOOO     PPPPPPPPPP          HHHHHHHHH     HHHHHHHHHEEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR
+
+eof

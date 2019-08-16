@@ -1,0 +1,4 @@
+#!/bin/bash
+
+exifsort --source /home/hexdsl/Nextcloud/InstantUpload/Camera --dest ~/Pictures/photos/
+

@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+steam -applaunch 22320
+flatpak run org.openmw.OpenMW
+

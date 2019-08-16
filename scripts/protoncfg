@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+WINEPREFIX=/home/hexdsl/hexdrive3tb/steam/steamapps/compatdata/$1/pfx/ winecfg

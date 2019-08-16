@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+WINEARCH=win64 WINEPREFIX=~/.wine_battlenet wineserver -k

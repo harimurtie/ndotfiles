@@ -1,0 +1,51 @@
+#!/bin/bash
+clear
+echo "PODCAST=$(basename -- "$0")"
+sleep 2
+echo "HOST=HexDSL.js"
+sleep 1
+echo "COHOST=Anyone who turns up!"
+sleep 1
+echo "HEAD=Freeze_241543903"
+sleep 1
+echo "AI_COHOST(
+	clear
+	
+	Echo ''some stuff goes in here''
+	Echo '' With trousers on...''
+        
+	Penguins gotta Linux)"
+sleep 0.5
+echo ". "
+sleep 0.5
+echo ".."
+sleep 0.5
+echo "..."
+sleep 0.5
+echo "...."
+sleep 0.5
+echo "£$%^£%$ ^ &$%^£$%&*$%^$%^$& * ^ &*^&%& ^^$^£ $ $ $$$% %%^"
+sleep 1
+clear
+echo "It's really happening... "
+sleep 0.5
+echo "IT HAS ARRIVED :D"
+sleep 0.2
+echo "Welcome to .XPenguin"
+sleep 0.4
+echo "With your Hosts Some unqualified dudes"
+sleep 0.4
+echo "Splicing None logical winkle pipes into VideoCast Engine > "
+sleep 0.4
+echo "Applying logic to  C:\>"
+sleep 0.4
+echo "Booting up systemd/Linux"
+sleep 0.4
+echo "pacaur -R GNU #lol"
+sleep 0.4
+echo "Locking Back doors"
+sleep 1
+echo "emacs xpenguin.sh "
+sleep 1
+echo " "
+cat /dev/random

@@ -1,0 +1,4 @@
+#!/bin/bash
+xhost +local: &
+(sleep 1 && sudo systemctl start systemd-nspawn@steamcontainer.service) &
+(sleep 5 && sudo machinectl shell hexdsl@steamcontainer) &

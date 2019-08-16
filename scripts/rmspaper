@@ -1,0 +1,9 @@
+#!/bin/bash
+baseURL="https://rms.sexy";
+img=$(curl -sL "$baseURL/" | grep -o -E -m1 'src="([^"#]+).jpg|jpeg"' | cut -d'"' -f2);
+imgURL="$baseURL$img";
+name="/home/hexdsl/Pictures/Wallpapers/stallp.jpg";
+
+curl -L -o $name $imgURL && convert -resize 1920x1080^ -gravity Center -crop 1920x1080+0+0 -quality 80 -delete 1--1 $name $name &&
+feh  --bg-fill $name;
+exit;
