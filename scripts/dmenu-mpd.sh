@@ -14,7 +14,7 @@ mpc_add() {
     mpc play
 }
 
-cmd="$(echo $cmd_list | sed 's/ /\n/g' | ${DMENU} -p "$prompt")"
+cmd="$(echo $cmd_list | sed 's/ /\n/g' | ${DMENU} -b -p "$prompt")"
 [[ -z $cmd ]] && exit 1
 
 if [[ $cmd = add ]]; then

@@ -1,4 +1,4 @@
 #!/bin/bash
 
 qrencode --size 100 -o - "$@" | xclip -selection clipboard -t image/png
-play ~/.bin/shutter.mp3
+play ~/Documents/scripts/shutter.mp3

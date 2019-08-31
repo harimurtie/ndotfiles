@@ -1,0 +1,11 @@
+#!/bin/bash
+pid=$((xprop | grep _NET_WM_PID | grep -Eo '[0-9]+') & sleep 0.1 && xdotool click 1)
+app=$(ps --no-header -o command $pid)
+if [[ $1 = "v" ]]
+then
+        `xdotool sleep 0.1 key super+v`
+    else
+            `xdotool sleep 0.1 key super+h`
+fi
+($app)
+

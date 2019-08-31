@@ -1,0 +1,2 @@
+#!/bin/bash
+youtube-viewer --resolution 360p "$(xclip -selection clipboard -o | cut -d '&' -f 1)"

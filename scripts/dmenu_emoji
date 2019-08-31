@@ -2,7 +2,7 @@
 # Must have xclip installed to even show menu.
 xclip -h >/dev/null || exit
 
-chosen=$(grep -v "#" ~/.bin/emoji | dmenu -i -l 20 -fn Hack-18)
+chosen=$(grep -v "#" ~/Documents/scripts/emoji | dmenu -b -i -l 10 -fn Hack-12)
 
 [ "$chosen" != "" ] || exit
 

@@ -1,3 +1,3 @@
 #!/bin/bash
-cd ~/Downloads/qbdownloads
+cd ~/Downloads/
 youtube-dl -citk --auto-number -f mp4 --geo-bypass-country US --yes-playlist $1

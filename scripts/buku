@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Documents/buku && zathura "$(ls *pdf *epub | dmenu -b -l 10)"
+cd ~/Documents/buku && zathura "$(ls *pdf *epub | dmenu -i -b -l 10)"
