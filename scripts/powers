@@ -1,0 +1,27 @@
+#!/bin/bash
+
+DMENU='dmenu -l 20 -i -b -nb #000000 -nf #999999 -sb #000000 -sf #31658C'
+choice=$(echo -e "voltoggle\nvolmax\nvolhalf\nplay\npause\nstop\nminimize\nmaximize\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
+
+case "$choice" in
+      voltoggle) pamixer --toggle-mute ;;
+      volmax) pamixer --set-volume 100 ;;
+      volhalf) pamixer --set-volume 50 ;;
+      play) mpc play ;;
+      pause) mpc toggle ;;
+      stop) mpc stop ;;
+      minimize) i3-msg move scratchpad ;;
+      maximize) ~/Documents/scripts/hide ;;
+      mpvcontrol) echo cycle pause | socat - ~/.config/mpv/socket ;;
+      close) i3-msg kill & ;;
+      screenshot) ~/Documents/scripts/screenshot.sh & ;;
+      screenshotarea) ~/Documents/scripts/screenshot.sh -s & ;;
+      screenshotdelay) ~/Documents/scripts/scrots & ;;
+      youtube) ~/Documents/scripts/ytplay & ;;
+      compton) ~/Documents/scripts/compton-toggle.sh & ;;
+      logout) i3-msg exit & ;;
+      reboot) sudo shutdown -r now & ;;
+      shutdown) sudo shutdown -h now & ;;
+      suspend) sudo pm-suspend & ;;
+esac
+
