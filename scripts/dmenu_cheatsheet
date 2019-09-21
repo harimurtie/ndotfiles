@@ -1,0 +1,7 @@
+#!/bin/sh
+# Must have xclip installed to even show menu.
+
+chosen=$(grep -v "#" ~/Documents/scripts/cheatsheet | dmenu -b -i -l 30 )
+
+[ "$chosen" != "" ] || exit
+

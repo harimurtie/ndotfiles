@@ -1,4 +1,4 @@
-set $nsi --no-startup-id
+set $lnsi --no-startup-id
 set $mod Mod4
 set $editor st
 gaps inner 8
@@ -11,7 +11,8 @@ new_window pixel 2
 hide_edge_borders none
 bindsym --release button3 kill
 bindsym $mod+u border none
-bindsym $mod+b border pixel 1
+#bindsym $mod+b border pixel 1
+bindsym $mod+v exec --no-startup-id ~/Documents/scripts/powers
 #bindsym $mod+n border normal
 font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
@@ -53,10 +54,9 @@ bindsym XF86AudioStop exec --no-startup-id mpc stop
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioNext exec --no-startup-id mpc next
-bindsym $mod+F5 exec --no-startup-id ~/Documents/scripts/ytplay
 
 # Start Applications
-bindsym $mod+Ctrl+b exec uxterm -e 'bmenu'
+bindsym $mod+Ctrl+b exec --no-startup-id xterm -e 'bmenu'
 bindsym $mod+F1 exec --no-startup-id st
 bindsym $mod+F2 exec --no-startup-id nice -n19 telegram-desktop
 bindsym $mod+F3 exec --no-startup-id pcmanfm
@@ -69,13 +69,14 @@ bindsym $mod+F9 exec --no-startup-id pamac-manager
 bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst'"
 bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -b"
+#bindsym $mod+space exec --no-startup-id dmenu_run -i -b
+bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/j4menu
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
-bindsym $mod+Tab exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -show window -lines 5 -width 500 -display-window 'windows'"
+bindsym $mod+Tab exec --no-startup-id rofi -show window -lines 5 -width 500 -display-window 'windows'
 #bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu_raise
 #bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
 #bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
-bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
+bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b -l 5
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
 bindsym $mod+g exec --no-startup-id ~/Documents/scripts/tutor
 bindsym $mod+j exec --no-startup-id ~/Documents/scripts/dmenu_emoji
@@ -239,7 +240,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
 #bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
 bindsym $mod+9 exec --no-startup-id ~/Documents/scripts/itung
-bindsym $mod+0 exec --no-startup-id ~/Documents/scripts/dmenu_power
+bindsym $mod+0 exec --no-startup-id ~/Documents/scripts/powers
 
 # Set shut down, restart and locking features
 bindsym $mod+Escape mode "$mode_system"
@@ -284,9 +285,8 @@ mode "resize" {
 #Autostart applications
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/config/i3/scripts/polybar_wrapper launch
 exec --no-startup-id unclutter
-exec --no-startup-id mpd
+exec --no-startup-id gamemoderun mpd
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipnotify
 exec --no-startup-id urxvtd
@@ -306,7 +306,7 @@ bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/sol
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
 #bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+8 exec --no-startup-id /home/damez/Documents/scripts/udiskie-dmenu
-bindsym $mod+m exec --no-startup-id /home/damez/Documents/scripts/dmenu-mpd.sh
+bindsym $mod+m exec --no-startup-id /home/damez/Documents/scripts/dmenu_cheatsheet
 
 set $clip_chooser clipmenu.sh
 # Show clipboard content

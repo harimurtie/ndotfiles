@@ -1,0 +1,24 @@
+mod+F1 st
+mod+F2 telegram
+mod+F3 thunar
+mod+F4 qutebrowser
+mod+F7 webcam
+mod+F8 buckle
+mod+F9 pamac
+mod+q  quit
+mod+r  resize
+mod+t  st
+mod+o  blank window
+mod+p  touchpad on off
+mod+s  xterm
+mod+d  networkmanager_dmenu
+mod+j  emoji
+mod+z  max tabbed
+mod+x  minimize
+mod+c  clipmenu
+mod+v  control center
+mod+m  cheatsheet
+mod+5  dock on
+mod+ctrl+5 dock off
+mod+8  udiskie mount
+mod+9  calculator
