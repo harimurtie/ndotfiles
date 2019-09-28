@@ -1,13 +1,18 @@
 #!/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-8' -l 30 -i -b -nb #000000 -nf #999999 -sb #000000 -sf #31658C'
-choice=$(echo -e "refresh\ndockon\ndockoff\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-8' -i -b -nb #000000 -nf #999999 -sb #000000 -sf #31658C'
+choice=$(echo -e "refresh\nkill\ndockon\ndockoff\nsteam\nkalkulator\ntelegram\nqutebrowser\ncadence\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
 
 case "$choice" in
       refresh) i3-msg restart ;;
+      kill) ~/Documents/scripts/dmenu-kill-process ;;
       dockon) ~/Documents/scripts/killdock on >/dev/null 2>&1 & ;;
       dockoff) ~/Documents/scripts/killdock off >/dev/null 2>&1 & ;;
       steam) steam ;;
+      kalkulator) ~/Documents/scripts/itung ;;
+      telegram) telegram-desktop ;;
+      qutebrowser) qutebrowser ;;
+      cadence) cadence ;;
       movie) ~/Documents/scripts/film ;;
       pavucontrol) pavucontrol-qt ;;
       voltoggle) pamixer --toggle-mute ;;
@@ -31,6 +36,7 @@ case "$choice" in
       screenshotdelay) ~/Documents/scripts/scrots & ;;
       youtube) ~/Documents/scripts/ytplay & ;;
       compton) ~/Documents/scripts/compton-toggle.sh & ;;
+      vokoscreen) vokoscreen & ;;
       logout) i3-msg exit & ;;
       reboot) exec systemctl reboot & ;;
       shutdown) exec systemctl -i poweroff & ;;

@@ -12,14 +12,14 @@ hide_edge_borders none
 bindsym --release button3 kill
 bindsym $mod+u border none
 #bindsym $mod+b border pixel 1
-bindsym $mod+v exec --no-startup-id ~/Documents/scripts/powers
+bindsym $mod+v exec --no-startup-id ~/Documents/scripts/dmenu_raise_or_run
 #bindsym $mod+n border normal
 font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
 bindsym $mod+t exec --no-startup-id st
 bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id xterm
-bindsym $mod+n exec --no-startup-id ~/Documents/scripts/qmenu_hud
+#bindsym $mod+n exec --no-startup-id ~/Documents/scripts/qmenu_hud
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
@@ -70,7 +70,8 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst
 bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
 #bindsym $mod+space exec --no-startup-id dmenu_run -i -b
-bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/j4menu
+#bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/j4menu
+bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/powers
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
 bindsym $mod+Tab exec --no-startup-id rofi -show window -lines 5 -width 500 -display-window 'windows'
 #bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu_raise
@@ -240,7 +241,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
 #bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
 bindsym $mod+9 exec --no-startup-id ~/Documents/scripts/itung
-bindsym $mod+0 exec --no-startup-id ~/Documents/scripts/powers
+bindsym $mod+0 exec --no-startup-id ~/Documents/scripts/j4menu
 
 # Set shut down, restart and locking features
 bindsym $mod+Escape mode "$mode_system"
@@ -307,6 +308,7 @@ bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/gra
 #bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+8 exec --no-startup-id /home/damez/Documents/scripts/udiskie-dmenu
 bindsym $mod+m exec --no-startup-id /home/damez/Documents/scripts/dmenu_cheatsheet
+bindsym $mod+n exec --no-startup-id /home/damez/Documents/scripts/dmenu_display
 
 set $clip_chooser clipmenu.sh
 # Show clipboard content

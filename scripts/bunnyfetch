@@ -48,13 +48,13 @@ shell=$(basename $SHELL)
 
 #tput clear
 cat << EOF
-	     $f3$o $t$os
+   	      $f3$o $t$os
              $f1$h  $t$wmname
    (\ /)     $f3$k  $t$kernel
    ( $d. .$t)    $f2$sh  $t$shell
    c($f1"$t)($f1"$t)   $f5$r  $t$resolution
              $f4$w  $t$wifiname
              $f1$u $t$uptime
-	     
+
 
 EOF

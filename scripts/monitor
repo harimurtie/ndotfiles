@@ -1,0 +1,18 @@
+ #rofi/dmenu display selector script
+ # Gives a dmenu prompt with options for the different displays
+ # Example:
+ # > ./display_select
+
+ choices=$(xrandr | grep -Po -e '^[\w\-]+\sconnected' | cut -d' ' -f1)
+
+ # FIXME insert a new line before the text with less hack
+ choices+='
+ Manual'
+
+ chosen=$(echo "$choices" | dmenu -fn 'TerminessTTF-8' -l 7 -b -i -p "Select display")
+
+ case "$chosen" in
+         DP-0) xrandr --output DP-0 --auto --output DP-1-1 --off ;;
+         DP-1-1) xrandr --output DP-1-1 --auto --output DP-0 --off ;;
+         Manual) arandr ;;
+ esac

@@ -8,6 +8,7 @@ mod+F9 pamac
 mod+q  quit
 mod+r  resize
 mod+t  st
+mod+y  youtube paste
 mod+o  blank window
 mod+p  touchpad on off
 mod+s  xterm
@@ -18,6 +19,7 @@ mod+x  minimize
 mod+c  clipmenu
 mod+v  control center
 mod+m  cheatsheet
+mod+n  monitor layout
 mod+5  dock on
 mod+ctrl+5 dock off
 mod+8  udiskie mount

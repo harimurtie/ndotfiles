@@ -1,0 +1,11 @@
+Usage: /usr/bin/fbgrab [option...] <filename.png|->
+
+Options:
+-c <N>      grab from /dev/ttyN
+-C <N>      grab from /dev/ttyN, for slower devices
+-d <dev>    use framebuffer device <dev>
+-i          turn on PNG interlacing
+-s <N>      sleep <N> seconds before making screenshot
+-?          display this help and exit
+
+If the specified destination is "-", the PNG output is piped to stdout.

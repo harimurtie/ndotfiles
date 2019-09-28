@@ -1,0 +1,5 @@
+#!/bin/bash
+#!/bin/bash
+for i in {1..5}; do
+        echo "Test" | $(which mail) -s "Test Message №$i" "milko.harimurti@icloud.com"
+done
