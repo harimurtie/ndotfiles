@@ -1,0 +1,2 @@
+#!/bin/sh
+ps -ef | sed 1d | dmenu -l 10 -i -p "What to kill?" | awk '{print $1" "$4}' | xargs kill -${1:-9} ;

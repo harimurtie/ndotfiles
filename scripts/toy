@@ -21,13 +21,15 @@ w=ssid
 wifiname="$(iwgetid | cut -d \" -f2)"
 
 o=os
-os="$(source /etc/os-release && echo $ID)"
+#os="$(source /etc/os-release && echo $ID)"
+os="$(lsb_release -sirc)"
 
 h=wm
 wmname="$(xprop -id $(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}') -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")"
 
 k=kernel
-kernel="$(uname -r | cut -d '-' -f1)"
+#kernel="$(uname -r | cut -d '-' -f1)"
+kernel="$(uname -r )"
 
 u=uptime
 uptime="$(uptime -p | sed 's/up //')"
@@ -38,6 +40,13 @@ resolution="$(xwininfo -root | grep geometry | awk '{print $2}' | cut -d + -f1)"
 sh=shell
 shell=$(basename $SHELL)
 
+i=install
+install="$(ls -alct /|tail -1|awk '{print $7, $6, $8} ')"
+
+c=cpu
+cpu="$(lscpu | grep "Model name:" | cut -c 34-)"
+
+
 # (\ /)
 # ( · ·)
 # c(")(")
@@ -47,14 +56,24 @@ shell=$(basename $SHELL)
 # c(")(")
 
 #tput clear
+
+#          $f3$o       $t$os
+#          $f5$k   $t$kernel
+#$f5 (\ /)    $d$f1$h       $t$wmname
+#$f1 ( . .)   $f2$sh    $t$shell
+#$d (")(")   $f5$r      $t$resolution
+#          $f1$u   $t$uptime
+#          $f3$i  $t$install
+
 cat << EOF
 
-             $d$f1$h  $t$wmname
-   (\ /)     $f3$k  $t$kernel
-   ( $d. .$t)    $f2$sh  $t$shell
-   c($f1"$t)($f1"$t)   $f5$r  $t$resolution
-             $f4$w  $t$wifiname
-             $f1$u $t$uptime
-	     $f3$o $t$os
+     $f3$o       $t$os
+     $f5$k   $t$kernel
+     $d$f1$h       $t$wmname
+     $f2$sh    $t$shell
+     $f3$c      $t$cpu
+     $f5$r      $t$resolution
+     $f1$u   $t$uptime
+     $f3$i  $t$install
 
 EOF

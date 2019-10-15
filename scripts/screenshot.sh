@@ -7,7 +7,7 @@ SCREENSHOTS_DIR=~/Pictures/screenshots
 TIMESTAMP="$(date +%Y.%m.%d-%H.%M.%S)"
 #TIMESTAMP="$(date +%Y.%m.%d--%s)"
 FILENAME=$SCREENSHOTS_DIR/$TIMESTAMP.screenshot.png
-PHOTO_ICON_PATH=~/.icons/oomox-only_icons/categories/scalable/applications-photography.svg
+PHOTO_ICON_PATH=~/.icons/custom/screenshot.png
 
 
 # -u option hides cursor
@@ -19,7 +19,7 @@ if [[ "$1" = "-s" ]]; then
     notify-send 'Select area to capture.' --urgency low -i $PHOTO_ICON_PATH
     maim -u -m 3 -s $FILENAME
     if [[ "$?" = "0" ]]; then
-        notify-send "Screenshot taken." --urgency low -i $PHOTO_ICON_PATH
+        notify-send "Screenshot" --urgency low -i $PHOTO_ICON_PATH
     fi
 elif [[ "$1" = "-c" ]]; then
     notify-send 'Select area to copy to clipboard.' --urgency low -i $PHOTO_ICON_PATH
@@ -40,5 +40,5 @@ elif [[ "$1" = "-e" ]]; then
 else
     # Full screenshot
     maim -u -m 3 $FILENAME
-    notify-send "Screenshot taken." --urgency low -i $PHOTO_ICON_PATH
+    notify-send "Screenshot" --urgency low -i $PHOTO_ICON_PATH
 fi

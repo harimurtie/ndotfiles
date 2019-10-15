@@ -1,18 +1,26 @@
 #!/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-8' -i -b -nb #000000 -nf #999999 -sb #000000 -sf #31658C'
-choice=$(echo -e "refresh\nkill\ndockon\ndockoff\nsteam\nkalkulator\ntelegram\nqutebrowser\ncadence\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-8' -i -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "refresh\nwallpaper\nfile\nscriptedit\nbuku\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nlock\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
 
 case "$choice" in
       refresh) i3-msg restart ;;
+      wallpaper) ~/Documents/scripts/gantiscale ;;
+      file) ~/Documents/scripts/dmenu_fm ;;
+      scriptedit) ~/Documents/scripts/confmenu ;;
+      buku) ~/Documents/scripts/books ;;
+      monitor) ~/Documents/scripts/dmenu_display ;;
       kill) ~/Documents/scripts/dmenu-kill-process ;;
       dockon) ~/Documents/scripts/killdock on >/dev/null 2>&1 & ;;
       dockoff) ~/Documents/scripts/killdock off >/dev/null 2>&1 & ;;
+      vim) xterm -e vim ;;
       steam) steam ;;
+      fceux) ~/Documents/scripts/emu ;;
       kalkulator) ~/Documents/scripts/itung ;;
       telegram) telegram-desktop ;;
       qutebrowser) qutebrowser ;;
       cadence) cadence ;;
+      olive) olive-editor ;;
       movie) ~/Documents/scripts/film ;;
       pavucontrol) pavucontrol-qt ;;
       voltoggle) pamixer --toggle-mute ;;
@@ -37,6 +45,7 @@ case "$choice" in
       youtube) ~/Documents/scripts/ytplay & ;;
       compton) ~/Documents/scripts/compton-toggle.sh & ;;
       vokoscreen) vokoscreen & ;;
+      lock) betterlockscreen -l & ;;
       logout) i3-msg exit & ;;
       reboot) exec systemctl reboot & ;;
       shutdown) exec systemctl -i poweroff & ;;

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+# Gives a dmenu list of all files in the pdfs dir
+
+dir="$HOME/Documents/scripts"
+
+# get choice of pdf
+choice=$(find $dir -type f -follow -print | dmenu -i -l 10)
+
+# if nothing is chosen then exit
+[ "$choice" != "" ] || exit
+
+# open pdf using zathura
+xterm -e vim "$choice"

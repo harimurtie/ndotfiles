@@ -17,7 +17,7 @@ mod+j  emoji
 mod+z  max tabbed
 mod+x  minimize
 mod+c  clipmenu
-mod+v  control center
+mod+space  control center
 mod+m  cheatsheet
 mod+n  monitor layout
 mod+5  dock on

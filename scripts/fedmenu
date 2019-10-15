@@ -1,0 +1,136 @@
+#!/bin/bash
+# fedmenu - File Explorer for dmenu
+
+# Config
+file_explorer="xterm -e ranger"
+terminal_execute="xterm -e"
+terminal_cd="xterm"
+viewer=sxiv
+reader=zathura
+mplayer=mpv
+vplayer=mpv
+office=libreoffice
+#dmenu_sb="#396535"
+#dmenu_fn="DejaVu Sans Mono-8"
+dmenu_launch="dmenu -i -l 9"
+
+item_open="⮡ Open with ..."
+item_back=" Back to directory"
+item_open_explorer=" Open in file explorer"
+item_open_vim=" Open in Vim"
+item_open_xfce4_terminal=" Open in terminal"
+item_exec=" Execute (bash)"
+item_reader=" Open with "$reader
+item_viewer=" Open with "$viewer
+item_vplayer=" Watch in "$vplayer
+item_mplayer=" Play in "$mplayer
+item_audacity=" Open in audacity"
+item_office=" Open in "$office
+
+# Set CWD to a normalized path if the argument starts with '.' to avoid errors
+[[ $1 == .* ]] && CWD=`realpath "$1"` || CWD=$1
+
+# Start from pwd if no file/directory is supplied
+if [ -z $1 ];
+then
+	CWD=$(pwd)
+fi
+
+declare -a items
+if [ -d "$CWD" ]
+then
+	# If item is a directory
+	is_directory=true
+	items+=("$(ls "$CWD" -a)")
+	items+=("$item_open_explorer")
+	items+=("$item_open_xfce4_terminal")
+	items+=("$item_open")
+else
+	# If item is a file
+	is_file=true
+	items+=("$item_open")
+	items+=("$item_open_vim")
+	[ -x "$CWD" ] && items+=("$item_exec")
+
+	case "${CWD##*.}" in
+		"pdf")
+			items+=("$item_reader")
+			;;
+		"jpg" | "jpeg" | "gif" | "png")
+			items+=("$item_viewer")
+			;;
+		"mp3" | "ogg" | "wav" | "m4a" | "opus")
+			items+=("$item_mplayer")
+			;;
+		"mp4" | "mkv" | "avi")
+			items+=("$item_vplayer")
+			;;
+		"aup")
+			items+=("$item_audacity")
+			;;
+		"odt" | "ods" | "doc" | "docx" | "xls" | "xlsx")
+			items+=("$item_office")
+			;;
+	esac
+
+	items+=("$item_back")
+fi
+
+prompt=""
+[ -f "$CWD" ] && prompt=""
+
+item=$(printf "%s\n" "${items[@]}" | eval "$dmenu_launch -p \"$prompt $CWD\"")
+
+# Exit on Esc
+[ -z "$item" ] && exit
+
+# Handle selected option or continue with selected file/directory
+case $item in
+
+	$item_back | '..')
+		exec fedmenu $(dirname "$CWD")
+		;;
+	$item_open)
+		exec $(compgen -c | eval "$dmenu_launch -p \"Open '$CWD' with\"") "$CWD"
+		;;
+	$item_open_explorer)
+		exec $file_explorer "$CWD"
+		;;
+	$item_open_vim)
+		exec $terminal_execute "vim $CWD"
+		;;
+	$item_open_xfce4_terminal)
+		exec $terminal_cd "$CWD"
+		;;
+	$item_exec)
+		exec "$CWD"
+		;;
+	$item_reader)
+		exec $reader "$CWD"
+		;;
+	$item_viewer)
+		exec $viewer "$CWD"
+		;;
+	$item_mplayer)
+		exec $mplayer "$CWD"
+		;;
+	$item_vplayer)
+		exec $vplayer "$CWD"
+		;;
+	$item_audacity)
+		exec audacity "$CWD"
+		;;
+	$item_office)
+		exec $office "$CWD"
+		;;
+	'.')
+		# Ignore move to current directory
+		exec fedmenu "$CWD"
+		;;
+	*)
+		# Append item name to the path and continue
+		item="$CWD/$item"
+		exec ~/Documents/scripts/fedmenu "$item"
+		;;
+esac
+

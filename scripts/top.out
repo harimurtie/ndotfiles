@@ -1,0 +1,11 @@
+top - 20:11:02 up 12:55,  1 user,  load average: 0,19, 0,28, 0,37
+Tasks: 166 total,   1 running, 165 sleeping,   0 stopped,   0 zombie
+%Cpu0  :  5,3 us,  0,0 sy,  0,0 ni, 94,7 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+%Cpu1  : 14,3 us, 14,3 sy,  0,0 ni, 71,4 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+KiB Mem :  1921488 total,   246396 free,  1112636 used,   562456 buff/cache
+KiB Swap:  8388604 total,  7600884 free,   787720 used.   566652 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+15337 damez     20       13480   3848   3208 R  16,7   0,2   0:00.05 top -b -n+
+  471 root      20      300480  54696  18508 S   5,6   2,8  10:48.36 /usr/lib/+
+ 1194 damez     20       22640   5276   1788 S   5,6   0,3  11:57.67 tmux

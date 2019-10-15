@@ -2,5 +2,5 @@
 # List and switch to a window.
 # Copyright 2013 Tom Vincent <http://tlvince.com/contact/>
 
-win="$(wmctrl -l | dmenu -i -b -l 5 "$@" | cut -d  ' ' -f 1)"
-[ "$win" ] && wmctrl -ia "$win" &
+win="$(wmctrl -lp | dmenu -b -l 5 "$@" | cut -d  ' ' -f 1)"
+[ "$win" ] && wmctrl -ipa "$win" &

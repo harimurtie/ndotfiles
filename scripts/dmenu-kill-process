@@ -3,7 +3,7 @@
 # dmenu theming
 lines="-b -i -l 20"
 font="-fn TerminessTTFNerdFont-10"
-colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
+#colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
 
 selected="$(ps -a -u $USER | \
             dmenu -i -p "kill process" \

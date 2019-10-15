@@ -6,6 +6,7 @@ pkgs=`pacman -Qqs | wc -l`
 aurp=`pacman -Qm | wc -l`
 #flap=`flatpak list | wc -l`
 age=`head -1 /var/log/pacman.log | cut -d\  -f1,2`
+install='ls -alct /|tail -1|awk '{print $7, $6, $8}''
 sens=`sensors | awk '/^Core 0:/ {print $3}'`
 memz=`free -h | awk '/^Mem:/ {print $3 "/" $2}'`
 cpum=`lscpu | grep "Model name: " |  cut -c 34-`
@@ -22,6 +23,7 @@ echo "kernel        : $kernel"
 echo "uptime        : $upsy"
 #echo "GPU Model     : $gpum"
 echo "CPU Model     : $cpum"
+echo "install     : $install"
 echo "CPU temp      : $sens"
 echo "Free RAM      : $memz"
 echo "Total storage : $spcs"
