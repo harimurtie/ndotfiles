@@ -1,25 +1,29 @@
 set $lnsi --no-startup-id
 set $mod Mod4
 set $editor st
-gaps inner 8
 workspace_layout tabbed
 #workspace_layout splith
 #workspace_layout splitv
 title_align center
 bindsym $mod+a focus parent
-new_window pixel 2
-hide_edge_borders none
+new_window pixel 1
+hide_edge_borders true
 bindsym --release button3 kill
+#bindsym --release button3 floating toggle
 bindsym $mod+u border none
-#bindsym $mod+b border pixel 1
-bindsym $mod+v exec --no-startup-id ~/Documents/scripts/dmenu_raise_or_run
+bindsym $mod+g exec --no-startup-id ~/Documents/scripts/dmenu_fm
+bindsym $mod+b border pixel 1
+#bindsym $mod+v exec --no-startup-id rofi -modi drun -show drun >/dev/null 2>&1 &
+bindsym Ctrl+space exec --no-startup-id dmenu_run >/dev/null 2>&1 &
 #bindsym $mod+n border normal
 font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
 bindsym $mod+t exec --no-startup-id st
 bindsym $mod+q kill
+bindsym button4 nop
+bindsym button5 nop
 bindsym $mod+s exec --no-startup-id xterm
-#bindsym $mod+n exec --no-startup-id ~/Documents/scripts/qmenu_hud
+#bindsym $mod+b exec --no-startup-id ~/Documents/scripts/qmenu_hud
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
@@ -45,9 +49,14 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2
-bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2
+#bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2
+#bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/Documents/scripts/volume.sh up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/Documents/scripts/volume.sh down
+bindsym XF86AudioMute exec --no-startup-id ~/Documents/scripts/volume.sh mute
+
+
 
 #ncmpcpp media keys
 bindsym XF86AudioStop exec --no-startup-id mpc stop
@@ -77,9 +86,9 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -lines 5 -width 500 -dis
 #bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu_raise
 #bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
 #bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
-bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b -l 5
+bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
-bindsym $mod+g exec --no-startup-id ~/Documents/scripts/tutor
+bindsym $mod+Shift+f exec --no-startup-id ~/Documents/scripts/dwl
 bindsym $mod+j exec --no-startup-id ~/Documents/scripts/dmenu_emoji
 bindsym $mod+Shift+v exec --no-startup-id ~/Documents/scripts/buku
 bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/porn
@@ -168,8 +177,14 @@ bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number $
 bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $ws8
 
 # Open specific applications in floating mode
+for_window [title=".*"] border pixel 0
+for_window [class=".*"] border pixel 0
 for_window [title="alsamixer"] floating enable border pixel 2
 for_window [class="PPSSPPQt"] floating disable border pixel 2
+for_window [class="fceux"] floating disable
+for_window [class="Fceux"] floating disable
+for_window [class="citra-qt"] floating disable
+for_window [class="Citra"] floating disable
 for_window [class="leagueclient.exe"] floating disable
 for_window [class="VirtualBox Machine"] floating enable
 for_window [class="dota2"] floating disable
@@ -177,6 +192,8 @@ for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [class="Docky"] floating disable border pixel 2
 for_window [class="olive-editor"] floating disable
+for_window [class="mame32.exe"] floating disable
+for_window [class="Wine"] floating disable
 for_window [class="Olive"] floating disable
 for_window [class="plank"] floating disable
 for_window [class="Plank"] floating disable
@@ -205,8 +222,8 @@ for_window [title="Mousepad"] floating disable
 for_window [class="Mousepad"] floating disable
 for_window [class="tomate"] floating enable border enable
 for_window [title="About Pale Moon"] floating disable
-for_window [title="video0 - mpv"] floating enable border pixel 2 sticky disable
-for_window [class="mpv"] floating enable border pixel 2 sticky enable
+for_window [title="video0 - mpv"] floating enable border pixel 0 sticky disable
+for_window [class="mpv"] floating enable border pixel 0 sticky enable
 for_window [class="gl"] floating enable border enable sticky enable
 for_window [class="Pamac-manager"] floating disable
 for_window [title="TelegramDesktop"] floating enable sticky enable
@@ -285,7 +302,7 @@ mode "resize" {
 
 #Autostart applications
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always  --no-startup-id $HOME/.config/polybar/launch.sh start
 exec --no-startup-id unclutter
 exec --no-startup-id gamemoderun mpd
 exec --no-startup-id xfce4-power-manager
@@ -293,16 +310,14 @@ exec --no-startup-id clipnotify
 exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
 exec --no-startup-id udiskie
-#exec --no-startup-id nice -n0 pulseeffects --gapplication-service
 exec --no-startup-id wal -R
-#exec --no-startup-id ~/Documents/scripts/restore
 
 
 # Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/manja.jpg
-#exec_always --no-startup-id feh --bg-scale -Z /home/damez/Pictures/wal/tigres.jpg
-#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/ana.jpg
-bindsym $mod+4 exec --no-startup-id /home/damez/Documents/scripts/pron
+#exec --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/cata.jpg
+#exec_always --no-startup-id feh --bg-scale -Z /home/damez/Pictures/wal/cata.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/catalina.jpg
+bindsym $mod+4 exec --no-startup-id $HOME/.config/polybar/launch.sh toggle
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
 #bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
@@ -321,9 +336,9 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #285577 #285577 #FFFFFF #285577  #FFFFFF
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #FFFFFF
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #000000
+  client.focused          #285577 #285577 #FFFFFF #285577  #FFFFF
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #FFFFF
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #00000
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000
   client.background       #2B2C2B
@@ -332,7 +347,7 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 ### settings for i3-gaps: ###
 #############################
 gaps inner 5
-gaps outer 3
+gaps outer 0
 smart_gaps on
 smart_borders on
-
+border_radius 8

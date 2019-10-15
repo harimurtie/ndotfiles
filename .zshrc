@@ -2,6 +2,21 @@
 # User configuration sourced by interactive shells
 #
 
+
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+# if the init script doesn't exist
+ if ! zgen saved; then
+
+   # specify plugins here
+   zgen oh-my-zsh
+
+   # generate the init script from plugins above
+   zgen save
+   fi
+
+zgen load urbainvaes/fzf-marks
+
 # Define zim location
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
@@ -93,11 +108,13 @@ SPACESHIP_VI_MODE_COLOR="green"
 
 #MINIMAL THEME
 # Components on the left prompt
-MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status mnml_keymap)
+MNML_PROMPT=(mnml_status mnml_keymap )
+#MNML_PROMPT=(mnml_status 'mnml_cwd 3 6' mnml_keymap)
+#MNML_PROMPT=(mnml_status mnml_keymap)
 # Components on the right prompt
-MNML_RPROMPT=('mnml_cwd 2 0' mnml_git)
+MNML_RPROMPT=('mnml_cwd 3 0')
 # Components shown on info line
-MNML_INFOLN=(mnml_err mnml_jobs mnml_uhp mnml_files)
+MNML_INFOLN=( mnml_err mnml_jobs mnml_uhp mnml_files)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -156,6 +173,7 @@ plugins=(vi-mode git)
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/lib/minimal.zsh
+source ~/Documents/bangunapp/fzf-marks/fzf-marks.plugin.zsh
 
 # User configuration
 
@@ -188,15 +206,19 @@ source ~/.oh-my-zsh/lib/minimal.zsh
 
 alias memo="systemd-analyze && neofetch && inxi -G && curl wttr.in/Purwokerto\?0"
 alias q="reset && ~"
+alias pp="pwd"
 alias hello="sys && wttr && anal"
 alias mt="neomutt"
 alias xwin="xwininfo"
-alias boot="uname -r && systemd-analyze"
+alias boot="icy && uname -r && systemd-analyze"
 alias goo="googler"
 alias v="vim"
 alias sv="sudo vim"
 alias la="ls -a"
 alias yd="youtube-dl -f 18"
+alias yf="youtube-dl"
+alias asu="screenfetch -E -D archlinux -w"
+alias hack="hackersascii"
 alias lla="ls -al"
 alias wlist="nmcli device wifi list"
 alias wconn="nmcli connection show"
@@ -205,7 +227,8 @@ alias f="fff"
 alias ra="ranger"
 alias m="mounts"
 alias um="unmount"
-alias qq="q && bunnyfetch"
+#alias qq="q && bunnyfetch"
+alias qq="q && boot"
 alias cek="/home/damez/Documents/bangunapp/color-scripts/color-scripts/pacman && sudo pacman -Syyuu"
 alias shot="scrot -c -d 10"
 alias konek="nmtui"
@@ -215,6 +238,7 @@ alias mm="sudo ps_mem"
 alias ff="free -h"
 alias swap="cat /proc/sys/vm/swappiness"
 alias cpol="vim ~/.config/polybar/config"
+alias cdo="vim ~/.config/polybar/configdock"
 alias sapu="sapu"
 alias mupen="mupen64plus"
 alias baca="fltrdr"
@@ -226,25 +250,43 @@ alias note="notetaking"
 alias ci3="vim ~/.config/i3/config"
 alias cz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
-alias hgrep="history | grep"
+alias hg="history | grep"
+alias lg="ls | grep"
 alias mpvyt="youtube-viewer --resolution=360p"
 alias pron="mpv /home/damez/Mail/a30"
 alias mov="mpv /home/damez/Videos/film"
 alias tut="mpv /home/damez/Videos/linux"
 alias tv="mpv --force-window -autofit 500x280 --shuffle /home/damez/Documents/iptv"
 alias mts="dmenumount"
+alias wals="wal -f Documents/colorscheme/solarizedd.txt"
+alias walf="wal -l  --theme github"
 alias um="dmenuumount"
 alias build="make && sudo make install"
 alias acc="acestream-launcher --player mpv"
-alias tmuxa="tmux attach"
+alias tmx="tmux attach"
 alias cx="vim ~/.Xresources"
 alias cv="vim ~/.vimrc"
+alias catx="cat ~/.xsession-errors"
+alias bd="cd .."
+alias ww="hexfetch"
+alias mut="hexfetch"
+alias fetch="toy"
+alias wall="wal -f Documents/colorscheme/yousai.txt"
+alias wald="wal -f Documents/colorscheme/hybrid.txt"
+alias tt="trizen"
+alias cpu="sudo cpu-x -n"
+alias cpro="vim ~/.profiles"
+alias wee="weechat"
+alias sr="surfraw -browser=w3m"
+alias surfraw="surfraw -browser=qutebrowser"
+alias hbcli="HandBrakeCLI --preset-import-file ~/Documents/scripts/videosa.json "videosa""
 
 fzf-dmenu() {
 	# note: xdg-open has a bug with .desktop files, so we cant use that shit
 	selected="$(ls /usr/share/applications | fzf -e)"
 	nohup `grep '^Exec' "/usr/share/applications/$selected" | tail -1 | sed 's/^Exec=//' | sed 's/%.//'` >/dev/null 2>&1&
 }
+fzf-surfraw() { surfraw "$(cat ~/.config/surfraw/bookmarks | sed '/^$/d' | sort -n | fzf -e)" ;}
 
 # hotkey to run the function (Ctrl+O)
 bindkey -s '^O' "fzf-dmenu\n"
@@ -254,6 +296,8 @@ bindkey -s '^O' "fzf-dmenu\n"
 PATH="$HOME/Documents/scripts:$PATH"
 export PATH
 PATH="$HOME/Documents/catatan:$PATH"
+export PATH
+PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH
 
 export EDITOR=vim
@@ -302,6 +346,15 @@ fzf-dmenu() {
 	selected="$(ls /usr/share/applications | fzf -e)"
 	nohup `grep '^Exec' "/usr/share/applications/$selected" | tail -1 | sed 's/^Exec=//' | sed 's/%.//'` >/dev/null 2>&1&
 }
+
+#Select the Terminus Powerline Font if we are in a TTY
+case $(tty) in
+        (/dev/tty[1-9])
+        setfont ter-powerline-v18n
+        $HOME/.local/bin/tty-solarized-dark.sh
+        ;;
+esac
+
 
 # hotkey to run the function (Ctrl+O)
 bindkey -s '^O' "fzf-dmenu\n"
