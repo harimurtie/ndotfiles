@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SRC="/home/damez/Videos/screencast/"
+DEST="/home/damez/Videos/convert"
+DEST_EXT=mp4
+HANDBRAKE_CLI=ffmpeg
+
+for FILE in "$SRC"/*
+do
+  filename=$(basename "$FILE")
+  extension=${filename##*.}
+  filename=${filename%.*}
+  $HANDBRAKE_CLI -i "$FILE" -crf 23 "$DEST"/"$filename".$DEST_EXT
+done

@@ -1,11 +1,16 @@
-top - 20:11:02 up 12:55,  1 user,  load average: 0,19, 0,28, 0,37
-Tasks: 166 total,   1 running, 165 sleeping,   0 stopped,   0 zombie
-%Cpu0  :  5,3 us,  0,0 sy,  0,0 ni, 94,7 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
-%Cpu1  : 14,3 us, 14,3 sy,  0,0 ni, 71,4 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
-KiB Mem :  1921488 total,   246396 free,  1112636 used,   562456 buff/cache
-KiB Swap:  8388604 total,  7600884 free,   787720 used.   566652 avail Mem 
+top - 07:33:02 up  5:26,  1 user,  load average: 1,93, 1,85, 1,66
+Tasks: 145 total,   4 running, 141 sleeping,   0 stopped,   0 zombie
+%Cpu0  : 42,9 us, 47,6 sy,  0,0 ni,  0,0 id,  0,0 wa,  4,8 hi,  4,8 si,  0,0 st
+%Cpu1  : 47,6 us, 52,4 sy,  0,0 ni,  0,0 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st
+KiB Mem :  1921488 total,   155756 free,   779380 used,   986352 buff/cache
+KiB Swap:  8388604 total,  8337228 free,    51376 used.   903336 avail Mem 
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-15337 damez     20       13480   3848   3208 R  16,7   0,2   0:00.05 top -b -n+
-  471 root      20      300480  54696  18508 S   5,6   2,8  10:48.36 /usr/lib/+
- 1194 damez     20       22640   5276   1788 S   5,6   0,3  11:57.67 tmux
+17684 damez     20        5580   2320   1960 R  31,6   0,1   0:02.05 du --max-+
+ 1463 damez     20       16372  10548   3076 S  10,5   0,5   4:25.29 tmux
+20211 damez     20     1477384 229416  40616 S  10,5  11,9   0:25.59 /usr/bin/+
+  191 root       0 -20                       I   5,3         0:01.05 [kworker/+
+10726 root      20      255452  53796  31168 S   5,3   2,8   0:19.84 /usr/lib/+
+13495 damez     20      350964  21292  14304 S   5,3   1,1   0:00.75 xfce4-pow+
+17926 damez     20        7392   3652   2924 R   5,3   0,2   6:12.76 /bin/bash+
+18853 damez     20       13508   3936   3284 R   5,3   0,2   0:00.03 top -b -n+

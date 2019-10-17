@@ -1,14 +1,17 @@
 #!/bin/bash
 
 DMENU='dmenu -fn 'TerminessTTF-8' -i -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
-choice=$(echo -e "refresh\nwallpaper\nfile\nscriptedit\nbuku\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nlock\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
+choice=$(echo -e "refresh\nwallpaper\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nlock\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
 
 case "$choice" in
       refresh) i3-msg restart ;;
       wallpaper) ~/Documents/scripts/gantiscale ;;
+      touchpad) ~/.config/i3/touchpad.sh devonoff ;;
+      convert) ~/Documents/scripts/converthb ;;
       file) ~/Documents/scripts/dmenu_fm ;;
       scriptedit) ~/Documents/scripts/confmenu ;;
       buku) ~/Documents/scripts/books ;;
+      record) ~/Documents/scripts/dmenurecord ;;
       monitor) ~/Documents/scripts/dmenu_display ;;
       kill) ~/Documents/scripts/dmenu-kill-process ;;
       dockon) ~/Documents/scripts/killdock on >/dev/null 2>&1 & ;;

@@ -1,0 +1,145 @@
+#!/bin/bash
+#!/bin/bash
+
+DATE=`date +%Y%m%d`
+TIME=`date +%H%M%S`
+AVINAME="recording-$DATE-$TIME.avi"
+FINALNAME="movie-$DATE-$TIME.mp4"
+FRAMERATE=15
+
+function pulseLoopOn
+{
+      echo "Creating pulseaudio Null-sink"
+        NULLSINK=$(pactl load-module module-null-sink)
+          echo "Creating pulseaudio Loopback from alsa-input"
+            INPUTLOOPBACK=$(pactl load-module module-loopback source=alsa_input.pci-0000_00_1b.0.analog-stereo sink=null)
+              echo "Creating pulseaudio Loopback from alsa-output"
+                OUTPUTLOOPBACK=$(pactl load-module module-loopback source=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor sink=null)
+            }
+
+        function pulseLoopOff
+        {
+              echo "Destroying pulseaudio sinks"
+                pactl unload-module $NULLSINK
+                  pactl unload-module $INPUTLOOPBACK
+                    pactl unload-module $OUTPUTLOOPBACK
+                }
+
+            function pulseMute {
+                  pactl set-sink-volume 0 0
+              }
+
+          function getWindow {
+                echo "Pick the window."
+                  unset x y w h WID
+                    INFO=`xwininfo`
+                      eval $(echo "$INFO" |
+                              sed -n -e "s/^ \+Absolute upper-left X: \+\([0-9]\+\).*/x=\1/p" \
+                                         -e "s/^ \+Absolute upper-left Y: \+\([0-9]\+\).*/y=\1/p" \
+                                                    -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p" \
+                                                               -e "s/^ \+Height: \+\([0-9]\+\).*/h=\1/p" \
+                                                                          -e "s/^xwininfo: +Window id: \+\(0x[0-9a-fA-F]\+\).*/WID=\1/p" )
+
+                        WINGEO="${w}x${h}"
+                          WINCORNORS=`echo $INFO | grep -oEe 'Corners:\s+\+[0-9]+\+[0-9]+' | grep -oEe '[0-9]+\+[0-9]+' | sed -e 's/\+/,/'`
+                            echo "Recording $WINGEO : $WINCORNORS"
+                        }
+
+                    function setWindowSize {
+                          wmctrl -i -r $WID -e 0,42,2,1280,720
+                      }
+
+                  function regularOptions
+                  {
+                        AUDIOGRAB="-f alsa -i pulse"
+                          VIDEOGRAB="-f x11grab -s $WINGEO -r $FRAMERATE -i :0.0+$WINCORNORS"
+                            AUDIOOUT="-acodec pcm_s16le"
+                              VIDEOOUT="-vcodec libx264 -vpre ultrafast -crf 0 -threads 0"
+                          }
+
+                      function minecraftOptions
+                      {
+                            AUDIOGRAB="-f alsa -ar 22050 -i pulse"
+                              VIDEOGRAB="-f x11grab -s $WINGEO -r $FRAMERATE -i :0.0+$WINCORNORS"
+                                AUDIOOUT="-acodec pcm_s16le"
+                                  VIDEOOUT="-vcodec libx264 -vpre ultrafast -vf scale=854:480 -threads 0"
+                              }
+
+                          function startRecord
+                          {
+                                OTHEROPTIONS="-loglevel info"
+                                  FFMPEG="ffmpeg $OTHEROPTIONS $AUDIOGRAB $VIDEOGRAB $AUDIOOUT $VIDEOOUT $AVINAME"
+                                    echo "Recording in 3..."
+                                      sleep 1
+                                        echo "2..."
+                                          sleep 1
+                                            echo "1..."
+                                              sleep 1
+                                                echo "$FFMPEG"
+                                                  $FFMPEG &
+                                                    PID=`echo $!`
+                                                }
+
+                                            function waitForOK
+                                            {
+                                                  zenity --warning --text="Press OK to stop recording"
+                                              }
+
+                                          function zap
+                                          {
+                                                kill $PID
+                                                  wait 2
+                                              }
+
+                                          function transcode
+                                          {
+                                                if [ -f $AVINAME ]
+                                                      then
+                                                              echo "Transcoding"
+                                                                  ffmpeg -i $AVINAME -acodec libmp3lame -ab 256k -vcodec libx264 -vpre lossless_fast -threads 0 $FINALNAME
+                                                                      echo "Transcoded to $FINALNAME"
+                                                                        fi
+                                                                    }
+
+                                                                MODE=`zenity --list --height=300 --width=300 \
+                                                                    --title="Choose the mode for recording" \
+                                                                              --column="Item" --column="Description" \
+                                                                                          1 "Mic Audio"\
+                                                                                                      2 "Loopback Audio"\
+                                                                                                                  3 "480p Minecraft"\
+                                                                                                                              `
+
+
+                                                                getWindow
+
+                                                                case "$MODE" in
+                                                                      "1")
+                                                                              regularOptions
+                                                                                  startRecord
+                                                                                      waitForOK
+                                                                                          zap
+                                                                                              ;;
+                                                                                                "2")
+                                                                                                        pulseMute
+                                                                                                            pulseLoopOn
+                                                                                                                regularOptions
+                                                                                                                    startRecord
+                                                                                                                        waitForOK
+                                                                                                                            zap
+                                                                                                                                pulseLoopOff
+                                                                                                                                    ;;
+                                                                                                                                      "3")
+                                                                                                                                              setWindowSize
+                                                                                                                                                  pulseLoopOn
+                                                                                                                                                      minecraftOptions
+                                                                                                                                                          startRecord
+                                                                                                                                                              waitForOK
+                                                                                                                                                                  zap
+                                                                                                                                                                      pulseLoopOff
+                                                                                                                                                                          ;;
+                                                                                                                                                                            *) exit 1;;
+                                                                                                                                                                        esac
+
+                                                                                                                                                                        transcode
+
+                                                                                                                                                                        echo "Done."
