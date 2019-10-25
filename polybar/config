@@ -54,8 +54,8 @@ width = 100%
 height = 15
 offset-x = 2%
 offset-y = 2%
-bottom = false
-#bottom = true
+#bottom = false
+bottom = true
 fixed-center = false
 line-size = 2
 border-top-size=7
@@ -64,10 +64,11 @@ foreground = ${colors.foreground}
 #background = #156566
 #border-color = #156566
 #background = #131C26
-#background = #00000
-background = #002B36
-#border-color = #00000
-border-color = #002B36
+background = #000000
+#background = #002B36
+border-color = #000000
+#border-color = #002B36
+pseudo-transparency = false
 
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
@@ -75,7 +76,7 @@ font-2 = ${fonts.font-2}
 
 modules-left = icon mpd_top i3 add xwindows
 modules-center =
-modules-right = esc min show max close gaps fs mem batre xbacklight spiker date0 yt cpt network ejek wifi pwr
+modules-right = update esc min show max close gaps fs mem batre xbacklight spiker date0 ss ytp yt cpt network ejek wifi pwr
 
 ;=====================================================
 ;   module
@@ -119,8 +120,8 @@ content-foreground = #FFFFFF
 content = 
 #content = i3wm
 content-padding = 1
-#click-left = "rofi -modi drun -show drun -show-icons -drun-icon-theme -location 7 -columns 1 -xoffset 0 -yoffset -25 -width 30"
-click-left = "rofi -modi drun -show drun -show-icons -drun-icon-theme -location 7 -columns 1 -xoffset 0 -yoffset -33 -width 20"
+#click-left = "rofi -modi drun -show drun -location 7 -columns 1 -xoffset 0 -yoffset -25 -width 30"
+click-left = "rofi -modi drun -show drun -show-icons -location 1 -columns 1 -xoffset 0 -yoffset 27 -width 25"
 #click-right = ~/.config/polybar/module/launcher-full
 click-right = i3-msg restart
 
@@ -335,7 +336,7 @@ label-volume-foreground = #FFFFFF
 label-muted-foreground = #FFFFFF
 ramp-volume-background = #00000
 label-volume-background = #00000
-label-muted-background = #000000
+label-muted-background = #00000
 label-volume = %percentage%%
 label-muted = ""
 #label-volume-padding = 1
@@ -359,13 +360,20 @@ label =  %gb_used%
 label-padding=1
 label-foreground=#FFFFFF
 
+[module/gpu]
+type = custom/script
+interval = 20
+exec = ~/Documents/scripts/intelgpu.sh
+label-foreground=#FFFFFF
+
+
 [module/pwr]
 type = custom/text
 content = 襤
 content-padding = 1
 #content-background = #
 content-foreground = #FFFFFF
-click-left = ~/.config/i3/scripts/polybar_wrapper options
+click-left = "~/Documents/scripts/dmenu_mager >/dev/null 2>&1 &"
 
 [module/gap]
 type = custom/text
@@ -545,7 +553,7 @@ content-padding =1
 
 [module/telegram]
 type = custom/text
-content-foreground = #FFFFFF
+content-foreground = #1D98DC
 content-background = #fffff
 click-left = "telegram-desktop >/dev/null 2>&1 &"
 content = 
@@ -559,6 +567,14 @@ click-left = "mousepad >/dev/null 2>&1 &"
 content = 
 content-padding =1
 
+[module/ytp]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "~/Documents/scripts/ytplay >/dev/null 2>&1 &"
+content = 
+content-padding =1
+
 [module/yt]
 type = custom/text
 content-foreground = #FFFFFF
@@ -568,6 +584,16 @@ click-left = "~/Documents/scripts/killdock on >/dev/null 2>&1 &"
 click-right = "~/Documents/scripts/killdock off >/dev/null 2>&1 &"
 content = 
 content-padding =1
+
+[module/ss]
+type = custom/text
+content-foreground = #FFFFFF
+content-background = #fffff
+click-left = "~/Documents/scripts/screenshot.sh >/dev/null 2>&1 &"
+click-right = "~/Documents/scripts/screenshot.sh -s >/dev/null 2>&1 &"
+content = 
+content-padding =1
+
 
 
 ;=====================================================
@@ -583,18 +609,18 @@ line-size = 2
 border-top-size=4
 border-bottom-size=1
 foreground = #FFFFFF
-background = #002B36
-border-color = #002B36
-pseudo-transparency=true
+background = #000000
+border-color = #000000
+pseudo-transparency=false
 
 
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = mpd_bar
-modules-center = term tele qb librec librew olive steam
-modules-right = mpd_bar
+modules-left = mpd_bar spotify
+modules-center = term tele qb librec librew olive psp steam
+modules-right = mpd_bar spotify
 ;=====================================================
 ;   module
 ;=====================================================
@@ -640,18 +666,25 @@ click-left = "olive-editor >/dev/null 2>&1 &"
 content = 
 content-padding =1
 
+[module/psp]
+type = custom/text
+content-foreground = #FFFFFF
+click-left = "ppsspp >/dev/null 2>&1 &"
+content = 
+content-padding-right =1
+
 [module/steam]
 type = custom/text
 content-foreground = #FFFFFF
 click-left = "steam >/dev/null 2>&1 &"
 content = 
-
+content-padding = 1
 
 [module/mpd_bar]
 type = internal/mpd
 interval = 1
 format-online = <label-song>
-label-song =   %title% 
+label-song =%title%
 label-song-maxlen = 30
 label-song-ellipsis = true
 label-offline = ""
@@ -692,3 +725,22 @@ label = %title:0:30:...%   %{B- -o -u}
 label-padding-left = 1
 label-padding-right = 1
 label-foreground = #FFFFFF
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python ~/Documents/scripts/spotify_status.py -f '{artist}: {song}'
+#format-underline = #1db954
+
+[module/update]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-all-updates.sh
+interval = 1000
+label = %output%
+format-foreground = #ffffff
+format-background = #000000
+format-prefix = "  "
+format-prefix-foreground = #ffffff
+label-padding-right = 1
