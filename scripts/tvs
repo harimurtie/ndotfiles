@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DMENU='dmenu -fn 'TerminessTTF-10' -l 6 -i -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "idanimax\nidaniplus\nidrcti\nidcnn\niddisney\nidmoviechannel\nidhits\nxxteen\nxxrussian\nxxpov\nxxpornstar\nxxinterracial\nxxcuckold" | $DMENU)
+
+case "$choice" in
+      idanimax) mpv http://210.210.155.35:80/dr9445/h/h144/index.m3u8 ;;
+      idaniplus) mpv http://210.210.155.35/session/0d216142-f3f5-11e8-ab67-89df93dc8d44/dr9445/h/h02/01.m3u8 ;;
+      idrcti) mpv http://202.80.222.130/000001/2/ch14041511532707866226/1001.m3u8?virtualDomain=000001.live_hls.zte.com ;;
+      idcnn) mpv https://live.cnnindonesia.com/livecnn/smil:cnntv.smil/chunklist_w1285822120_b384000_sleng.m3u8 ;;
+      iddisney) mpv http://103.47.132.164/PLTV/88888888/224/3221226011/04.m3u8 ;;
+      idmoviechannel) mpv http://210.210.155.35/x6bnqe/s/s31/S4/mnf.m3u8 ;;
+      idhits) mpv http://210.210.155.35/session/b664cd50-6b66-11e9-88bd-a3eeb50c438d/uq2663/h/h37/index2.m3u8?fluxustv.m3u8 ;;
+      xxteen) mpv http://live.redtraffic.xyz/teen.m3u8 ;;
+      xxrussian) http://live.redtraffic.xyz/russian.m3u8 ;;
+      xxpov) mpv http://live.redtraffic.xyz/pov.m3u8 ;;
+      xxpornstar) mpv http://live.redtraffic.xyz/pornstar.m3u8 ;;
+      xxinterracial) mpv http://live.redtraffic.xyz/interracial.m3u8 ;;
+      xxcuckold) mpv http://live.redtraffic.xyz/cuckold.m3u8 ;;
+esac
+

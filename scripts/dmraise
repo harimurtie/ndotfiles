@@ -1,0 +1,4 @@
+#!/bin/bash
+#!/bin/bash
+app=$(pgrep $1)
+wmctrl -ia "$(wmctrl -lp | grep "$app" | tail -1 | awk '{ print $1 }')"

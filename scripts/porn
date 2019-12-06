@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/Mail/aish && mpv "$(ls *mkv *mp4 *m3u | dmenu -i -b -l 20)"
+cd ~/Mail/ && mpv "$(ls *mkv *mp4 *m3u | dmenu -i -b -l 20)"

@@ -54,8 +54,8 @@ width = 100%
 height = 15
 offset-x = 2%
 offset-y = 2%
-#bottom = false
-bottom = true
+bottom = false
+#bottom = true
 fixed-center = false
 line-size = 2
 border-top-size=7
@@ -76,7 +76,7 @@ font-2 = ${fonts.font-2}
 
 modules-left = icon mpd_top i3 add xwindows
 modules-center =
-modules-right = update esc min show max close gaps fs mem batre xbacklight spiker date0 ss ytp yt cpt network ejek wifi pwr
+modules-right = esc close min show gaps fs mem batre xbacklight spiker date0 ss ytp yt cpt network ejek wifi pwr
 
 ;=====================================================
 ;   module
@@ -505,34 +505,35 @@ content-padding =1
 
 [module/min]
 type = custom/text
-content-foreground =#ffffff
+#content-foreground =#ffffff
+content-foreground =#FFBD00
 content-background =#00000
 click-left = i3-msg move scratchpad
-content = 
+content = 
 content-padding =1
 
 [module/show]
 type = custom/text
-content-foreground =#ffffff
+content-foreground =#14CC3A
 content-background =#00000
 click-left = ~/Documents/scripts/hide
-content = 
+content = 
 content-padding =1
 
 [module/max]
 type = custom/text
-content-foreground =#ffffff
+content-foreground =#14CC3A
 content-background =#00000
-click-left = i3-msg floating toggle
-content = 
+click-left = i3-msg fullscreen toggle
+content = 
 content-padding =1
 
 [module/close]
 type = custom/text
-content-foreground =#ffffff
+content-foreground =#D83727
 content-background =#00000
 click-left = i3-msg kill
-content = 
+content = 
 content-padding =1
 
 [module/qute]
@@ -744,3 +745,47 @@ format-background = #000000
 format-prefix = "  "
 format-prefix-foreground = #ffffff
 label-padding-right = 1
+
+[module/menu-apps]
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+
+menu-0-0 = Browsers
+menu-0-0-exec = menu-open-1
+menu-0-1 = Multimedia
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = Firefox
+menu-1-0-exec = firefox &
+menu-1-1 = Chromium
+menu-1-1-exec = chromium &
+
+menu-2-0 = Gimp
+menu-2-0-exec = gimp &
+menu-2-1 = Scrot
+menu-2-1-exec = scrot &
+
+; Available tags:
+;   <label-toggle> (default) - gets replaced with <label-(open|close)>
+;   <menu> (default)
+; Note that if you use <label-toggle> you must also include
+; the definition for <label-open>
+;format = <label-toggle> <menu>
+
+label-open = Apps
+label-close = x
+
+; Optional item separator
+; Default: none
+label-separator = |

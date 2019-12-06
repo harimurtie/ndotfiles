@@ -1,14 +1,18 @@
 #!/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-8' -i -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
-choice=$(echo -e "refresh\nwallpaper\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nlock\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-10' -i -l 10 -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "refresh\nlist\nfilemanager\nplayer\naria\nwallpaper\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nudiskie\nlock\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
 
 case "$choice" in
       refresh) i3-msg restart ;;
-      wallpaper) ~/Documents/scripts/gantiscale ;;
+      list) ~/Documents/scripts/list ;;
+      wallpaper) ~/Documents/scripts/gantifill ;;
+      filemanager) pcmanfm ;;
+      player) smplayer ;;
+      aria) ~/Documents/scripts/dmenu_aria2 ;;
       touchpad) ~/.config/i3/touchpad.sh devonoff ;;
       convert) ~/Documents/scripts/converthb ;;
-      file) ~/Documents/scripts/dmenu_fm ;;
+      file) ~/Documents/scripts/dmenufm ;;
       scriptedit) ~/Documents/scripts/confmenu ;;
       buku) ~/Documents/scripts/books ;;
       record) ~/Documents/scripts/dmenurecord ;;
@@ -18,6 +22,7 @@ case "$choice" in
       dockoff) ~/Documents/scripts/killdock off >/dev/null 2>&1 & ;;
       vim) xterm -e vim ;;
       steam) steam ;;
+      tvs)~/Documents/scripts/tvs ;;
       drawing) drawing ;;
       fceux) ~/Documents/scripts/emu ;;
       kalkulator) ~/Documents/scripts/itung ;;
@@ -49,6 +54,7 @@ case "$choice" in
       youtube) ~/Documents/scripts/ytplay & ;;
       compton) ~/Documents/scripts/compton-toggle.sh & ;;
       vokoscreen) vokoscreen & ;;
+      udiskie) ~/Documents/scripts/udiskie-dmenu & ;;
       lock) betterlockscreen -l & ;;
       logout) i3-msg exit & ;;
       reboot) exec systemctl reboot & ;;

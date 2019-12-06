@@ -217,6 +217,7 @@ alias sv="sudo vim"
 alias la="ls -a"
 alias yd="youtube-dl -f 18"
 alias yf="youtube-dl"
+alias ym="youtube-dl -x --audio-format m4a --audio-quality 0 --embed-thumbnail"
 alias asu="screenfetch -E -D archlinux -w"
 alias hack="hackersascii"
 alias lla="ls -al"
@@ -242,10 +243,10 @@ alias cdo="vim ~/.config/polybar/configdock"
 alias sapu="sapu"
 alias mupen="mupen64plus"
 alias baca="fltrdr"
-alias ssd="dd if=./largefile of=/dev/null bs=4k && dd if=/dev/zero of=./largefile bs=4k count=1024"
+alias benchssd="dd if=./largefile of=/dev/null bs=4k && dd if=/dev/zero of=./largefile bs=4k count=1024"
 alias host="bunnyfetch"
 alias nf="neofetch"
-alias beras="b && curl wttr.in/Purwokerto\?0 && curl -L git.io/rice"
+alias beras="bunnyfetch  && curl -L git.io/rice"
 alias note="notetaking"
 alias ci3="vim ~/.config/i3/config"
 alias cz="vim ~/.zshrc"
@@ -354,6 +355,11 @@ case $(tty) in
         $HOME/.local/bin/tty-solarized-dark.sh
         ;;
 esac
+
+# setup pyenv (you should also put these three lines in .bashrc or similar)
+export PATH="${HOME}/.pyenv/bin:${PATH}"
+export PYENV_ROOT="${HOME}/.pyenv"
+eval "$(pyenv init -)"
 
 
 # hotkey to run the function (Ctrl+O)
