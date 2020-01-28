@@ -1,6 +1,6 @@
 set $lnsi --no-startup-id
 set $mod Mod4
-set $editor st
+set $editor XTerm
 workspace_layout tabbed
 #workspace_layout splith
 #workspace_layout splitv
@@ -8,10 +8,11 @@ title_align center
 bindsym $mod+a focus parent
 new_window pixel 1
 hide_edge_borders true
+#bindsym --release button3 move scratchpad
 bindsym --release button3 kill
 #bindsym --release button3 floating toggle
 bindsym $mod+u border none
-bindsym $mod+g exec --no-startup-id ~/Documents/scripts/dmenu_fm
+bindsym $mod+g exec --no-startup-id ~/Documents/scripts/dmenufm
 bindsym $mod+b border pixel 1
 #bindsym $mod+v exec --no-startup-id rofi -modi drun -show drun >/dev/null 2>&1 &
 bindsym Ctrl+space exec --no-startup-id j4-dmenu-desktop >/dev/null 2>&1 &
@@ -20,7 +21,6 @@ font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
 bindsym $mod+t exec --no-startup-id st
 bindsym $mod+q kill
-bindsym Alt+Tab altab
 bindsym button4 nop
 bindsym button5 nop
 bindsym $mod+s exec --no-startup-id xterm
@@ -57,8 +57,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id ~/Documents/scripts/volume.sh 
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/Documents/scripts/volume.sh down
 bindsym XF86AudioMute exec --no-startup-id ~/Documents/scripts/volume.sh mute
 
-
-
 #ncmpcpp media keys
 bindsym XF86AudioStop exec --no-startup-id mpc stop
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
@@ -84,11 +82,12 @@ bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
 #bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/j4menu
 bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/dmenu_mager
 #bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
-bindsym $mod+Tab exec --no-startup-id rofi -show window -lines 5 -width 500 -display-window 'windows'
+#bindsym $mod+Tab exec --no-startup-id rofi -show window -lines 5 -width 500 -display-window 'windows'
+bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu-running-apps-finder.sh
 #bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu_raise
 #bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
 #bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
-bindsym $mod+d exec --no-startup-id networkmanager_dmenu -b
+bindsym $mod+d exec --no-startup-id networkmanager_dmenu -w 1000 -x 190 -y 250
 bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
 bindsym $mod+Shift+f exec --no-startup-id ~/Documents/scripts/dwl
 bindsym $mod+j exec --no-startup-id ~/Documents/scripts/dmenu_emoji
@@ -100,7 +99,7 @@ bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/porn
 bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/killdock on
 bindsym $mod+Ctrl+5 exec --no-startup-id ~/Documents/scripts/killdock off
 #bindsym $mod+0 exec --no-startup-id /home/damez/.config/i3/scripts/polybar_wrapper options
-bindsym $mod+y exec --no-startup-id ~/Documents/scripts/ytplay
+bindsym $mod+y exec --no-startup-id ~/Documents/scripts/dmenu_ytview
 
 focus_follows_mouse no
 bindsym $mod+h focus left
@@ -120,7 +119,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-
+#bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth no
@@ -306,9 +306,12 @@ mode "resize" {
 #Autostart applications
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
 exec_always  --no-startup-id $HOME/.config/polybar/launch.sh start
+#exec --no-startup-id tint2 ~/Desktop/custom.tint2rc
+#exec_always --no-startup-id tint2 -c ~/.config/tint2/carina/carina.tint2rc
 exec_always --no-startup-id pkill compton
 exec --no-startup-id unclutter
-exec_--no-startup-id alttab
+#exec --no-startup-id alttab
+#exec --no-startup-id gebaard -b
 exec --no-startup-id gamemoderun mpd
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipnotify
@@ -319,9 +322,9 @@ exec --no-startup-id wal -R
 
 
 # Background Wallpaper
-#exec --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/cata.jpg
-#exec_always --no-startup-id feh --bg-scale -Z /home/damez/Pictures/wal/cata.jpg
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/blackcat.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/perspective.jpg
+#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/hexagon.jpg
+exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/owl.jpg
 bindsym $mod+4 exec --no-startup-id $HOME/.config/polybar/launch.sh toggle
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
@@ -332,7 +335,7 @@ bindsym $mod+n exec --no-startup-id /home/damez/Documents/scripts/dmenu_display
 
 set $clip_chooser clipmenu.sh
 # Show clipboard content
-bindsym $mod+c exec --no-startup-id clipmenu -b
+bindsym $mod+c exec --no-startup-id clipmenu -x 170 -y 300 -w 1000
 # Clean Up clipboard
 #bindsym $mod+Shift+c exec --no-startup-id $clip_chooser clean
 bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
@@ -352,7 +355,9 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 ### settings for i3-gaps: ###
 #############################
 gaps inner 10
-gaps outer 0
+gaps outer 8
 smart_gaps on
 smart_borders on
-border_radius 8
+border_radius 0
+
+
