@@ -2,8 +2,8 @@ set ssl_starttls=yes
 set ssl_force_tls=yes
 
 set imap_user = 'milko.harimurti@icloud.com'
-set imap_pass = 'didw-ifkr-icgv-jnov'
-set smtp_pass = 'didw-ifkr-icgv-jnov'
+set imap_pass = ''
+set smtp_pass = ''
 set imap_pipeline_depth=0
 set from='milko.harimurti@icloud.com'
 set realname='Milko Harimurti'
