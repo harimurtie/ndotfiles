@@ -8,15 +8,16 @@
 
 # inspired by https://github.com/harimurtie/ndotfiles/blob/master/scripts/ytplay
 
-resolution="144p\n240p\n360p\n480p\n720p\n1080p"
-dmenu="dmenu -x 300 -y 220 -w 800 -fn Iosevka-11 -p Resolution -i -l 10 -h 23"
+#resolution="144p\n240p\n360p\n480p\n720p\n1080p"
+resolution="360p"
+dmenu="dmenu -x 190 -y 300 -w 1000 -fn Iosevka-11 -p resolution -i -l 10 "
 selected=$(echo -e "$resolution" | $dmenu)
 
 case "$selected" in
-  144p ) youtube-viewer --resolution 144p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
-  240p ) youtube-viewer --resolution 240p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
-  360p ) youtube-viewer --resolution 360p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
-  480p ) youtube-viewer --resolution 480p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
-  720p ) youtube-viewer --resolution 720p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
-  1080p ) youtube-viewer --resolution 1080p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+#  144p ) youtube-viewer --resolution 144p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+#  240p ) youtube-viewer --resolution 240p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+#  360p ) youtube-viewer --resolution 360p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+#  480p ) youtube-viewer --resolution 480p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+360p ) mpv --ytdl-format=18 "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+#  1080p ) youtube-viewer --resolution 1080p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
 esac
