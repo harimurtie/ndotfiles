@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-10' -l 6 -i -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
-choice=$(echo -e "idanimax\nidaniplus\nidrcti\nidcnn\niddisney\nidmoviechannel\nidhits\nxxteen\nxxrussian\nxxpov\nxxpornstar\nxxinterracial\nxxcuckold" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-10' -x 190 -y 300 -w 1000 -l 6 -i -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "idanimax\nidaniplus\nidrcti\nidcnn\niddisney\nidmoviechannel\nidhits\nxxteen\nxxrussian\nxxpov\nxxpornstar\nxxinterracial\nxxcuckold\nxxrough" | $DMENU)
 
 case "$choice" in
       idanimax) mpv http://210.210.155.35:80/dr9445/h/h144/index.m3u8 ;;
@@ -17,5 +17,6 @@ case "$choice" in
       xxpornstar) mpv http://live.redtraffic.xyz/pornstar.m3u8 ;;
       xxinterracial) mpv http://live.redtraffic.xyz/interracial.m3u8 ;;
       xxcuckold) mpv http://live.redtraffic.xyz/cuckold.m3u8 ;;
+      xxrough) mpv http://cdn.adultiptv.net/rough.m3u8  ;;
 esac
 

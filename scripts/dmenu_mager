@@ -1,12 +1,19 @@
 #!/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-10' -i -l 10 -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
-choice=$(echo -e "refresh\nlist\nfilemanager\nplayer\naria\nwallpaper\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nudiskie\nlock\nlogout\nreboot\nshutdown\nsuspend" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-10' -i -l 10 -x 190 -w 1000 -y 250 -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "lock\nlogout\nviter\nnetwork\nreboot\nshutdown\nsuspend\nterminal\nkonsol\nrefresh\nlist\nfilemanager\nplayer\naria\nwallpaper\ncalc\ntypora\ntag\ngammy\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\npron\nvideo\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nudiskie" | $DMENU)
 
 case "$choice" in
       refresh) i3-msg restart ;;
       list) ~/Documents/scripts/list ;;
       wallpaper) ~/Documents/scripts/gantifill ;;
+      viter) python3 ~/Documents/bangunapp/viter/viter.py ;;
+      calc) libreoffice --calc ;;
+      typora) typora ;;
+      tag) easytag ;;
+      gammy) gammy ;;
+      terminal) xterm ;;
+      konsol) ppsspp ;;
       filemanager) pcmanfm ;;
       player) smplayer ;;
       aria) ~/Documents/scripts/dmenu_aria2 ;;
@@ -23,6 +30,8 @@ case "$choice" in
       vim) xterm -e vim ;;
       steam) steam ;;
       tvs)~/Documents/scripts/tvs ;;
+      pron)~/Documents/scripts/sans ;;
+      video)~/Documents/scripts/mpvinfinite ;;
       drawing) drawing ;;
       fceux) ~/Documents/scripts/emu ;;
       kalkulator) ~/Documents/scripts/itung ;;
@@ -35,9 +44,9 @@ case "$choice" in
       voltoggle) pamixer --toggle-mute ;;
       volmax) pamixer --set-volume 100 ;;
       volhalf) pamixer --set-volume 50 ;;
-      bright30) xbacklight -set 30 ;;
-      bright50) xbacklight -set 50 ;;
-      bright100) xbacklight -set 100 ;;
+      bright30) light -S 30 ;;
+      bright50) light -S 50 ;;
+      bright100)light -S 100 ;;
       play) mpc play ;;
       pause) mpc toggle ;;
       stop) mpc stop ;;
@@ -56,6 +65,7 @@ case "$choice" in
       vokoscreen) vokoscreen & ;;
       udiskie) ~/Documents/scripts/udiskie-dmenu & ;;
       lock) betterlockscreen -l & ;;
+      network) networkmanager_dmenu -w 1000 -x 190 -y 250 & ;;
       logout) i3-msg exit & ;;
       reboot) exec systemctl reboot & ;;
       shutdown) exec systemctl -i poweroff & ;;

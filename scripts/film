@@ -1,3 +1,3 @@
 #!/bin/bash
 #cd ~/Videos/"$(ls *)" && mpv -vo xv "$(ls *mkv *mp4 *m3u *webm  | dmenu -i -b -l 20)"
-mpv -vo xv "$(ls /home/damez/Videos/film/*  | dmenu -i -b -l 20)"
+mpv -vo xv "$(ls /home/damez/Videos/film/*  | dmenu -i -l 10 -x 190 -y 250 -w 1000)"

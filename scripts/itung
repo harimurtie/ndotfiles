@@ -1,5 +1,5 @@
 #!/bin/bash
 
 CM1=`xsel -o`
-CM2=`echo $CM1 | dmenu -b -p kalkulator: | calc -p`
-echo $CM2 | xsel -i | echo $CM2 | dmenu -b -p jawaban:
+CM2=`echo $CM1 | dmenu -x 190 -y 300 -w 1000 -p kalkulator: | calc -p`
+echo $CM2 | xsel -i | echo $CM2 | dmenu -x 190 -y 300 -w 1000 -p jawaban:

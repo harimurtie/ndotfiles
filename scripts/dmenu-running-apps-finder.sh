@@ -21,7 +21,7 @@ foo=$(for i in $winlist; do
         win_class=$(xprop -id ${win_id} WM_CLASS | cut -d'"' -f2)
         win_title=$(xprop -id ${win_id} WM_NAME | cut -d'=' -f2-)
         printf  "%10.10s${focustag}| %60.60s | 0x%7.7x\n" "${win_class}" "${win_title}" "${win_id}"
-done |sort| dmenu -i -l $count)
+done |sort| dmenu -i -x 290 -y 300 -w 900 -l $count)
 
 
 if [ $? -eq 0 ]; then

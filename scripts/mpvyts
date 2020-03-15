@@ -13,17 +13,17 @@ check_empty() {
 }
 
 if [[ -z $(grep "video only" "$format") ]]; then
-  quality=$(tail -n +5 "$format" | awk '{print $1}' | rofi -dmenu -i -p "Select quality:")
+  quality=$(tail -n +5 "$format" | awk '{print $1}' | dmenu -x 190 -w 1000 -y 250  -i -l 8 -p "Select quality:")
   check_empty "$quality"
 
   mpv --title=mpv-float --loop-file --ontop --ytdl-format="$quality" "$1"
 else
   video_quality=$(grep "video only" "$format" | awk '{print $1,"("$NF,$4,$2")"}' \
-    | rofi -dmenu -i -p "Select video resolution" | awk '{print $1}')
+    | dmenu -x 190 -w 1000 -y 250  -i -l 8 -i -p "Select video resolution" | awk '{print $1}')
   check_empty "$video_quality"
 
   audio_quality=$(grep "audio only" "$format" | awk '{print $1,"("$NF,$7,$9")"}' \
-    | rofi -dmenu -i -p "Select audio quality" | awk '{print $1}')
+    | dmenu -x 190 -w 1000 -y 250  -i -l 8 -i -p "Select audio quality" | awk '{print $1}')
   check_empty "$audio_quality"
 
   mpv --title=mpv-float --loop-file --ontop \
