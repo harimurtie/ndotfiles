@@ -42,13 +42,13 @@ font-4 = "Ubuntu Condensed:size=11;2"
 ;   global/wm
 ;=====================================================
 [global/wm]
-enable-ipc = true
+#enable-ipc = true
 
 ;=====================================================
 ;   bar/top
 ;=====================================================
 [bar/top]
-monitor = ${env:MONITOR:eDP1}
+#monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 20
 #offset-x = 2%
@@ -56,21 +56,21 @@ height = 20
 #bottom = false
 bottom = true
 fixed-center = true
-line-size = 2
+line-size = 0
 border-top-size=7
 border-bottom-size=5
 foreground = ${colors.foreground}
-background = #00000
-border-color = #00000
+background = #000000
+border-color = #000000
 pseudo-transparency = true
 
 font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = pwr batre1 fs close min show i3 add
-modules-center = xwindow
-modules-right = wifi gaps gaps batre gaps gaps xbacklight gaps spiker ejek date0
+modules-left = mpd_top pwr close min show super batre1 fs gaps
+modules-center = mpd_bar xwindow
+modules-right = wifi gaps gaps batre gaps backlightwithlight spiker ejek date0
 
 ;=====================================================
 ;   module
@@ -79,6 +79,12 @@ modules-right = wifi gaps gaps batre gaps gaps xbacklight gaps spiker ejek date0
 type = custom/text
 content =""
 click-left = ~/Documents/scripts/next_workspace
+content-padding = 1
+
+[module/sans]
+type = custom/text
+content =""
+click-left = "~/Documents/scripts/sans >/dev/null 2>&1 &"
 content-padding = 1
 
 [module/icon]
@@ -102,60 +108,12 @@ label = %title:0:20:...%  %{B- -o -u}
 label-foreground = #FFFFFF
 #label-background = #FFFFFF
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = true
-fuzzy-match = false
-strip-wsnumbers = true
-pin-workspaces = true
-reverse-scroll = false
-#content-padding = 1
-#content-background = ${colors.background}
-content-background =#285577
-label-focused = %icon%
-label-focused-foreground = #FFFFFF
-label-focused-background = #285577
-;label-focused-background = #00bd2c40
-label-focused-padding = 1
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
-label-unfocused-foreground = #FFFFFF
-#label-unfocused-background = #FFFFFF
-#label-unfocused-background = #00bd2c40
-label-unfocused-padding = 1
-
-; visible = Active workspace on unfocused monitor
-label-visible = %icon%
-;label-visible-background = #02EE57
-label-visible-background = #FFFFFF
-label-visible-foreground = #000000
-label-visible-padding = 1
-
-; urgent = Workspace with urgency hint set
-label-urgent = %icon%
-label-urgent-background = ${colors.background}
-label-urgent-foreground = ${colors.secondary}
-label-urgent-padding = 1
-
-; ws-icon-[0-9]+ = label;icon
-; ; NOTE: The label needs to match the name of the i3 workspace
-;ws-icon-0 = 1; 
-;ws-icon-1 = 2; 
-;ws-icon-2 = 3; 
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-
-
 [module/mpd_top]
 type = internal/mpd
 interval = 1
 #format-online = <icon-prev> <toggle> <icon-next>  <label-song> <bar-progress> <label-time>
-#format-online = <icon-prev> <toggle> <icon-stop> <icon-next> <label-song>
 format-online = <icon-prev> <toggle> <icon-stop> <icon-next>
+#format-online = <icon-prev> <toggle> <icon-stop> <icon-next>
 label-song =  "%title%"
 label-song-maxlen = 15
 label-song-ellipsis = true
@@ -167,11 +125,18 @@ label-time-foreground = #FFFFFF
 #format-offline-background = #FFFFFF
 #label-time-background = #FFFFFF
 format-online-padding = 1
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
+#icon-play = 
+#icon-pause = 
+#icon-stop = 
+#icon-prev = 
+#icon-next = 
+#icon-seekb = 
+#icon-seekf = 
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
 icon-seekb = 
 icon-seekf = 
 bar-progress-width = 10
@@ -193,6 +158,8 @@ bar-progress-fill-font = 2
 bar-progress-empty = ┉
 bar-progress-empty-foreground = #1e88e5
 bar-progress-empty-font = 2
+
+
 
 ;=====================================================
 ;   module
@@ -288,21 +255,21 @@ full-at = 100
 format-charging = <animation-charging>
 format-discharging = <ramp-capacity>
 label-charging-foreground= #FFFFFF
-label-charging-background= #00000
+label-charging-background= #000000
 label-charging-padding=1
 label-discharging-foreground= #FFFFFF
-label-discharging-background= #00000
+label-discharging-background= #000000
 label-discharging-padding=1
 format-full-prefix = ""
 format-full-prefix-foreground = #FFFFFF
-format-full-prefix-background = #00000
+format-full-prefix-background = #000000
 ramp-capacity-foreground = #FFFFFF
-ramp-capacity-background = #00000
+ramp-capacity-background = #000000
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 animation-charging-foreground = #FFFFFF
-animation-charging-background = #00000
+animation-charging-background = #000000
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -312,16 +279,16 @@ module-padding = 1
 
 [module/xbacklight]
 type = internal/xbacklight
-format = <ramp>
+format = <ramp> <label>
 ramp = 
 ramp-0 = 
-ramp-foreground = #FFFFFF
-ramp-background = #00000
+ramp-foreground = #FFBD00
+ramp-background = #000000
 #ramp-padding = 0.5
 label = %percentage%%
 label-foreground = #FFFFFF
-label-background = #00000
-label-padding= 1
+label-background = #000000
+#label-padding= 1
 
 [module/spiker]
 type = internal/pulseaudio
@@ -331,9 +298,9 @@ ramp-volume-padding = 1
 ramp-volume-foreground = #FFFFFF
 label-volume-foreground = #FFFFFF
 label-muted-foreground = #FFFFFF
-ramp-volume-background = #00000
-label-volume-background = #00000
-label-muted-background = #00000
+ramp-volume-background = #000000
+label-volume-background = #000000
+label-muted-background = #000000
 label-volume = %percentage%%
 label-muted = ""
 label-muted-padding = 1
@@ -513,7 +480,7 @@ content-padding =1
 type = custom/text
 #content-foreground =#ffffff
 content-foreground =#FFBD00
-content-background =#00000
+content-background =#000000
 click-left = i3-msg move scratchpad
 content = 
 content-padding =1
@@ -521,8 +488,16 @@ content-padding =1
 [module/show]
 type = custom/text
 content-foreground =#14CC3A
-content-background =#00000
+content-background =#000000
 click-left = ~/Documents/scripts/hide
+content = 
+content-padding =1
+
+[module/super]
+type = custom/text
+content-foreground =#0CA6D3
+content-background =#000000
+click-left = i3-msg move scratchpad && ~/Documents/scripts/hide
 content = 
 content-padding =1
 
@@ -690,7 +665,7 @@ content-padding = 1
 [module/mpd_bar]
 type = internal/mpd
 interval = 1
-format-online = <label-song>
+format-online = <label-song> <label-time>
 label-song =%title%
 label-song-maxlen = 30
 label-song-ellipsis = true
@@ -806,3 +781,68 @@ label = %output%
 type = custom/script
 exec = ~/Documents/bangunapp/polybar-i3-windows/module.py
 tail = true
+
+[module/backlightwithlight]
+type = custom/script
+interval = 0.2
+exec = ~/Documents/scripts/backlightwithlight
+scroll-up = exec light -A 5
+scroll-down = exec light -U 5
+format-prefix = " "
+label = %output%
+label-foreground = #FFFFFF
+label-background = #000000
+format-padding = 1
+
+[module/jam]
+type = custom/script
+exec = date '+%H:%M'
+interval = 1
+label = %output%
+label-foreground = #FFFFFF
+format-prefix = " "
+format-prefix-foreground = #FFFFFF
+click-left = ~/Downloads/Telegram Desktop/popdate
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
