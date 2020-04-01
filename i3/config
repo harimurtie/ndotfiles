@@ -2,29 +2,25 @@ set $lnsi --no-startup-id
 set $mod Mod4
 set $editor XTerm
 workspace_layout tabbed
-#workspace_layout splith
-#workspace_layout splitv
 title_align center
 bindsym $mod+a focus parent
 new_window pixel 1
 hide_edge_borders true
-#bindsym --release button3 move scratchpad
 bindsym --release button3 kill
-#bindsym --release button3 floating toggle
 bindsym $mod+u border none
-bindsym $mod+g exec --no-startup-id ~/Documents/scripts/dmenufm
-bindsym $mod+b border pixel 1
-#bindsym $mod+v exec --no-startup-id rofi -modi drun -show drun >/dev/null 2>&1 &
-bindsym Ctrl+space exec --no-startup-id j4-dmenu-desktop >/dev/null 2>&1 &
-#bindsym $mod+n border normal
+bindsym $mod+g exec --no-startup-id ~/Documents/scripts/hider
+bindsym $mod+b border pixel 3
+bindsym Ctrl+space exec --no-startup-id j4-dmenu-desktop  >/dev/null 2>&1 &
 font xft:TerminessTTF Nerd Font Mono 9
 floating_modifier $mod
-bindsym $mod+t exec --no-startup-id st
+bindsym $mod+t exec --no-startup-id python3 ~/Documents/bangunapp/viter/viter.py
+bindsym $mod+s exec --no-startup-id xterm
 bindsym $mod+q kill
 bindsym button4 nop
 bindsym button5 nop
-bindsym $mod+s exec --no-startup-id xterm
-#bindsym $mod+b exec --no-startup-id ~/Documents/scripts/qmenu_hud
+bindsym button6 nop
+bindsym button7 nop
+
 #window decor
 for_window [class=".*"] title_format "%class"
 for_window [class=Telegram] title_format "   telegram"
@@ -44,15 +40,11 @@ for_window [class=mpv] title_format " movie"
 for_window [class=gl] title_format " movie"
 for_window [class=Pamac-manager] title_format " pamac"
 for_window [class=Google-chrome] title_format " chrome"
-#bindsym $mod+u title_format "Important | %title"
 
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2
-#bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2
-#bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/Documents/scripts/volume.sh up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/Documents/scripts/volume.sh down
 bindsym XF86AudioMute exec --no-startup-id ~/Documents/scripts/volume.sh mute
@@ -70,7 +62,6 @@ bindsym $mod+F2 exec --no-startup-id nice -n19 telegram-desktop
 bindsym $mod+F3 exec --no-startup-id pcmanfm
 bindsym $mod+F4 exec --no-startup-id qutebrowser
 bindsym $mod+F5 exec --no-startup-id pkill polybar
-#bindsym $mod+F6 exec --no-startup-id subl
 bindsym $mod+F7 exec --no-startup-id mpv --no-audio --window-scale=0.5 av://v4l2:/dev/video0 --vf=hflip
 bindsym $mod+F8 exec --no-startup-id buckle
 bindsym $mod+Ctrl+F8 exec --no-startup-id pkill buckle
@@ -78,33 +69,20 @@ bindsym $mod+F9 exec --no-startup-id pamac-manager
 bindsym $mod+Shift+d --release exec "killall dunst; exec dunstify 'restart dunst'"
 bindsym Print exec "/home/damez/Documents/scripts/screenshot.sh"
 bindsym $mod+Print exec "/home/damez/Documents/scripts/screenshot.sh -s"
-#bindsym $mod+space exec --no-startup-id dmenu_run -i -b
-#bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/j4menu
 bindsym $mod+space exec --no-startup-id /home/damez/Documents/scripts/dmenu_mager
-#bindsym $mod+space exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'TerminessTTF Nerd Font Mono 13' -modi drun
-#bindsym $mod+Tab exec --no-startup-id rofi -show window -lines 5 -width 500 -display-window 'windows'
 bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu-running-apps-finder.sh
-#bindsym $mod+Tab exec --no-startup-id ~/Documents/scripts/dmenu_raise
-#bindsym $mod+Tab exec --no-startup-id xst -c "window-switcher" -e ~/Documents/scripts/switch
-#bindsym $mod+t exec --no-startup-id rofi -theme solarized_alternate -font "SF Pro Text 11" -lines 10 -width 50 -location 0 -show locate -modi "locate:~/.local/share/rofi/finder.sh"
-bindsym $mod+d exec --no-startup-id networkmanager_dmenu -w 1000 -x 190 -y 250
-bindsym $mod+f exec --no-startup-id ~/Documents/scripts/film
+bindsym $mod+d exec --no-startup-id networkmanager_dmenu
+bindsym $mod+f exec --no-startup-id ~/Documents/scripts/dmenu_wifi
 bindsym $mod+Shift+f exec --no-startup-id ~/Documents/scripts/dwl
 bindsym $mod+j exec --no-startup-id ~/Documents/scripts/dmenu_emoji
 bindsym $mod+Shift+v exec --no-startup-id ~/Documents/scripts/buku
 bindsym $mod+Shift+g exec --no-startup-id ~/Documents/scripts/porn
-#bindsym $mod+5 exec --no-startup-id plank
-#bindsym $mod+Ctrl+5 exec --no-startup-id pkill plank
-#bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/pbar on
 bindsym $mod+5 exec --no-startup-id ~/Documents/scripts/killdock on
 bindsym $mod+Ctrl+5 exec --no-startup-id ~/Documents/scripts/killdock off
-#bindsym $mod+0 exec --no-startup-id /home/damez/.config/i3/scripts/polybar_wrapper options
 bindsym $mod+y exec --no-startup-id ~/Documents/scripts/dmenu_ytview
 
 focus_follows_mouse no
 bindsym $mod+h focus left
-#bindsym $mod+j focus down
-#bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -119,7 +97,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-#bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus left
 
 # workspace back and forth (with/without active container)
@@ -127,10 +104,8 @@ workspace_auto_back_and_forth no
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+Return fullscreen toggle
-#bindsym $mod+Return exec --no-startup-id gnome-terminal
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+o open
@@ -157,7 +132,6 @@ set $ws10 "10"
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
-#bindsym $mod+4 workspace number $ws4
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace number $ws1
@@ -254,12 +228,10 @@ for_window [class="Open Image"] floating disable
 
 
 for_window [urgent=latest] focus
-#bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # touchpad toggle
 bindsym $mod+p exec ~/.config/i3/touchpad.sh devonoff
-#bindsym $mod+Escape exec --no-startup-id ~/Documents/scripts/power
 bindsym $mod+9 exec --no-startup-id ~/Documents/scripts/itung
 bindsym $mod+0 exec --no-startup-id ~/Documents/scripts/j4menu
 
@@ -305,30 +277,22 @@ mode "resize" {
 
 #Autostart applications
 exec --no-startup-id /usr/lib/lxpolkit/lxpolkit
+exec --no-startup-id xrandr --output eDP1 --scale-from 1600x900 --panning 1600x900
 exec_always  --no-startup-id $HOME/.config/polybar/launch.sh start
-#exec --no-startup-id tint2 ~/Desktop/custom.tint2rc
-#exec_always --no-startup-id tint2 -c ~/.config/tint2/carina/carina.tint2rc
 exec_always --no-startup-id pkill compton
 exec --no-startup-id unclutter
-#exec --no-startup-id alttab
-#exec --no-startup-id gebaard -b
 exec --no-startup-id gamemoderun mpd
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipnotify
-exec --no-startup-id urxvtd
 exec --no-startup-id clipmenud
 exec --no-startup-id udiskie
 exec --no-startup-id wal -R
 
-
 # Background Wallpaper
-#exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/perspective.jpg
 #exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/hexagon.jpg
-exec_always --no-startup-id feh --bg-fill -Z /home/damez/Pictures/wal/owl.jpg
 bindsym $mod+4 exec --no-startup-id $HOME/.config/polybar/launch.sh toggle
 bindsym $mod+6 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+7 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/grayscalel.txt
-#bindsym $mod+8 exec --no-startup-id wal -f /home/damez/Documents/colorscheme/solarizedd.txt
 bindsym $mod+8 exec --no-startup-id /home/damez/Documents/scripts/udiskie-dmenu
 bindsym $mod+m exec --no-startup-id /home/damez/Documents/scripts/dmenu_cheatsheet
 bindsym $mod+n exec --no-startup-id /home/damez/Documents/scripts/dmenu_display
@@ -337,16 +301,15 @@ set $clip_chooser clipmenu.sh
 # Show clipboard content
 bindsym $mod+c exec --no-startup-id clipmenu -x 170 -y 300 -w 1000
 # Clean Up clipboard
-#bindsym $mod+Shift+c exec --no-startup-id $clip_chooser clean
 bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 
 
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #285577 #285577 #FFFFFF #285577  #FFFFF
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #FFFFF
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #00000
+  client.focused          #285577 #285577 #FFFFFF #285577  #FFFFFF
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948  #FFFFFF
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948  #000000
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000
   client.background       #2B2C2B
@@ -354,8 +317,8 @@ bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
 #############################
 ### settings for i3-gaps: ###
 #############################
-gaps inner 10
-gaps outer 8
+gaps inner 0
+gaps outer 0
 smart_gaps on
 smart_borders on
 border_radius 0
