@@ -17,22 +17,14 @@
 [colors]
 background = #000000
 foreground = #FFFFFF
-foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color3:#222}
-bi = #1e88e5
-be = #1e88e5
-bf = #43a047
-bn = #43a047
-bm = #fdd835
-bd = #e53935
+[margin]
+for-modules = 1
 
 ;=====================================================
 ;   fonts
 ;=====================================================
 [fonts]
-font-0 = "UbuntuMono Nerd Font:size=12:antialias=true;2"
+font-0 = "UbuntuMono Nerd Font:size=11:antialias=true;2"
 font-1 = "Iosevka Term:size=12:antialias=true;2"
 font-2 = "Droid Sans Japanese:size=12;2"
 font-3 = "icomoon\-feather:size=12;2"
@@ -56,7 +48,7 @@ fixed-center = true
 line-size = 0
 border-top-size=7
 border-bottom-size=5
-foreground = ${colors.foreground}
+foreground = #FFFFFF
 background = #000000
 border-color = #000000
 pseudo-transparency = true
@@ -65,9 +57,9 @@ font-0 = ${fonts.font-0}
 font-1 = ${fonts.font-1}
 font-2 = ${fonts.font-2}
 
-modules-left = pwr mpd_top close min show super i3 add fs gaps
-modules-center = xwindows
+modules-left = pwr mpd_top close min show super i3 add fs gaps xwindows cpu-graph
 modules-right = wifi gaps gaps batre gaps backlightwithlight spiker ejek date0
+
 
 ;=====================================================
 ;   module
@@ -81,7 +73,7 @@ content-padding = 1
 [module/xwindows]
 type = internal/xwindow
 format = <label>
-label-maxlen = 20
+label-maxlen = 15
 label =%title:0:20:...%  %{B- -o -u}
 label-foreground = #FFFFFF
 label-background = #000000
@@ -277,13 +269,6 @@ click-left = i3-msg kill
 content = 
 content-padding =1
 
-[module/steam]
-type = custom/text
-content-foreground = #FFFFFF
-click-left = "steam >/dev/null 2>&1 &"
-content = 
-content-padding = 1
-
 [module/i3]
 type = internal/i3
 pin-workspaces = true
@@ -306,3 +291,64 @@ label = %output%
 label-foreground = #FFFFFF
 label-background = #000000
 format-padding = 1
+
+[module/cpu-graph]
+type = internal/cpu
+interval = 0.08
+format = "<ramp-coreload>"
+#format = "<bar-load>"
+#format = "<ramp-load>"
+format-underline = #FFFFFF
+#format-margin = ${margin.for-modules}
+format-padding = 1
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = #FFFFFF
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = #FFFFFF
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = #FFFFFF
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = #FFFFFF
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = #FFFFFF
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = #FFFFFF
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = #FFFFFF
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = #FFFFFF
+ramp-coreload-font = 3
+ramp-load-0 = ▁
+ramp-load-0-foreground = #FFFFFF
+ramp-load-1 = ▂
+ramp-load-1-foreground = #FFFFFF
+ramp-load-2 = ▃
+ramp-load-2-foreground = #FFFFFF
+ramp-load-3 = ▄
+ramp-load-3-foreground = #FFFFFF
+ramp-load-4 = ▅
+ramp-load-4-foreground = #FFFFFF
+ramp-load-5 = ▆
+ramp-load-5-foreground = #FFFFFF
+ramp-load-6 = ▇
+ramp-load-6-foreground = #FFFFFF
+ramp-load-7 = █
+ramp-load-7-foreground = #FFFFFF
+ramp-load-font = 3
+bar-load-width-0 = ▁
+bar-load-width-0-foreground = #FFFFFF
+bar-load-width-1 = ▂
+bar-load-width-1-foreground = #FFFFFF
+bar-load-width-2 = ▃
+bar-load-width-2-foreground = #FFFFFF
+bar-load-width-3 = ▄
+bar-load-width-3-foreground = #FFFFFF
+bar-load-width-4 = ▅
+bar-load-width-4-foreground = #FFFFFF
+bar-load-width-5 = ▆
+bar-load-width-5-foreground = #FFFFFF
+bar-load-width-6 = ▇
+bar-load-width-6-foreground = #FFFFFF
+bar-load-width-7 = █
+bar-load-width-7-foreground = #FFFFFF
+bar-load-width-font = 3
