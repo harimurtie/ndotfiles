@@ -1,2 +1,2 @@
 #!/bin/bash
-j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu"
+j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu -i -b -x 200 -w 1000 -y 250 -l 10"

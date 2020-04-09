@@ -1,12 +1,17 @@
-#!/bin/bash
+#/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-10' -i -l 10 -x 190 -w 1000 -y 250 -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
-choice=$(echo -e "light\ndark\nwide\nnormal\nlock\nlogout\nviter\nnetwork\nreboot\nshutdown\nsuspend\nterminal\nkonsol\nrefresh\nlist\nfilemanager\nplayer\naria\nwallpaper\ncalc\ntypora\ntag\ngammy\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\npron\nvideo\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nmovie\npavucontrol\nvoltoggle\nvolmax\nvolhalf\nnes\nsnes\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nudiskie" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-8' -i -l 10 -x 210 -w 1000 -y 270 -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "light\nmecha-on\nmecha-off\nbar-on\nbar-off\nkeyboard\ndark\nwide\nnormal\nlock\nlogout\nviter\nnetwork\nreboot\nshutdown\nsuspend\nterminal\nkonsol\nrefresh\nlist\nfilemanager\nplayer\naria\nwallpaper\ncalc\ntypora\ntag\ngammy\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nstoprec\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\npron\nvideo\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nfilm\npavucontrol\nmute\nvolmax\nvolhalf\nnes\nsnes\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nudiskie" | $DMENU)
 
 case "$choice" in
       light) wal -f ~/Documents/colorscheme/3024.light.txt ;;
-      dark) wal -f ~/Documents/colorscheme/solarized.dark.txt ;;
-      wide) xrandr --output eDP1 --scale-from 1600x900 --panning 1600x900 ;;
+      keyboard) onboard  ;;
+      mecha-on) buckle -g 25 -s 30 -p ~/Documents/mxblues  ;;
+      mecha-off) pkill buckle  ;;
+      bar-on) ~/Documents/scripts/polyon  ;;
+      bar-off) ~/Documents/scripts/polyoff  ;;
+      light) wal -f ~/Documents/colorscheme/3024.light.txt ;;
+      wide) xrandr --output eDP1 --scale-from 1440x900 --panning 1440x900 ;;
       normal) xrandr --output eDP1 --scale-from 1366x768 --panning 1366x768 ;;
       dark) wal -f ~/Documents/colorscheme/solarized.dark.txt ;;
       refresh) i3-msg restart ;;
@@ -28,6 +33,7 @@ case "$choice" in
       scriptedit) ~/Documents/scripts/confmenu ;;
       buku) ~/Documents/scripts/books ;;
       record) ~/Documents/scripts/dmenurecord ;;
+      stoprec) ~/Documents/scripts/stoprec ;;
       monitor) ~/Documents/scripts/dmenu_display ;;
       kill) ~/Documents/scripts/dmenu-kill-process ;;
       dockon) ~/Documents/scripts/killdock on >/dev/null 2>&1 & ;;
@@ -41,12 +47,12 @@ case "$choice" in
       fceux) ~/Documents/scripts/emu ;;
       kalkulator) ~/Documents/scripts/itung ;;
       telegram) nice -n19 telegram-desktop ;;
-      qutebrowser) qutebrowser ;;
+      qutebrowser) qutebrowser --backend webengine ;;
       cadence) cadence ;;
       olive) olive-editor ;;
-      movie) ~/Documents/scripts/film ;;
+      film) ~/Documents/scripts/film ;;
       pavucontrol) pavucontrol-qt ;;
-      voltoggle) pactl set-sink-mute 0 toggle ;;
+      mute) pactl set-sink-mute 0 toggle ;;
       volmax) pamixer --set-volume 100 ;;
       volhalf) pamixer --set-volume 50 ;;
       nes) fceux ;;

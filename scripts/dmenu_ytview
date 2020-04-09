@@ -9,7 +9,7 @@
 # inspired by https://github.com/harimurtie/ndotfiles/blob/master/scripts/ytplay
 
 #resolution="144p\n240p\n360p\n480p\n720p\n1080p"
-resolution="360p"
+resolution="360p\nlow\ndllow\naudio\ndlaudio"
 dmenu="dmenu -x 190 -y 300 -w 1000 -fn Iosevka-11 -p resolution -i -l 10 "
 selected=$(echo -e "$resolution" | $dmenu)
 
@@ -19,5 +19,9 @@ case "$selected" in
 #  360p ) youtube-viewer --resolution 360p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
 #  480p ) youtube-viewer --resolution 480p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
 360p ) mpv --ytdl-format=18 "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+low ) mpv --ytdl-format=low "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+dllow ) youtube-dl -f low "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+audio ) mpv --ytdl-format=0 "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
+dlaudio ) youtube-dl -f 0 "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
 #  1080p ) youtube-viewer --resolution 1080p "$(xclip -selection clipboard -o | cut -d '&' -f 1)";;
 esac

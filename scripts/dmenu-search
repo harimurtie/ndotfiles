@@ -1,0 +1,9 @@
+#!/bin/bash
+
+EDITOR='vim'
+TERM='st'
+LINE_NUM='-l 15'
+PROMPT='-p edit '
+FILE=$(du -a /home/damez | sed 's:/home/bit6tream/\..*::g;s:^[0-9]\+::;s:^\s\+::' | sed -n 's:/home/bit6tream/:&:p' | dmenu $LINE_NUM $PROMPT)
+# FILE="'$FILE'"
+[[ $FILE != "" ]] && $TERM -e $EDITOR "$FILE"

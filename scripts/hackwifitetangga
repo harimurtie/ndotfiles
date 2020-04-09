@@ -1,0 +1,2 @@
+#!/bin/bash
+figlet -f ~/Documents/bangunapp/figlet-fonts/3d.flf kasih rendang | nms -a -f green

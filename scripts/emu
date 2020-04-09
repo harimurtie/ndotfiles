@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-9' -l 4 -i -b -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+DMENU='dmenu -fn 'TerminessTTF-9'  -l 4 -i -x 190 -w 1000 -y 250 -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
 choice=$(echo -e "nes\nsnes\npsp\nnds" | $DMENU)
 
 case "$choice" in

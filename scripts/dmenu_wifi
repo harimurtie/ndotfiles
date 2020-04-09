@@ -7,13 +7,13 @@ cat slist | grep -Eo "Quality=[0-9]{1,}/[0-9]{1,}" | cut -d= -f2 | cut -d/ -f1 >
 cat slist | grep ESSID | cut -d\" -f2 > elist
 paste -d" " qlist elist > list
 rm qlist elist slist
-SEL=`sort -r list | dmenu`
+SEL=`sort -r list | dmenu -i -x 200 -w 1000 -y 250`
 if [ -z "$SEL" ]; then
 	rm list
 	exit
 fi
 SEL1=`echo $SEL | cut -d" " -f2`
-if [ `dmenu -p "Obtaining IP, press return to cancel"` ]; then
+if [ `dmenu -i -x 200 -w 1000 -y 250 -p "Obtaining IP, press return to cancel"` ]; then
 	killall dhcpcd
 fi &
 wifi "$SEL1"

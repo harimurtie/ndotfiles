@@ -1,3 +1,3 @@
 #!/bin/bash
-cat ~/.config/i3/config | grep 'bindsym' | grep -v '^\s*#' | sed 's/bindsym / /' | dmenu -i -l 10
+cat ~/.config/i3/config | grep 'bindsym' | grep -v '^\s*#' | sed 's/bindsym / /' | dmenu -x 200 -w 1000 -y 250 -i -l 10
 

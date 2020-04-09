@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # dmenu theming
-lines="-b -i -l 20"
+lines="-x 210 -w 1000 -y 270  -i -l 20"
 font="-fn TerminessTTFNerdFont-10"
 #colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
 
@@ -13,7 +13,7 @@ selected="$(ps -a -u $USER | \
 if [[ ! -z $selected ]]; then
 
     answer="$(echo -e "Yes\nNo" | \
-            dmenu -i -p "$selected will be killed, are you sure?" \
+            dmenu -x 210 -w 1000 -y 270 -i -p "$selected will be killed, are you sure?" \
             $lines $colors $font )"
 
     if [[ $answer == "Yes" ]]; then

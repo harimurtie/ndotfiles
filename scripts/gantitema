@@ -1,0 +1,2 @@
+#!/bin/bash
+pkill polybar && polybar -c ~/.config/polybar/configblue top
