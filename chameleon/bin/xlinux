@@ -1,0 +1,4 @@
+#!/bin/bash
+pkill polybar ;sleep 1;
+feh --bg-fill wallpaper/wallpaper.png &
+polybar -c polybar/configlinux.ini top

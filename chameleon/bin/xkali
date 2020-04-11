@@ -1,0 +1,4 @@
+#!/bin/bash
+pkill polybar ;sleep 1;
+feh --bg-fill wallpaper/kali.png &
+polybar -c polybar/configkali.ini kali

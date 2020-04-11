@@ -1,0 +1,4 @@
+#!/bin/bash
+pkill polybar ;sleep 1;
+feh --bg-fill wallpaper/snowleopard.jpg &
+polybar -c polybar/configmac.ini mac
