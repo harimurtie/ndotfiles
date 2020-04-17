@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#when set to exit, mpd_control will exit if you press escape
+#when set to break, mpd_control will go the upper level if possible
+#ESC_ACTION="break"
+# source configuration file for rofi if exists
+
+ROFI="dmenu -x 210 -w 1000 -y 270 -l 10 -i -p 'Search:'"
+
+
+
+	TITLE=$(mpc -p 6600 playlist | $ROFI);
+	if [ "$TITLE" = "" ]; then exit; fi
+	POS=$(mpc -p 6600 playlist | grep -n "$TITLE" | awk -F: '{print $1}')
+	mpc -p 6600 play $POS;
+
+

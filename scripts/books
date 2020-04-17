@@ -6,7 +6,7 @@
 dir="$HOME/Documents/buku"
 
 # get choice of pdf
-choice=$(find $dir -type f -follow -print | dmenu -i -l 10)
+choice=$(find $dir -type f -follow -print | dmenu -x 200 -w 1000 -y 250 -i -l 10)
 
 # if nothing is chosen then exit
 [ "$choice" != "" ] || exit

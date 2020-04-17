@@ -1,0 +1,4 @@
+#!/bin/bash
+killall -SIGINT polybar ;sleep 1;
+feh --bg-fill /home/damez/Pictures/wal/kali.png &
+polybar -c ~/Documents/bangunapp/polybar-themes/polybar-10/panel/kali.ini main

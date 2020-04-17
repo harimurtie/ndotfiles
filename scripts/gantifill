@@ -1,2 +1,2 @@
 #!/bin/bash
-feh --bg-fill -Z "$(ls /home/damez/Pictures/wal/* | dmenu -x 190 -w 1000 -y 250 -i -l 20)"
+feh --bg-fill "$(ls /home/damez/Pictures/wal/* | dmenu -x 210 -w 1000 -y 250 -i -l 10)"

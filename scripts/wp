@@ -1,0 +1,2 @@
+#!/bin/bash
+figlet -f 3d -w 100 wani piro \? | nms -a -f green

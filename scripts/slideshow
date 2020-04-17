@@ -1,8 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+main(){
+    [[ -f ${deckfile:=$*}  ]] ||  ERX no such file
+}
 
 
-shownote()(
-block=$(pen btw \ i \ use \ manjaro)
+shownote() {
+block=$(figlet "$1")
 terminal_width=$(tput cols)
 terminal_height=$(tput lines)
 block_width=$(echo "$block" | wc -L)
@@ -14,4 +18,4 @@ vpad=$(printf "%$((blank_lines / 2))s" " ")
 vpad=${vpad// /$'\n'}
 block=$(echo "$block" | sed "s/^/${hpad}/g")
 printf '%s' "$vpad" "$block" "$vpad"
-)
+}

@@ -1,0 +1,3 @@
+#!/bin/bash
+mpc playlist | dmenu -i -l 20
+mpc play

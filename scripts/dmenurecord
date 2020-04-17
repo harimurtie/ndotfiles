@@ -23,7 +23,9 @@ killrecording() {
 	pkill -RTMIN+9 i3blocks
 	# even after SIGTERM, ffmpeg may still run, so SIGKILL it.
 	sleep 3
-	kill -9 "$recpid"
+	#killall -9 "$recpid"
+	killall -SIGINT ffmpeg
+	#killall  ffmpeg
 	exit
 	}
 
@@ -33,7 +35,7 @@ screencast() { \
 	-framerate 60 \
 	-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
 	-i :0.0 \
-	-f pulse -i default \
+	-f pulse -i 0 \
 	-r 30 \
  	-c:v libx264 -c:a flac \
 	"$HOME/Videos/screencast/screencast-$(date '+%y%m%d-%H%M-%S').mkv" &
@@ -80,20 +82,21 @@ audio() { \
 	}
 
 askrecording() { \
-	choice=$(printf "screencast\\nvideo\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -x 190 -y 300 -w 1000 -l 5 -i -p "Select recording style:")
+	choice=$(printf "screencast\\nvideo\\naudio\\nwebcam\\nkillrecording\\nwebcam (hi-def)" | dmenu -x 190 -y 300 -w 1000 -l 6 -i -p "Select recording style:")
 	case "$choice" in
 		screencast) screencast;;
 		audio) audio;;
 		video) video;;
 		webcam) webcam;;
+		killrecording) killrecording;;
 		"webcam (hi-def)") webcamhidef;;
 	esac
 	}
 
-asktoend() { \
-	response=$(printf "No\\nYes" | dmenu -i -x 190 -y 300 -w 1000 -p "Recording still active. End recording?") &&
-	[ "$response" = "Yes" ] &&  killrecording
-	}
+#asktoend() { \
+#	response=$(printf "No\\nYes" | dmenu -i -x 190 -y 300 -w 1000 -p "Recording still active. End recording?") &&
+#	[ "$response" = "Yes" ] &&  killrecording
+#	}
 
 
 case "$1" in

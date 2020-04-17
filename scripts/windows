@@ -1,0 +1,4 @@
+#!/bin/bash
+killall -SIGINT polybar ;sleep 1;
+feh --bg-fill -Z /home/damez/Pictures/wal/windows.jpg &
+polybar -c ~/Documents/bangunapp/polybar-themes/polybar-10/panel/windows.ini main

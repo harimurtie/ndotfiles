@@ -1,12 +1,24 @@
 #/bin/bash
 
-DMENU='dmenu -fn 'TerminessTTF-8' -i -l 10 -x 210 -w 1000 -y 270 -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
-choice=$(echo -e "light\nmecha-on\nmecha-off\nbar-on\nbar-off\nkeyboard\ndark\nwide\nnormal\nlock\nlogout\nviter\nnetwork\nreboot\nshutdown\nsuspend\nterminal\nkonsol\nrefresh\nlist\nfilemanager\nplayer\naria\nwallpaper\ncalc\ntypora\ntag\ngammy\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nstoprec\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\npron\nvideo\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nfilm\npavucontrol\nmute\nvolmax\nvolhalf\nnes\nsnes\nbright30\nbright50\nbright100\nplay\npause\nstop\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nvokoscreen\nudiskie" | $DMENU)
+DMENU='dmenu -fn 'TerminessTTF-11' -i -l 10 -x 205 -w 950 -y 270 -nb #000000 -nf #999999 -sb #FFFFFF -sf #31658C'
+choice=$(echo -e "light\nwindows\nxp\nkali\nlinux-white\nlinux-blue\nmac\nmecha-buckling-on\nmecha-gateronred-on\nmecha-mxblue-on\nmecha-mxblue-soft-on\nmecha-mxbrown-on\nmecha-mxreds-on\nmecha-off\nbar-on\nbar-off\nkeyboard\nmousepad\ndark\nwide\nnormal\nlock\nlogout\nviter\nnetwork\nreboot\nshutdown\nsuspend\nterminal\nkonsol\nrefresh\nlist\nfilemanager\nplay\naria\nwallpaper\ncalc\ntypora\ntag\ngammy\ntouchpad\nconvert\nfile\nscriptedit\nbuku\nrecord\nstop\nmonitor\nkill\ndockon\ndockoff\nvim\nsteam\ntvs\npron\nvideo\ndrawing\nfceux\nkalkulator\ntelegram\nqutebrowser\ncadence\nolive\nfilm\npavucontrol\nmute\nvolmax\nvolhalf\nnes\nsnes\nbright30\nbright50\nbright100\nplayer\nmusic\npause\nstoprec\nnext\nprev\nminimize\nmaximize\nfullscreen\nmpvcontrol\nclose\nscreenshot\nscreenshotarea\nscreenshotdelay\nyoutube\ncompton\nxeyes\nvokoscreen\nudiskie" | $DMENU)
 
 case "$choice" in
       light) wal -f ~/Documents/colorscheme/3024.light.txt ;;
       keyboard) onboard  ;;
-      mecha-on) buckle -g 25 -s 30 -p ~/Documents/mxblues  ;;
+      mousepad) mousepad  ;;
+      windows) ~/Documents/scripts/windows  ;;
+      xp) ~/Documents/scripts/windowsxp  ;;
+      kali) ~/Documents/scripts/kali  ;;
+      linux-white) ~/Documents/scripts/linux-white  ;;
+      linux-blue) ~/Documents/scripts/linux-blue  ;;
+      mac) ~/Documents/scripts/mac  ;;
+      mecha-buckling-on) buckle -g 50  ;;
+      mecha-gateronred-on) buckle -g 50 -s 530 -p ~/Documents/keyboardsounds/gateronreds ;;
+      mecha-mxblue-on) buckle -g 50 -s 50 -p ~/Documents/keyboardsounds/mxblues ;;
+      mecha-mxblue-soft-on) buckle -g 50 -s 50 -p ~/Documents/keyboardsounds/mxbluesofts ;;
+      mecha-mxbrown-on) buckle -g 50 -s 50 -p ~/Documents/keyboardsounds/mxbrowns ;;
+      mecha-mxreds-on) buckle -g 50 -s 50 -p ~/Documents/keyboardsounds/mxreds ;;
       mecha-off) pkill buckle  ;;
       bar-on) ~/Documents/scripts/polyon  ;;
       bar-off) ~/Documents/scripts/polyoff  ;;
@@ -26,6 +38,7 @@ case "$choice" in
       konsol) ppsspp ;;
       filemanager) pcmanfm ;;
       player) smplayer ;;
+      music) ~/Documents/scripts/mpds ;;
       aria) ~/Documents/scripts/dmenu_aria2 ;;
       touchpad) ~/.config/i3/touchpad.sh devonoff ;;
       convert) ~/Documents/scripts/converthb ;;
@@ -60,7 +73,7 @@ case "$choice" in
       bright30) light -S 30 ;;
       bright50) light -S 50 ;;
       bright100)light -S 100 ;;
-      play) mpc play ;;
+      play) ~/Documents/scripts/mpds ;;
       pause) mpc toggle ;;
       stop) mpc stop ;;
       next) mpc next ;;
@@ -76,6 +89,7 @@ case "$choice" in
       youtube) ~/Documents/scripts/ytplay & ;;
       compton) ~/Documents/scripts/compton-toggle.sh & ;;
       vokoscreen) vokoscreen & ;;
+      xeyes) xeyes -fg black & ;;
       udiskie) ~/Documents/scripts/udiskie-dmenu & ;;
       lock) betterlockscreen -l & ;;
       network) networkmanager_dmenu  & ;;
